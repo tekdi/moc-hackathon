@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-21T20:44:47+00:00",
+ "built_at": "2026-08-21T21:21:06+00:00",
  "public": true,
- "commit": "634ae49",
+ "commit": "a546861",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 1,
  "vocabularies": {
@@ -1348,7 +1348,7 @@
       "security-privacy-review",
       "productisation"
      ],
-     "current_summary": "Gemini LLM provider added alongside Anthropic/Mock; full productization pass complete (npm-publish-ready packages, root LICENSE, rewritten README, pipeline re-verified end-to-end against the real BaForms extension); 278 tests passing with typecheck/build/genericity audit all clean; security cleanup done (a vendored hardcoded API key was found and redacted, repo-wide scan clean); GitHub backup was blocked by GitHub App permissions, worked around with a secret-scrubbed ZIP export; real Gemini/Anthropic API calls and Prisma generation remain blocked by sandbox network restrictions (environment limitation, not a code defect).",
+     "current_summary": "Gemini LLM provider added alongside Anthropic/Mock; full productization pass complete (npm-publish-ready packages, root LICENSE, rewritten README, pipeline re-verified end-to-end against the real BaForms extension); 278 tests passing with typecheck/build/genericity audit all clean; security cleanup done (a vendored hardcoded API key was found and redacted, repo-wide scan clean); GitHub backup was blocked by GitHub App permissions, worked around with a secret-scrubbed ZIP export; real Gemini/Anthropic API calls and Prisma generation remain blocked by sandbox network restrictions (environment limitation, not a code defect). Also delivered 17 product-level Joomla2Node migration skills (00-16) plus a SKILL-VALIDATION.md — packaging the engine so a new agent can migrate an arbitrary Joomla extension without touching engine source — audited by an independent subagent pass that caught 6 real defects before delivery.",
      "last_update": "2026-08-21",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
@@ -1366,7 +1366,7 @@
       }
      ]
     },
-    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-joomla-to-nodejs-microservice-generator\">ai-powered-joomla-to-nodejs-microservice-generator</a>.</p>\n<h3>Current state</h3>\n<p>Productization pass complete and demo-ready: Gemini LLM provider added, all <code>@joomla2node/*</code> packages npm-publish-ready, 278 tests passing with clean typecheck/build/genericity audit, and the pipeline re-verified end-to-end against the real BaForms extension. A vendored hardcoded API key was found and redacted during a pre-backup security sweep. The GitHub backup itself is blocked by GitHub App permissions, so the team is working from a secret-scrubbed ZIP export in the meantime. Real Gemini/Anthropic API calls and Prisma generation remain blocked by sandbox network restrictions — a known environment limitation, not a code defect. A second real Joomla extension migration remains future validation.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-joomla-to-nodejs-microservice-generator\">ai-powered-joomla-to-nodejs-microservice-generator</a>.</p>\n<h3>Current state</h3>\n<p>Productization pass complete and demo-ready: Gemini LLM provider added, all <code>@joomla2node/*</code> packages npm-publish-ready, 278 tests passing with clean typecheck/build/genericity audit, and the pipeline re-verified end-to-end against the real BaForms extension. A vendored hardcoded API key was found and redacted during a pre-backup security sweep. The GitHub backup itself is blocked by GitHub App permissions, so the team is working from a secret-scrubbed ZIP export in the meantime. Real Gemini/Anthropic API calls and Prisma generation remain blocked by sandbox network restrictions — a known environment limitation, not a code defect. A second real Joomla extension migration remains future validation. Additionally, 17 product-level Joomla2Node migration skills (00 overview + 01-16 stages) plus a SKILL-VALIDATION.md mapping doc were built and delivered, packaging the engine for reuse by a new agent on a new extension — an independent audit subagent caught and fixed 6 real defects (including a fabricated import) before delivery.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
    },
    {
     "id": "team-9",
@@ -3335,6 +3335,54 @@
     "body": "<h3>What we did</h3>\n<p>Ran a full security cleanup pass ahead of backing the project up to GitHub, then attempted the backup itself.</p>\n<h3>What broke</h3>\n<p>The GitHub backup attempt was blocked by GitHub App permission/installation issues — it can't create repos, and the connector wasn't installed with repo access for this project.</p>\n<h3>What we decided</h3>\n<p>Worked around the blocked backup by exporting the complete current project as a verified, secret-scrubbed ZIP for manual push to a private GitHub repo — see the linked decision record.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not stated this round — see the linked learning record for the security-cleanup takeaway.</p>"
    },
    {
+    "id": "team-7/2026-08-21-migration-skills-package",
+    "type": "update",
+    "path": "updates/team-7/2026-08-21-migration-skills-package.md",
+    "title": "Built and delivered 17 product-level Joomla2Node migration skills (00-joomla2node-overview plus 01-16 stage skills) for an AI agent to migrate an arbitrary Joomla extension using the existing engine — explicitly distinct from the existing joomla2node-engine-dev skill (engine development, not usage). Every skill maps to a real function, CLI command, or schema field, verified by direct reads of the current source (analyzer, blueprint, ai, generator, agent, cli packages) plus 4 parallel research subagents. Ran an independent audit subagent afterward that caught and fixed 6 real defects before delivery. Delivered SKILL-VALIDATION.md (a skill-by-skill mapping to implementation/validation/limitations), 17 individual .skill files, a combined bundle, and the standalone validation doc, all via SendUserFile.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "team-7",
+     "date": "2026-08-21",
+     "stage": "productisation",
+     "record_kind": "progress",
+     "reported_by": "amol-patil",
+     "logged_by": "amol-patil",
+     "what_changed": "Built and delivered 17 product-level Joomla2Node migration skills (00-joomla2node-overview plus 01-16 stage skills) for an AI agent to migrate an arbitrary Joomla extension using the existing engine — explicitly distinct from the existing joomla2node-engine-dev skill (engine development, not usage). Every skill maps to a real function, CLI command, or schema field, verified by direct reads of the current source (analyzer, blueprint, ai, generator, agent, cli packages) plus 4 parallel research subagents. Ran an independent audit subagent afterward that caught and fixed 6 real defects before delivery. Delivered SKILL-VALIDATION.md (a skill-by-skill mapping to implementation/validation/limitations), 17 individual .skill files, a combined bundle, and the standalone validation doc, all via SendUserFile.",
+     "decisions": [
+      "2026-08-21-per-stage-skills-vs-monolith"
+     ],
+     "learnings": [
+      "2026-08-21-independent-audit-catches-fabrication"
+     ],
+     "metrics": {
+      "skills_created": 17,
+      "defects_caught_by_audit": 6,
+      "files_delivered": 20,
+      "sample": "17 SKILL.md files (00 overview + 01-16 stages) plus SKILL-VALIDATION.md, checked against the real source at packages/analyzer, packages/blueprint, packages/ai, packages/generator, packages/agent, packages/cli",
+      "method": "Direct source reads and 4 parallel research subagents for drafting, followed by one independent audit subagent with no memory of the drafting pass"
+     },
+     "artifacts": [],
+     "confidence": "asserted",
+     "ai_role": "generated",
+     "ai_tool": "claude-desktop",
+     "ai_leverage": "high",
+     "harness_pattern": "subagent",
+     "human_intervention": "Corrected the 6 issues the audit subagent found (a fabricated import, a stale directory-layout diagram repeated in two files, an imprecise count, a broken cross-reference, an overstated parsing claim, and a missing section) before delivery; no other manual rewrite needed.",
+     "acceleration": "Parallel research subagents read and fact-checked around 15 source files across 6 packages in one pass instead of serially; a second, independently-instantiated audit subagent caught defects a same-context self-review had already missed.",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Built and delivered 17 product-level Joomla2Node migration skills (<code>00-joomla2node-overview</code> plus <code>01</code> through <code>16</code>) for an AI agent to migrate an arbitrary Joomla extension using the existing engine, kept explicitly distinct from the existing <code>joomla2node-engine-dev</code> skill (which is for developing the engine itself, not using it). Every skill defines inputs, outputs, prerequisites, evidence to inspect, the exact existing functionality to call, validation, failure handling, manual-review requirements, what must never be invented, and handoff to the next stage — referencing real files/functions/CLI commands only. Verified via direct reads of the current source (<code>packages/analyzer</code>, <code>packages/blueprint</code>, <code>packages/ai</code>, <code>packages/generator</code>, <code>packages/agent</code>, <code>packages/cli</code>) plus 4 parallel research subagents. Ran an independent audit subagent afterward, which caught and fixed 6 real defects before delivery. Delivered <code>SKILL-VALIDATION.md</code> (mapping every skill to its real implementation, validation performed, and known limitations), 17 individual <code>.skill</code> files, a combined bundle, and the standalone validation doc.</p>\n<h3>What broke</h3>\n<p>Nothing broke in the sense of a failing build or test — this was a documentation/skill-authoring task. The AI-authored first draft did contain 6 real inaccuracies (see the linked learning), all caught before delivery rather than shipped.</p>\n<h3>What we decided</h3>\n<p>Split the guidance into 17 separate per-stage skills instead of one monolithic end-to-end skill — see the linked decision.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Verify every specific claim (file path, function name, CLI flag, literal default, exact generated text) against the actual current source before writing it into anything meant to be trusted at face value — and run a second, independently-instantiated review pass rather than relying on the same context that wrote the first draft to catch its own mistakes.</p>"
+   },
+   {
     "id": "team-7/2026-08-21-productization-pass",
     "type": "update",
     "path": "updates/team-7/2026-08-21-productization-pass.md",
@@ -3592,9 +3640,89 @@
      "date": "2026-08-21"
     },
     "body": "<h3>Context</h3>\n<p>Needed to get a verified, secret-scrubbed backup of the full Joomla2Node project out of the sandbox and into a private GitHub repo, but had no direct git/GitHub write access from the sandbox environment.</p>\n<h3>Options</h3>\n<p>Direct push via the GitHub App/connector was the natural first choice but was blocked by permissions — see <code>options_considered</code>.</p>\n<h3>Rationale</h3>\n<p>Exporting a ZIP was the only remaining path that didn't require GitHub write access, and the export was verified clean on a secret scan before handoff.</p>\n<h3>Consequences</h3>\n<p>The user has to manually push the ZIP to a private repo themselves; the automated, versioned backup path is deferred until the GitHub App's installation/permissions are fixed for this project.</p>"
+   },
+   {
+    "id": "team-7/2026-08-21-per-stage-skills-vs-monolith",
+    "type": "decision",
+    "path": "decisions/team-7/2026-08-21-per-stage-skills-vs-monolith.md",
+    "title": "Split the migration guidance into 17 separate per-stage skills (00 overview + 01-16 stages) rather than one large end-to-end migration skill.",
+    "fm": {
+     "schema_version": 1,
+     "type": "decision",
+     "team": "team-7",
+     "stage": "productisation",
+     "decision_type": "pattern-choice",
+     "decision": "Split the migration guidance into 17 separate per-stage skills (00 overview + 01-16 stages) rather than one large end-to-end migration skill.",
+     "options_considered": [
+      {
+       "option": "One large single SKILL.md covering the entire 16-stage pipeline",
+       "why_not": "Claude's skill-loading model favors small, focused files (progressive disclosure) — a single monolithic file would force loading the whole pipeline's instructions even when only one stage is relevant, and would make it impossible for a \"run complete migration\" skill to orchestrate the others without duplicating their content inline."
+      }
+     ],
+     "chosen_because": "Per-stage skills let an agent load only the stage it's working on, let the orchestration skill (16) reference the other 15 without repeating their instructions, and let each stage be independently inspected and audited — which is exactly how 6 real defects were caught before delivery.",
+     "tradeoff_accepted": "17 separate files instead of 1 means more surface area to keep mutually consistent and in sync with the underlying engine as it evolves — cross-skill consistency has to be actively audited rather than being automatically true of a single file.",
+     "constraints": [],
+     "reversible": "yes",
+     "revisit_if": "Maintaining consistency across 17 files under source drift becomes more costly than the modularity is worth, or Claude's skill-loading model changes to better support large multi-section files.",
+     "decided_by": "amol-patil",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-desktop",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>Needed to package the already-implemented Joomla2Node engine into skill(s) an AI agent could follow to migrate an arbitrary Joomla extension, without duplicating or modifying the engine itself.</p>\n<h3>Options</h3>\n<p>A single monolithic skill covering all 16 stages was the natural first shape but was rejected — see <code>options_considered</code>.</p>\n<h3>Rationale</h3>\n<p>Per-stage skills support progressive disclosure, let the orchestration skill reference rather than repeat the others, and make each stage independently auditable.</p>\n<h3>Consequences</h3>\n<p>17 files now need to be kept consistent with each other and with the real source as the engine changes; an independent audit pass is the mitigation, and it already proved its worth by catching 6 defects in the first pass.</p>"
    }
   ],
   "learning": [
+   {
+    "id": "team-7/2026-08-21-independent-audit-catches-fabrication",
+    "type": "learning",
+    "path": "learnings/team-7/2026-08-21-independent-audit-catches-fabrication.md",
+    "title": "Running an independent audit subagent — with no memory of how the first draft was produced — against the same real source caught 6 real defects in AI-authored skill documentation, including one outright fabricated import and a stale architecture diagram copied from a stale README, that the original drafting pass had missed.",
+    "fm": {
+     "schema_version": 1,
+     "type": "learning",
+     "team": "team-7",
+     "stage": "productisation",
+     "kind": "worked",
+     "learning": "Running an independent audit subagent — with no memory of how the first draft was produced — against the same real source caught 6 real defects in AI-authored skill documentation, including one outright fabricated import and a stale architecture diagram copied from a stale README, that the original drafting pass had missed.",
+     "evidence": "The audit subagent flagged (1) a fabricated import of functions not actually re-exported at the @joomla2node/generator package root, (2) a stale flat directory-layout diagram — copied from the generator package's own stale README — contradicted by the real generated output tree, repeated in two separate files, (3) an approximate \"~70\" count of a hardcoded table set that was actually exactly 64, (4) a broken cross-reference to a references/ file that doesn't exist in this skill family, (5) an overstated claim that SQL parsing captures keys/indexes when only primary-key flags are actually captured, (6) a missing Inputs/Outputs section in the orchestration skill. All 6 were independently verified against the real source and fixed before delivery.",
+     "generalises_to": "For any AI-authored technical documentation meant to be trusted at face value (skills, ADRs, onboarding docs), run a second, independently-instantiated review pass against the primary source before delivery — the same context that wrote the first draft is poorly positioned to catch its own fabrications, especially ones copied from other stale documentation.",
+     "would_do_differently": "Not stated this round.",
+     "cost_of_lesson": "One additional subagent pass reading the same ~15 source files fresh, plus targeted fixes to 6 files — under an hour, and cheap relative to the risk of shipping a skill that tells the next agent to import a function that doesn't exist.",
+     "learned_by": "amol-patil",
+     "learned_on": "2026-08-21",
+     "ai_role": "reviewed",
+     "ai_tool": "claude-desktop",
+     "ai_leverage": "high",
+     "ai_failure_mode": "hallucinated-api",
+     "harness_pattern": "subagent",
+     "confidence": "asserted",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>What happened</h3>\n<p>While drafting 17 product-level Joomla2Node migration skills, an independent audit subagent — separate from and with no memory of the drafting pass — was run against the real source to check for fabrication, cross-skill contradictions, engine duplication, and extension-specific leakage. It caught 6 real, concrete defects, including a hallucinated import and a stale diagram, that the drafting pass had not caught on its own.</p>\n<h3>Evidence</h3>\n<p>See the frontmatter <code>evidence</code> field for the full list of 6 defects found and fixed: a fabricated import, a stale directory-layout diagram (in two files), an imprecise count, a broken cross-reference, an overstated capability claim, and a missing section.</p>\n<h3>What we'd do differently</h3>\n<p>Not stated this round.</p>"
+   },
    {
     "id": "team-7/2026-08-21-security-cleanup",
     "type": "learning",
@@ -3632,6 +3760,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "a546861",
+   "author": "atpatil11",
+   "date": "2026-08-22T02:50:51+05:30",
+   "subject": "hack: team-7 migration-skills-package update, decision, and learning"
+  },
   {
    "sha": "634ae49",
    "author": "Deepak Patil",
