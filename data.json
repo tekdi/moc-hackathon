@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-21T20:36:15+00:00",
+ "built_at": "2026-08-21T20:44:47+00:00",
  "public": true,
- "commit": "e7222dd",
+ "commit": "634ae49",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 1,
  "vocabularies": {
@@ -1048,7 +1048,7 @@
      "idea_ref_ideas_sheet": 8,
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "ideas-sheet",
@@ -1057,7 +1057,7 @@
       }
      ],
      "picked_by": [
-      "team-9"
+      "trust-builders"
      ]
     },
     "body": "<h3>Problem</h3>\n<p>Trust in a food label rests almost entirely on the honesty of everyone in the chain and the paperwork they choose to keep. The challenge is to let food carry its own verifiable history from origin to the person eating it.</p>\n<h3>Proposed solution</h3>\n<p>Capture real-world moments as they happen — a boat leaving harbour, a catch iced, a plot sown, a warehouse hop — and let someone far down the chain reconstruct the story and have reason to believe it. Four questions a strong solution must answer: trust without a trusted middleman (tamper-evidence and provenance); capture by real people with limited digital literacy and patchy connectivity; what the end user actually sees when they scan; and whether the approach survives a completely different food chain without a rebuild.</p>\n<h3>What they said they'd demo</h3>\n<p>A working demo of a full journey end to end — capture at origin through to the trust-check at the end.</p>\n<h3>Notes</h3>\n<p>Fisheries (EU catch certificates) and agriculture (farm plot to retail pack) given as illustrations, not requirements.</p>"
@@ -1377,27 +1377,11 @@
      "schema_version": 1,
      "type": "team",
      "slug": "team-9",
-     "team_number": 9,
-     "captain": "deepak-patil",
-     "members": [
-      "shifa-mujawar",
-      "kalpesh-patil",
-      "samriddhi-thakar",
-      "rajkumar-jamdade"
-     ],
-     "idea": "trace-to-trust",
-     "origin": "pre-seeded",
-     "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
-     "sources": [
-      {
-       "system": "teams-sheet",
-       "method": "document",
-       "date": "2026-08-21"
-      }
-     ]
+     "deprecated": true,
+     "renamed_to": "trust-builders",
+     "last_updated": "2026-08-22"
     },
-    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/trace-to-trust\">trace-to-trust</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
+    "body": "<p>This team has renamed itself. See <a href=\"trust-builders.md\">trust-builders</a> for the current entry — all fields, updates, decisions and learnings now live there.</p>"
    },
    {
     "id": "tekdi-innovators",
@@ -1470,6 +1454,47 @@
      ]
     },
     "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/workqueue-ai-work-intelligence\">workqueue-ai-work-intelligence</a>.</p>\n<h3>Current state</h3>\n<p>Working end-to-end prototype demoed. Gmail, Calendar/Meet and Time Tracker integrated; GitHub/GitLab and Keka not yet wired up. See <a href=\"#/update/threadai/2026-08-22-prototype-complete\">updates/threadai/2026-08-22-prototype-complete.md</a> for detail.</p>"
+   },
+   {
+    "id": "trust-builders",
+    "type": "team",
+    "path": "teams/trust-builders.md",
+    "title": "Trust Builders",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "trust-builders",
+     "name": "Trust Builders",
+     "team_number": 9,
+     "captain": "deepak-patil",
+     "members": [
+      "shifa-mujawar",
+      "kalpesh-patil",
+      "samriddhi-thakar",
+      "rajkumar-jamdade"
+     ],
+     "idea": "trace-to-trust",
+     "status": "building",
+     "stage_gate": "implementation",
+     "current_summary": "Backend complete (full traceability chain, HashService). Frontend in progress — public /verify page live, admin foundation + Farmers module done, Crop Cycles module next.",
+     "last_update": "2026-08-22",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/trace-to-trust\">trace-to-trust</a>.</p>\n<h3>Current state</h3>\n<p>Backend complete — full traceability chain (Farmer → Crop Cycle → Growing Activities → Harvest Lot → Collection Batch → Processing Batch → Quality Check → Finished Product), including HashService. Frontend: public <code>/verify</code> page live (product details, traceability, multiple source farmers/harvest lots, quantity flow, quality info, integrity verification status, tampering warnings), plus admin foundation and the Farmers module. Next: Crop Cycles module, then the remaining admin modules.</p>\n<h3>Notes</h3>\n<p>Previously tracked under the placeholder slug <code>team-9</code> (the team name cell was blank in the teams sheet). Renamed to <strong>Trust Builders</strong> per the team's own project scope document, confirmed by the team captain (2026-08-22) — see <code>teams/team-9.md</code> for the redirect note.</p>"
    },
    {
     "id": "vowaliens",
@@ -1887,7 +1912,7 @@
      "name": "Deepak Patil",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
@@ -1902,7 +1927,7 @@
      ],
      "teams": [
       {
-       "team": "team-9",
+       "team": "trust-builders",
        "role": "captain"
       }
      ],
@@ -2086,7 +2111,7 @@
      "name": "Kalpesh Patil",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
@@ -2096,7 +2121,7 @@
      ],
      "teams": [
       {
-       "team": "team-9",
+       "team": "trust-builders",
        "role": "member"
       }
      ],
@@ -2515,7 +2540,7 @@
      "name": "Rajkumar Jamdade",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
@@ -2525,7 +2550,7 @@
      ],
      "teams": [
       {
-       "team": "team-9",
+       "team": "trust-builders",
        "role": "member"
       }
      ],
@@ -2725,7 +2750,7 @@
      "name": "Samriddhi Thakar",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
@@ -2735,7 +2760,7 @@
      ],
      "teams": [
       {
-       "team": "team-9",
+       "team": "trust-builders",
        "role": "member"
       }
      ],
@@ -2812,7 +2837,7 @@
      "name": "Shifa Mujawar",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
@@ -2822,7 +2847,7 @@
      ],
      "teams": [
       {
-       "team": "team-9",
+       "team": "trust-builders",
        "role": "member"
       }
      ],
@@ -3490,6 +3515,38 @@
      "supersedes": null
     },
     "body": "<h3>What we did</h3>\n<p>UI is live and reachable — login screen at <code>localhost:3000/login</code> with Google OAuth (\"Continue with Google\") and ThreadAI branding.</p>\n<h3>What broke</h3>\n<p>Not reported.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>Contested</h3>\n<p>The login page's landing copy reads <strong>\"8 Connected Sources\"</strong>. This conflicts with the 2026-08-22 update (<a href=\"2026-08-22-prototype-complete.md\"><code>2026-08-22-prototype-complete.md</code></a>), which reported only 3 integrations actually working (Gmail, Calendar/Meet, Time Tracker). Not resolved — Vishal confirmed the UI itself is live but did not confirm whether \"8\" reflects the current integration count or is target/marketing copy. Recorded as contested rather than picking a number.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not reported.</p>"
+   },
+   {
+    "id": "trust-builders/2026-08-22-backend-complete-verify-page-live",
+    "type": "update",
+    "path": "updates/trust-builders/2026-08-22-backend-complete-verify-page-live.md",
+    "title": "Backend complete — full NestJS traceability chain (Farmer → Crop Cycle → Growing Activities → Harvest Lot → Collection Batch → Processing Batch → Quality Check → Finished Product), including HashService. Frontend in progress — public /verify page live (product details, full traceability, multiple source farmers/harvest lots, quantity flow, quality info, integrity verification status, tampering/affected-record warnings), plus admin foundation and the Farmers module. Next up — Crop Cycles module, then the remaining admin modules.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "trust-builders",
+     "date": "2026-08-22",
+     "stage": "implementation",
+     "record_kind": "progress",
+     "reported_by": "deepak-patil",
+     "logged_by": "deepak-patil",
+     "what_changed": "Backend complete — full NestJS traceability chain (Farmer → Crop Cycle → Growing Activities → Harvest Lot → Collection Batch → Processing Batch → Quality Check → Finished Product), including HashService. Frontend in progress — public /verify page live (product details, full traceability, multiple source farmers/harvest lots, quantity flow, quality info, integrity verification status, tampering/affected-record warnings), plus admin foundation and the Farmers module. Next up — Crop Cycles module, then the remaining admin modules.",
+     "decisions": [],
+     "learnings": [],
+     "metrics": [],
+     "artifacts": [],
+     "confidence": "asserted",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22"
+    },
+    "body": "<h3>What we did</h3>\n<p>Completed the backend build of the full traceability chain end to end (Farmer → Crop Cycle → Growing Activities → Harvest Lot → Collection Batch → Processing Batch → Quality Check → Finished Product), including the centralized <code>HashService</code>. On the frontend, built the public <code>/verify</code> page — product details, complete traceability, multiple source farmers/harvest lots, quantity flow, quality information, integrity verification status, and tampering/affected-record warnings — plus the admin foundation and the Farmers module.</p>\n<h3>What broke</h3>\n<p>Not stated this round.</p>\n<h3>What we decided</h3>\n<p>Not stated this round.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not stated this round.</p>"
    }
   ],
   "decision": [
@@ -3575,6 +3632,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "634ae49",
+   "author": "Deepak Patil",
+   "date": "2026-08-22T02:14:37+05:30",
+   "subject": "hack: rename team-9 to trust-builders; log backend + /verify page update"
+  },
   {
    "sha": "e7222dd",
    "author": "Gourav More",
