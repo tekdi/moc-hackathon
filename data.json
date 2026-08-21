@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-21T19:38:09+00:00",
+ "built_at": "2026-08-21T20:14:42+00:00",
  "public": true,
- "commit": "d23cbd1",
+ "commit": "d53f00d",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 1,
  "vocabularies": {
@@ -1334,6 +1334,16 @@
       "kamalakanta-biswal"
      ],
      "idea": "ai-powered-joomla-to-nodejs-microservice-generator",
+     "status": "demo-ready",
+     "stage_gate": "productisation",
+     "stages_completed": [
+      "implementation",
+      "integration",
+      "security-privacy-review",
+      "productisation"
+     ],
+     "current_summary": "Gemini LLM provider added alongside Anthropic/Mock; full productization pass complete (npm-publish-ready packages, root LICENSE, rewritten README, pipeline re-verified end-to-end against the real BaForms extension); 278 tests passing with typecheck/build/genericity audit all clean; security cleanup done (a vendored hardcoded API key was found and redacted, repo-wide scan clean); GitHub backup was blocked by GitHub App permissions, worked around with a secret-scrubbed ZIP export; real Gemini/Anthropic API calls and Prisma generation remain blocked by sandbox network restrictions (environment limitation, not a code defect).",
+     "last_update": "2026-08-21",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
      "last_updated": "2026-08-21",
@@ -1342,10 +1352,15 @@
        "system": "teams-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
       }
      ]
     },
-    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-joomla-to-nodejs-microservice-generator\">ai-powered-joomla-to-nodejs-microservice-generator</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-joomla-to-nodejs-microservice-generator\">ai-powered-joomla-to-nodejs-microservice-generator</a>.</p>\n<h3>Current state</h3>\n<p>Productization pass complete and demo-ready: Gemini LLM provider added, all <code>@joomla2node/*</code> packages npm-publish-ready, 278 tests passing with clean typecheck/build/genericity audit, and the pipeline re-verified end-to-end against the real BaForms extension. A vendored hardcoded API key was found and redacted during a pre-backup security sweep. The GitHub backup itself is blocked by GitHub App permissions, so the team is working from a secret-scrubbed ZIP export in the meantime. Real Gemini/Anthropic API calls and Prisma generation remain blocked by sandbox network restrictions — a known environment limitation, not a code defect. A second real Joomla extension migration remains future validation.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
    },
    {
     "id": "team-9",
@@ -3217,6 +3232,153 @@
   ],
   "update": [
    {
+    "id": "team-7/2026-08-21-gemini-llm-provider",
+    "type": "update",
+    "path": "updates/team-7/2026-08-21-gemini-llm-provider.md",
+    "title": "Added a working Google Gemini LLM provider (GeminiLLMProvider) alongside the existing Anthropic and Mock providers, using the official @google/genai SDK, with zero changes to the existing pipeline/schema/correction-loop architecture.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "team-7",
+     "date": "2026-08-21",
+     "stage": "implementation",
+     "record_kind": "progress",
+     "reported_by": "amol-patil",
+     "logged_by": "amol-patil",
+     "what_changed": "Added a working Google Gemini LLM provider (GeminiLLMProvider) alongside the existing Anthropic and Mock providers, using the official @google/genai SDK, with zero changes to the existing pipeline/schema/correction-loop architecture.",
+     "decisions": [],
+     "learnings": [],
+     "metrics": [],
+     "artifacts": [],
+     "confidence": "asserted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Added a Gemini provider (<code>GeminiLLMProvider</code>) to the migration engine's pluggable LLM-provider layer, alongside the existing Anthropic and Mock providers, using the official <code>@google/genai</code> SDK. It matches the existing provider interface exactly, so no changes were needed to the pipeline, schema, or correction-loop architecture. The CLI gained <code>--provider gemini</code> and <code>--model</code> flags, plus <code>GEMINI_API_KEY</code> / <code>GEMINI_MODEL</code> environment variable support.</p>\n<h3>What broke</h3>\n<p>Not reported.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not stated this round.</p>"
+   },
+   {
+    "id": "team-7/2026-08-21-github-backup-and-security-pass",
+    "type": "update",
+    "path": "updates/team-7/2026-08-21-github-backup-and-security-pass.md",
+    "title": "Ran a full security cleanup ahead of an external GitHub backup — found and redacted a real-looking hardcoded Google API key vendored inside the BaForms third-party PHP source — then hit a GitHub App permission/installation block on the backup itself and worked around it by exporting a verified, secret-scrubbed ZIP.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "team-7",
+     "date": "2026-08-21",
+     "stage": "security-privacy-review",
+     "record_kind": "blocker",
+     "reported_by": "amol-patil",
+     "logged_by": "amol-patil",
+     "what_changed": "Ran a full security cleanup ahead of an external GitHub backup — found and redacted a real-looking hardcoded Google API key vendored inside the BaForms third-party PHP source — then hit a GitHub App permission/installation block on the backup itself and worked around it by exporting a verified, secret-scrubbed ZIP.",
+     "decisions": [
+      "team-7/2026-08-21-github-backup-workaround"
+     ],
+     "learnings": [
+      "team-7/2026-08-21-security-cleanup"
+     ],
+     "metrics": [],
+     "artifacts": [],
+     "confidence": "asserted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Ran a full security cleanup pass ahead of backing the project up to GitHub, then attempted the backup itself.</p>\n<h3>What broke</h3>\n<p>The GitHub backup attempt was blocked by GitHub App permission/installation issues — it can't create repos, and the connector wasn't installed with repo access for this project.</p>\n<h3>What we decided</h3>\n<p>Worked around the blocked backup by exporting the complete current project as a verified, secret-scrubbed ZIP for manual push to a private GitHub repo — see the linked decision record.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not stated this round — see the linked learning record for the security-cleanup takeaway.</p>"
+   },
+   {
+    "id": "team-7/2026-08-21-productization-pass",
+    "type": "update",
+    "path": "updates/team-7/2026-08-21-productization-pass.md",
+    "title": "Completed a final productization pass — npm-publishing readiness across all @joomla2node/* packages, a root LICENSE, a rewritten root README, and full pipeline re-verification against the real BaForms extension — with the whole repo at 278 passing tests and clean typecheck/build/genericity audit.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "team-7",
+     "date": "2026-08-21",
+     "stage": "productisation",
+     "record_kind": "progress",
+     "reported_by": "amol-patil",
+     "logged_by": "amol-patil",
+     "what_changed": "Completed a final productization pass — npm-publishing readiness across all @joomla2node/* packages, a root LICENSE, a rewritten root README, and full pipeline re-verification against the real BaForms extension — with the whole repo at 278 passing tests and clean typecheck/build/genericity audit.",
+     "decisions": [],
+     "learnings": [],
+     "metrics": {
+      "tests_passing": 278,
+      "typecheck": "clean",
+      "build": "clean",
+      "genericity_audit": "passing",
+      "sample": "Full monorepo test suite across all @joomla2node/* packages, plus a manual CLI run against the real BaForms extension",
+      "method": "Automated test run + typecheck + build + genericity-audit script"
+     },
+     "artifacts": [],
+     "confidence": "asserted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Fixed npm-publishing readiness across all <code>@joomla2node/*</code> packages (license, exports, files, publishConfig), added a root LICENSE, rewrote the stale root README, and re-verified the full pipeline end-to-end against the real BaForms extension via the CLI. Full repo state: 278 tests passing, typecheck/build clean across all packages, genericity audit passing.</p>\n<h3>What broke</h3>\n<p>Not reported.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not stated this round.</p>"
+   },
+   {
+    "id": "team-7/2026-08-21-sandbox-network-blockers",
+    "type": "update",
+    "path": "updates/team-7/2026-08-21-sandbox-network-blockers.md",
+    "title": "Real Gemini/Anthropic API calls and Prisma generation are blocked in the current sandbox by network restrictions — confirmed to be an environment limitation, not a code defect.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "team-7",
+     "date": "2026-08-21",
+     "stage": "integration",
+     "record_kind": "blocker",
+     "reported_by": "amol-patil",
+     "logged_by": "amol-patil",
+     "what_changed": "Real Gemini/Anthropic API calls and Prisma generation are blocked in the current sandbox by network restrictions — confirmed to be an environment limitation, not a code defect.",
+     "decisions": [],
+     "learnings": [],
+     "metrics": [],
+     "artifacts": [],
+     "confidence": "asserted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Confirmed that real Gemini/Anthropic API calls and Prisma generation are currently blocked in the sandbox by network restrictions, not by anything wrong in the code. Full pipeline correctness has instead been verified end-to-end against the real BaForms extension via the CLI (see the productization-pass update).</p>\n<h3>What broke</h3>\n<p>Live LLM API calls (Gemini, Anthropic) and Prisma client/schema generation don't reach the network from this sandbox.</p>\n<h3>What we decided</h3>\n<p>No workaround decision recorded for this blocker — flagged as a known open item pending a sandbox with network access.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>A second real Joomla extension migration (beyond BaForms) remains as future validation work.</p>"
+   },
+   {
     "id": "threadai/2026-08-22-dashboard-homepage",
     "type": "update",
     "path": "updates/threadai/2026-08-22-dashboard-homepage.md",
@@ -3324,10 +3486,95 @@
     "body": "<h3>What we did</h3>\n<p>UI is live and reachable — login screen at <code>localhost:3000/login</code> with Google OAuth (\"Continue with Google\") and ThreadAI branding.</p>\n<h3>What broke</h3>\n<p>Not reported.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>Contested</h3>\n<p>The login page's landing copy reads <strong>\"8 Connected Sources\"</strong>. This conflicts with the 2026-08-22 update (<a href=\"2026-08-22-prototype-complete.md\"><code>2026-08-22-prototype-complete.md</code></a>), which reported only 3 integrations actually working (Gmail, Calendar/Meet, Time Tracker). Not resolved — Vishal confirmed the UI itself is live but did not confirm whether \"8\" reflects the current integration count or is target/marketing copy. Recorded as contested rather than picking a number.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not reported.</p>"
    }
   ],
-  "decision": [],
-  "learning": []
+  "decision": [
+   {
+    "id": "team-7/2026-08-21-github-backup-workaround",
+    "type": "decision",
+    "path": "decisions/team-7/2026-08-21-github-backup-workaround.md",
+    "title": "Export the complete, secret-scrubbed project as a ZIP for manual push to a private GitHub repo, instead of an automated backup.",
+    "fm": {
+     "schema_version": 1,
+     "type": "decision",
+     "team": "team-7",
+     "stage": "security-privacy-review",
+     "decision_type": "workaround",
+     "decision": "Export the complete, secret-scrubbed project as a ZIP for manual push to a private GitHub repo, instead of an automated backup.",
+     "options_considered": [
+      {
+       "option": "Create a new private repo and push directly via the connected GitHub App/connector",
+       "why_not": "The GitHub App installation isn't authorized to create repositories, and the connector wasn't installed with repo access for this project in this sandbox — so it authenticates but cannot create or push to a repo."
+      }
+     ],
+     "chosen_because": "It was the only path available to get the work off the sandbox and into the user's hands without direct GitHub write access.",
+     "tradeoff_accepted": "Backup requires a manual step from the user (downloading and pushing the ZIP) rather than a fully automated push, and the sandbox's local commit history isn't carried over unless the user re-initializes git before pushing.",
+     "constraints": [
+      "access"
+     ],
+     "reversible": "yes",
+     "revisit_if": "Once the GitHub App installation is granted repository-creation/write access for this project (or another form of repo write access is arranged).",
+     "decided_by": "amol-patil",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>Needed to get a verified, secret-scrubbed backup of the full Joomla2Node project out of the sandbox and into a private GitHub repo, but had no direct git/GitHub write access from the sandbox environment.</p>\n<h3>Options</h3>\n<p>Direct push via the GitHub App/connector was the natural first choice but was blocked by permissions — see <code>options_considered</code>.</p>\n<h3>Rationale</h3>\n<p>Exporting a ZIP was the only remaining path that didn't require GitHub write access, and the export was verified clean on a secret scan before handoff.</p>\n<h3>Consequences</h3>\n<p>The user has to manually push the ZIP to a private repo themselves; the automated, versioned backup path is deferred until the GitHub App's installation/permissions are fixed for this project.</p>"
+   }
+  ],
+  "learning": [
+   {
+    "id": "team-7/2026-08-21-security-cleanup",
+    "type": "learning",
+    "path": "learnings/team-7/2026-08-21-security-cleanup.md",
+    "title": "A full repo-wide secret scan ahead of an external backup caught a real-looking hardcoded Google API key vendored inside the BaForms third-party PHP source.",
+    "fm": {
+     "schema_version": 1,
+     "type": "learning",
+     "team": "team-7",
+     "stage": "security-privacy-review",
+     "kind": "worked",
+     "learning": "A full repo-wide secret scan ahead of an external backup caught a real-looking hardcoded Google API key vendored inside the BaForms third-party PHP source.",
+     "evidence": "The key was found and redacted from the vendored PHP source, and a repo-wide secret scan run afterward came back clean.",
+     "generalises_to": "Run a full secret scan before any external backup, export, or publish step — including on vendored third-party code the team didn't write itself, since bundled dependencies can carry live-looking credentials nobody on the team put there.",
+     "would_do_differently": "Not stated this round.",
+     "cost_of_lesson": "Under an hour — one dedicated repo-wide scan-and-redact pass before export.",
+     "learned_by": "amol-patil",
+     "learned_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>What happened</h3>\n<p>While preparing the project for an external GitHub backup, a full security cleanup pass turned up a real-looking hardcoded Google API key vendored inside the BaForms third-party PHP source (not code the team wrote).</p>\n<h3>Evidence</h3>\n<p>The key was redacted from the vendored source, and a repo-wide secret scan run afterward returned clean.</p>\n<h3>What we'd do differently</h3>\n<p>Not stated this round.</p>"
+   }
+  ]
  },
  "commits": [
+  {
+   "sha": "d53f00d",
+   "author": "atpatil11",
+   "date": "2026-08-22T01:44:30+05:30",
+   "subject": "hack: Team 7 (Joomla2Node) — Gemini provider, productization pass, security cleanup + backup workaround, sandbox blockers"
+  },
   {
    "sha": "d23cbd1",
    "author": "Vishal Chincholi",
