@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-21T20:14:42+00:00",
+ "built_at": "2026-08-21T20:36:15+00:00",
  "public": true,
- "commit": "d53f00d",
+ "commit": "e7222dd",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 1,
  "vocabularies": {
@@ -1289,11 +1289,12 @@
     "id": "team-5",
     "type": "team",
     "path": "teams/team-5.md",
-    "title": "Team 5",
+    "title": "Linguistic Legends",
     "fm": {
      "schema_version": 1,
      "type": "team",
      "slug": "team-5",
+     "name": "Linguistic Legends",
      "team_number": 5,
      "captain": "gourav-more",
      "members": [
@@ -1305,16 +1306,21 @@
      "idea": "ai-powered-digital-readiness-and-assessment-companion",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "user-conversation",
+       "method": "stated",
+       "date": "2026-08-22"
       }
      ]
     },
-    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-digital-readiness-and-assessment-companion\">ai-powered-digital-readiness-and-assessment-companion</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-digital-readiness-and-assessment-companion\">ai-powered-digital-readiness-and-assessment-companion</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>\n<h3>Notes</h3>\n<p>Team name confirmed as <strong>Linguistic Legends</strong> by team captain Gourav More (2026-08-22). The slug remains <code>team-5</code> per convention (slugs are not renamed once other entities reference them).</p>"
    },
    {
     "id": "team-7",
@@ -3569,6 +3575,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "e7222dd",
+   "author": "Gourav More",
+   "date": "2026-08-22T02:06:00+05:30",
+   "subject": "hack: name team-5 \"Linguistic Legends\" per captain"
+  },
   {
    "sha": "d53f00d",
    "author": "atpatil11",
