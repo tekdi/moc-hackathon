@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hackathon Brain</title>
+<meta name="description" content="Live view of the Tekdi AI Product Development Hackathon brain — teams, ideas, decisions and learnings.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#/pulse">
+    <span class="brand-mark" aria-hidden="true">🧠</span>
+    <span class="brand-text">
+      <strong>Hackathon Brain</strong>
+      <small id="brand-sub">Tekdi AI Product Development Hackathon</small>
+    </span>
+  </a>
+
+  <div class="search">
+    <input id="search" type="search" autocomplete="off" spellcheck="false"
+           placeholder="Search teams, ideas, people, updates…" aria-label="Search the brain">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+
+  <div class="topbar-right">
+    <span id="freshness" class="freshness" title="When this page was last rebuilt">
+      <span class="pulse-dot"></span><span id="freshness-text">loading…</span>
+    </span>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle light and dark">◐</button>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <a href="#/pulse" data-view="pulse">Pulse</a>
+  <a href="#/teams" data-view="teams">Teams</a>
+  <a href="#/ideas" data-view="ideas">Ideas</a>
+  <a href="#/people" data-view="people">People</a>
+  <a href="#/activity" data-view="activity">Activity</a>
+</nav>
+
+<main id="app" class="app">
+  <div class="loading">Loading the brain…</div>
+</main>
+
+<footer class="footer">
+  <span id="footer-repo"></span>
+  <span>Rebuilt automatically on every push. Nothing here is typed into this page by hand.</span>
+</footer>
+
+<div id="toast" class="toast" hidden>
+  <span>New updates landed.</span>
+  <button type="button" id="toast-reload">Refresh</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

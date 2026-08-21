@@ -1,0 +1,3373 @@
+{
+ "built_at": "2026-08-21T19:34:12+00:00",
+ "public": true,
+ "commit": "4769846",
+ "repo": "tekdi/moihackathon-brain",
+ "schema_version": 1,
+ "vocabularies": {
+  "problem_area": [
+   "internal-productivity-engineering",
+   "education-learning",
+   "government-dpi",
+   "enterprise-business-productivity",
+   "social-impact",
+   "open-innovation"
+  ],
+  "business_impact": [
+   "enhance-existing-customer-project",
+   "solve-for-multiple-customers",
+   "reusable-accelerator",
+   "standalone-product",
+   "internal-productivity",
+   "new-business-opportunity",
+   "technology-capability-ip",
+   "open-source-contribution",
+   "other"
+  ],
+  "inspiration": [
+   "personal-experience",
+   "current-tekdi-project",
+   "customer-discussion",
+   "market-observation",
+   "internal-challenge",
+   "other"
+  ],
+  "stage": [
+   "pre-analysis",
+   "discovery",
+   "solution-design",
+   "prd",
+   "tech-design",
+   "tech-selection",
+   "environment-setup",
+   "implementation",
+   "integration",
+   "poc-validation",
+   "scale-testing",
+   "security-privacy-review",
+   "ux-validation",
+   "demo-prep",
+   "retro",
+   "productisation"
+  ],
+  "record_kind": [
+   "progress",
+   "blocker",
+   "metric",
+   "artifact",
+   "demo",
+   "note"
+  ],
+  "decision_type": [
+   "scope-cut",
+   "scope-add",
+   "build-vs-buy",
+   "build-vs-reuse",
+   "stack-choice",
+   "model-choice",
+   "vendor-choice",
+   "data-choice",
+   "architecture-choice",
+   "pattern-choice",
+   "ux-tradeoff",
+   "abandon-and-pivot",
+   "defer",
+   "workaround"
+  ],
+  "learning_kind": [
+   "worked",
+   "failed",
+   "surprised",
+   "wasted-time",
+   "reusable"
+  ],
+  "constraint": [
+   "time",
+   "cost",
+   "data",
+   "skills",
+   "infra",
+   "compliance",
+   "access"
+  ],
+  "reversible": [
+   "yes",
+   "no",
+   "costly"
+  ],
+  "team_status": [
+   "forming",
+   "building",
+   "demo-ready",
+   "demoed",
+   "dropped"
+  ],
+  "idea_status": [
+   "unclaimed",
+   "in-progress",
+   "demoed",
+   "parked"
+  ],
+  "ai_role": [
+   "generated",
+   "drafted",
+   "reviewed",
+   "refactored",
+   "none"
+  ],
+  "ai_tool": [
+   "claude-code",
+   "claude-desktop",
+   "cursor",
+   "copilot",
+   "antigravity",
+   "gemini-cli",
+   "other"
+  ],
+  "ai_leverage": [
+   "high",
+   "medium",
+   "low",
+   "negative"
+  ],
+  "ai_failure_mode": [
+   "hallucinated-api",
+   "wrong-abstraction",
+   "silent-scope-drift",
+   "context-loss",
+   "overconfident-wrong",
+   "rework-loop",
+   "test-theatre",
+   "none"
+  ],
+  "harness_pattern": [
+   "skill",
+   "subagent",
+   "workflow",
+   "plain-chat",
+   "mcp-tool",
+   "hooks",
+   "none"
+  ],
+  "artifact_kind": [
+   "prd",
+   "architecture-diagram",
+   "adr",
+   "repo",
+   "pr",
+   "demo-video",
+   "screenshot",
+   "dataset",
+   "ground-truth-sheet",
+   "eval-results",
+   "test-report",
+   "cost-model",
+   "deck"
+  ],
+  "source_method": [
+   "queried",
+   "stated",
+   "derived",
+   "document",
+   "public"
+  ],
+  "confidence": [
+   "asserted",
+   "corroborated",
+   "contested"
+  ],
+  "origin": [
+   "pre-seeded",
+   "self-registered"
+  ],
+  "technology": []
+ },
+ "entity_order": [
+  "idea",
+  "team",
+  "person",
+  "update",
+  "decision",
+  "learning"
+ ],
+ "entity_folders": {
+  "idea": "ideas",
+  "team": "teams",
+  "person": "people",
+  "update": "updates",
+  "decision": "decisions",
+  "learning": "learnings"
+ },
+ "entities": {
+  "idea": [
+   {
+    "id": "ai-accessibility-reviewer",
+    "type": "idea",
+    "path": "ideas/ai-accessibility-reviewer.md",
+    "title": "AI Accessibility Reviewer",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "ai-accessibility-reviewer",
+     "title": "AI Accessibility Reviewer",
+     "problem_area": "enterprise-business-productivity",
+     "proposed_by": [
+      "vishal-chincholi"
+     ],
+     "proposed_on": "2026-08-11",
+     "business_impact": [
+      "solve-for-multiple-customers",
+      "reusable-accelerator",
+      "standalone-product",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Designers, product managers, developers, QA, accessibility specialists, and organisations building digital products for diverse users.",
+     "demo_promise": "An AI tool that analyses designs for risk across visual, interaction, content and cognitive domains — explaining what the issue is, who it affects, why it matters, its severity, and how the design could improve. Shown through a sample UI with AI findings and suggested fixes.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 2,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Accessibility is considered late in product development. Designers and developers don't know what issues exist until formal QA or an accessibility audit, making fixes costly and delaying inclusive design.</p>\n<h3>Proposed solution</h3>\n<p>Analyse designs early and explain findings rather than just flagging them. Accessibility is often reduced to visual constraints; building at scale for education and underserved users needs a broader view than standard visual guidelines.</p>\n<h3>What they said they'd demo</h3>\n<p>An AI tool that analyses designs for risk across visual, interaction, content and cognitive domains — explaining what the issue is, who it affects, why it matters, its severity, and how the design could improve. Shown through a sample UI with AI findings and suggested fixes.</p>"
+   },
+   {
+    "id": "ai-agent-for-scam-verification-and-digital-trust",
+    "type": "idea",
+    "path": "ideas/ai-agent-for-scam-verification-and-digital-trust.md",
+    "title": "AI Agent for Scam Verification & Digital Trust",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "ai-agent-for-scam-verification-and-digital-trust",
+     "title": "AI Agent for Scam Verification & Digital Trust",
+     "problem_area": "open-innovation",
+     "proposed_by": [
+      "mahesh-mahajan"
+     ],
+     "proposed_on": "2026-08-11",
+     "business_impact": [
+      "solve-for-multiple-customers",
+      "reusable-accelerator"
+     ],
+     "beneficiaries": "Individual consumers, senior citizens, students, banking and fintech customers, employees, support teams. Adaptable for banks, government services, telecom, utilities and platforms.",
+     "demo_promise": "End-to-end agent taking a suspicious SMS/WhatsApp screenshot: extract via AI/OCR, identify claims and URLs, retrieve trusted policies and known scam patterns via RAG, verify URL/sender/claims against trusted sources, produce a risk assessment (Likely Safe / Needs Verification / High Risk) with an explainable evidence trail and a recommended next action. Both a legitimate and a scam message shown, to prove it does not label everything fraud.",
+     "inspiration": "personal-experience",
+     "status": "in-progress",
+     "idea_ref_ideas_sheet": 3,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": [
+      "vowaliens"
+     ]
+    },
+    "body": "<h3>Problem</h3>\n<p>People receive suspicious messages, payment requests and links daily. Existing solutions classify them as scam or not-scam, which produces false positives and never establishes whether the claims in a message are actually true.</p>\n<h3>Proposed solution</h3>\n<p>TrustLens investigates rather than classifies — RAG over trusted policies and scam patterns, plus verification tools for URLs, sender identity and claims such as transactions or bills.</p>\n<h3>What they said they'd demo</h3>\n<p>End-to-end agent taking a suspicious SMS/WhatsApp screenshot: extract via AI/OCR, identify claims and URLs, retrieve trusted policies and known scam patterns via RAG, verify URL/sender/claims against trusted sources, produce a risk assessment (Likely Safe / Needs Verification / High Risk) with an explainable evidence trail and a recommended next action. Both a legitimate and a scam message shown, to prove it does not label everything fraud.</p>\n<h3>Notes</h3>\n<p><strong>Contested mapping.</strong> This idea's own stated team (Vijay Khollam, Tushar Mahajan, Alfaz Shaikh, Ishan Zade, Mahesh Mahajan) is the roster of <a href=\"#/team/impact-makers\">Impact Makers</a> — Team 1. But the teams sheet assigns this title to <a href=\"#/team/vowaliens\">vowAliens</a> — Team 6 — and gives Team 1 an unrelated Agritech statement that exists in neither sheet. Linked to Team 6 as the teams sheet states; the disagreement is recorded rather than resolved. Ask both teams.</p>"
+   },
+   {
+    "id": "ai-classroom-engagement-monitor",
+    "type": "idea",
+    "path": "ideas/ai-classroom-engagement-monitor.md",
+    "title": "AI Classroom Engagement Monitor",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "ai-classroom-engagement-monitor",
+     "title": "AI Classroom Engagement Monitor",
+     "problem_area": "education-learning",
+     "proposed_by": [
+      "vinod"
+     ],
+     "proposed_on": "2026-08-15",
+     "business_impact": [
+      "open-source-contribution"
+     ],
+     "beneficiaries": "Students and learners; school leadership teams.",
+     "demo_promise": "A prototype of the solution, or at minimum a workflow.",
+     "inspiration": "customer-discussion",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 15,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>A student, especially in a rural school, may find the classroom passive without the teacher realising why students are disengaged. School leadership has little objective information about teaching quality.</p>\n<h3>Proposed solution</h3>\n<p>Help leadership understand teaching quality and student engagement, identify the gap, and address it.</p>\n<h3>What they said they'd demo</h3>\n<p>A prototype of the solution, or at minimum a workflow.</p>"
+   },
+   {
+    "id": "ai-powered-digital-readiness-and-assessment-companion",
+    "type": "idea",
+    "path": "ideas/ai-powered-digital-readiness-and-assessment-companion.md",
+    "title": "AI-Powered Digital Readiness & Assessment Companion",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "ai-powered-digital-readiness-and-assessment-companion",
+     "title": "AI-Powered Digital Readiness & Assessment Companion",
+     "problem_area": "education-learning",
+     "proposed_by": [
+      "gourav-more"
+     ],
+     "proposed_on": "2026-08-12",
+     "business_impact": [
+      "enhance-existing-customer-project",
+      "solve-for-multiple-customers",
+      "reusable-accelerator",
+      "standalone-product",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Children who are first-time digital learners in rural and government schools; teachers and assessors who currently spend their time on basic device help; education departments, NGOs, EdTech companies and assessment organisations.",
+     "demo_promise": "A first-time learner taken through mouse practice, keyboard interaction, listening, microphone and voice check, navigation, AI guidance when stuck, a readiness check, then a game-like oral reading activity with background speech analysis and a simple teacher-facing result.",
+     "inspiration": "current-tekdi-project",
+     "supporting_material": [
+      "https://drive.google.com/open?id=1ql8da9DZ9KLIFpNF11Q2hSEcRX-KjyJZ"
+     ],
+     "status": "in-progress",
+     "idea_ref_ideas_sheet": 5,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": [
+      "team-5"
+     ]
+    },
+    "body": "<h3>Problem</h3>\n<p>Many children in rural and government schools have little experience with computers or tablets, and struggle with mouse, keyboard, navigation, microphone and headphones before any learning activity can start. Formal assessment also makes children anxious, which changes how they read and speak.</p>\n<h3>Proposed solution</h3>\n<p>Combine device readiness, AI guidance and child-friendly assessment in one environment. The child learns the device through a game, then the same environment becomes the assessment — reading as part of a story rather than sitting a test. The child experiences a game; the teacher receives structured results.</p>\n<h3>What they said they'd demo</h3>\n<p>A first-time learner taken through mouse practice, keyboard interaction, listening, microphone and voice check, navigation, AI guidance when stuck, a readiness check, then a game-like oral reading activity with background speech analysis and a simple teacher-facing result.</p>"
+   },
+   {
+    "id": "ai-powered-joomla-to-nodejs-microservice-generator",
+    "type": "idea",
+    "path": "ideas/ai-powered-joomla-to-nodejs-microservice-generator.md",
+    "title": "AI-Powered Joomla-to-Node.js Microservice Generator",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "ai-powered-joomla-to-nodejs-microservice-generator",
+     "title": "AI-Powered Joomla-to-Node.js Microservice Generator",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "amol-patil"
+     ],
+     "proposed_on": "2026-08-11",
+     "business_impact": [
+      "enhance-existing-customer-project",
+      "solve-for-multiple-customers",
+      "reusable-accelerator",
+      "standalone-product",
+      "internal-productivity",
+      "new-business-opportunity",
+      "technology-capability-ip",
+      "open-source-contribution"
+     ],
+     "beneficiaries": "Tekdi engineering teams working on Node.js projects (around 80% of the work), and future client engagements requiring Joomla-to-Node migrations. Joomla customers.",
+     "demo_promise": "Feed a real Joomla extension — code, structure and database — into the tool and show it generating a working Node.js microservice that replicates the extension's core features.",
+     "inspiration": "customer-discussion",
+     "status": "in-progress",
+     "idea_ref_ideas_sheet": 4,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": [
+      "team-7"
+     ]
+    },
+    "body": "<h3>Problem</h3>\n<p>Mature Joomla extension logic cannot be reused in a Node-centric stack without rebuilding it by hand.</p>\n<h3>Proposed solution</h3>\n<p>Ingest a Joomla extension's files, codebase and database schema, analyse its features, and generate an equivalent Node.js microservice.</p>\n<h3>What they said they'd demo</h3>\n<p>Feed a real Joomla extension — code, structure and database — into the tool and show it generating a working Node.js microservice that replicates the extension's core features.</p>"
+   },
+   {
+    "id": "ai-reverse-engineer",
+    "type": "idea",
+    "path": "ideas/ai-reverse-engineer.md",
+    "title": "AI Reverse Engineer",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "ai-reverse-engineer",
+     "title": "AI Reverse Engineer",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "namita-gaikwad"
+     ],
+     "proposed_on": "2026-08-18",
+     "business_impact": [
+      "reusable-accelerator",
+      "internal-productivity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "New developers, tech leads and architects.",
+     "demo_promise": "\"What will break if I change or delete this?\" as the hero feature, \"why is this production error happening?\" second, and automatic architecture reconstruction as the visual centrepiece.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 19,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Nobody can predict what an unfamiliar application will do when it is changed.</p>\n<h3>Proposed solution</h3>\n<p>Given an unknown application, reconstruct how it works, identify risks, and predict what could break before a change: understand, reconstruct, simulate, predict, explain, recommend.</p>\n<h3>What they said they'd demo</h3>\n<p>\"What will break if I change or delete this?\" as the hero feature, \"why is this production error happening?\" second, and automatic architecture reconstruction as the visual centrepiece.</p>"
+   },
+   {
+    "id": "bridging-the-industry-readiness-gap",
+    "type": "idea",
+    "path": "ideas/bridging-the-industry-readiness-gap.md",
+    "title": "Bridging the Industry Readiness Gap",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "bridging-the-industry-readiness-gap",
+     "title": "Bridging the Industry Readiness Gap",
+     "problem_area": "education-learning",
+     "proposed_by": [
+      "anurag-goutam"
+     ],
+     "proposed_on": "2026-08-12",
+     "business_impact": [
+      "solve-for-multiple-customers"
+     ],
+     "beneficiaries": "Students, colleges, and employers.",
+     "demo_promise": "A platform taking students from learning to industry readiness: structured paths, daily DSA and development practice, AI-guided implementation, project building, skill assessment, progress tracking and portfolio-based proof.",
+     "inspiration": "market-observation",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 6,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>India produces many technical graduates while employers struggle to find industry-ready talent. Curricula change slowly, students optimise for marks over mastery, and unlimited learning resources come with no direction on what to learn or build next. Mentoring does not scale, and students, colleges and employers all lack visibility into actual skill development.</p>\n<h3>Proposed solution</h3>\n<p>A continuous industry-readiness platform covering the whole path rather than one fragment of it.</p>\n<h3>What they said they'd demo</h3>\n<p>A platform taking students from learning to industry readiness: structured paths, daily DSA and development practice, AI-guided implementation, project building, skill assessment, progress tracking and portfolio-based proof.</p>"
+   },
+   {
+    "id": "get-our-agents-out-of-our-own-harness",
+    "type": "idea",
+    "path": "ideas/get-our-agents-out-of-our-own-harness.md",
+    "title": "Get Our Agents Out of Our Own Harness",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "get-our-agents-out-of-our-own-harness",
+     "title": "Get Our Agents Out of Our Own Harness",
+     "problem_area": "internal-productivity-engineering",
+     "business_impact": [
+      "reusable-accelerator",
+      "standalone-product",
+      "new-business-opportunity",
+      "technology-capability-ip",
+      "open-source-contribution"
+     ],
+     "beneficiaries": "Tekdi engineering teams who want the platform's agent intelligence wherever they already work, and external customers who could license the agents as skills without adopting the harness.",
+     "demo_promise": "Package one or two real agents as a Claude-compatible skill, run them from inside Claude with a live entitlement check, and show — even via a stubbed call — that the same wrapper contract would work unchanged from a different AI surface.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 25,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>The Tekdi Agent Platform hosts real, working intelligence that teams already rely on, but it is locked inside one custom harness and cannot be used from Claude, Antigravity or wherever people actually work. That caps internal adoption and caps turning the intelligence into something licensable.</p>\n<h3>Proposed solution</h3>\n<p>Package a first slice of 10–15 existing agents as a portable skill/plugin bundle, each a thin wrapper whose tool calls route back through an authenticated Tekdi API that checks subscription entitlement before the underlying agent runs. Distributed from many surfaces, monetised and controlled from one place.</p>\n<h3>What they said they'd demo</h3>\n<p>Package one or two real agents as a Claude-compatible skill, run them from inside Claude with a live entitlement check, and show — even via a stubbed call — that the same wrapper contract would work unchanged from a different AI surface.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
+   },
+   {
+    "id": "give-the-brain-a-memory-for-how-we-actually-deliver",
+    "type": "idea",
+    "path": "ideas/give-the-brain-a-memory-for-how-we-actually-deliver.md",
+    "title": "Give the Brain a Memory for How We Actually Deliver",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "give-the-brain-a-memory-for-how-we-actually-deliver",
+     "title": "Give the Brain a Memory for How We Actually Deliver",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "parth-lawate"
+     ],
+     "business_impact": [
+      "reusable-accelerator",
+      "internal-productivity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Delivery and engineering teams reusing past decisions, PMs and architects scoping new engagements, new joiners ramping onto a project, and anyone drafting proposals or case studies who needs real delivery history.",
+     "demo_promise": "Feed the skill a real conversation about a delivery decision and show it land — correctly shaped, correctly routed, correctly attributed — in the right brain repo, without a human picking where it goes.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 20,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>The company brain knows who the clients are, what was sold and who was involved — but almost nothing about how the work is actually built. There is no structured place for why Postgres was chosen over Mongo, why an integration was reworked mid-flight, what a retro flagged, or what a senior engineer would tell a team walking into a similar build. That knowledge lives in Slack threads and people's heads and evaporates when someone rolls off.</p>\n<h3>Proposed solution</h3>\n<p>Design a delivery/engineering knowledge schema — decisions, trade-offs, retro learnings — with the same discipline the wiki already uses (typed frontmatter, sourced provenance, additive schema versioning), and extend the ingest skill to recognise this content and route it to the right repo.</p>\n<h3>What they said they'd demo</h3>\n<p>Feed the skill a real conversation about a delivery decision and show it land — correctly shaped, correctly routed, correctly attributed — in the right brain repo, without a human picking where it goes.</p>\n<h3>Notes</h3>\n<p><strong>This wiki is a live pilot of that schema.</strong> Its <code>decisions/</code> and <code>learnings/</code> entities are the proposal, running against real work.</p>"
+   },
+   {
+    "id": "intelligent-match-making-app",
+    "type": "idea",
+    "path": "ideas/intelligent-match-making-app.md",
+    "title": "Intelligent match making app",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "intelligent-match-making-app",
+     "title": "Intelligent match making app",
+     "problem_area": "social-impact",
+     "proposed_by": [
+      "mahesh-k"
+     ],
+     "proposed_on": "2026-08-10",
+     "business_impact": [
+      "solve-for-multiple-customers",
+      "new-business-opportunity"
+     ],
+     "beneficiaries": "Young people searching for a life partner.",
+     "demo_promise": "An app.",
+     "inspiration": "personal-experience",
+     "supporting_material": [
+      "https://drive.google.com/open?id=1WXDJfgNllu-5-ceXLhXU1CNp57OfKOrx"
+     ],
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 1,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Matchmaking today matches on stated preferences rather than underlying values.</p>\n<h3>Proposed solution</h3>\n<p>A values-based compatibility matcher with a social-media insight scan.</p>\n<h3>What they said they'd demo</h3>\n<p>An app.</p>\n<h3>Notes</h3>\n<p>The submission is brief; the summary field repeats the submission header. Detail lives in the linked document.</p>"
+   },
+   {
+    "id": "make-the-brain-explorable-not-just-queryable",
+    "type": "idea",
+    "path": "ideas/make-the-brain-explorable-not-just-queryable.md",
+    "title": "Make the Brain Explorable, Not Just Queryable",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "make-the-brain-explorable-not-just-queryable",
+     "title": "Make the Brain Explorable, Not Just Queryable",
+     "problem_area": "internal-productivity-engineering",
+     "business_impact": [
+      "reusable-accelerator",
+      "internal-productivity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Non-technical staff (BD, leadership, HR) who need to explore what Tekdi knows without going through an AI agent or GitHub, and new joiners orienting themselves.",
+     "demo_promise": "Load tekdibraincore, show a graph a non-engineer can navigate, click into an entity, and ask a real question in a chat panel to get a real, sourced answer.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 23,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>The brain's value is in its connections, but the only way to see them is to be an agent reading raw markdown or a person clicking through files on GitHub. Once there is more than one brain repo there is no way to see them as one connected thing at all.</p>\n<h3>Proposed solution</h3>\n<p>A web UI reading structured frontmatter across one or more brain repos and rendering it as an explorable knowledge graph — entities as nodes, frontmatter relationships as edges — with a chat panel grounded in the underlying data.</p>\n<h3>What they said they'd demo</h3>\n<p>Load tekdibraincore, show a graph a non-engineer can navigate, click into an entity, and ask a real question in a chat panel to get a real, sourced answer.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
+   },
+   {
+    "id": "one-click-project-onboarding",
+    "type": "idea",
+    "path": "ideas/one-click-project-onboarding.md",
+    "title": "One-Click Project Onboarding",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "one-click-project-onboarding",
+     "title": "One-Click Project Onboarding",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "deepak-patil"
+     ],
+     "proposed_on": "2026-08-13",
+     "business_impact": [
+      "reusable-accelerator",
+      "internal-productivity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Developers joining or moving between projects, technical leads and architects, BAs and QA, project managers during transitions, and teams taking over an existing application.",
+     "demo_promise": "Not stated in the submission.",
+     "inspiration": "internal-challenge",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 12,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>A developer joining an existing project spends significant time understanding it before any development starts. Information is spread across repositories, READMEs, technical documents, API docs, database scripts and project management tools — and sometimes exists only in existing team members' heads.</p>\n<h3>Proposed solution</h3>\n<p>Connect a repository and its available documentation and produce a single onboarding view: overview, stack, architecture, setup, key modules, APIs, database, guidelines, links and contacts — also identifying what project information is missing or outdated.</p>\n<h3>What they said they'd demo</h3>\n<p>Not stated in the submission.</p>"
+   },
+   {
+    "id": "real-time-public-transport-tracking-for-small-cities",
+    "type": "idea",
+    "path": "ideas/real-time-public-transport-tracking-for-small-cities.md",
+    "title": "Real-Time Public Transport Tracking for Small Cities",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "real-time-public-transport-tracking-for-small-cities",
+     "title": "Real-Time Public Transport Tracking for Small Cities",
+     "problem_area": "government-dpi",
+     "proposed_by": [
+      "vishal-adheli"
+     ],
+     "proposed_on": "2026-08-17",
+     "business_impact": [
+      "solve-for-multiple-customers",
+      "standalone-product",
+      "open-source-contribution"
+     ],
+     "beneficiaries": "The general public and service providers.",
+     "demo_promise": "Live tracking of a public transport system.",
+     "inspiration": "other",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 17,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Small cities have no real-time public transport tracking.</p>\n<h3>Proposed solution</h3>\n<p>Not detailed in the submission.</p>\n<h3>What they said they'd demo</h3>\n<p>Live tracking of a public transport system.</p>"
+   },
+   {
+    "id": "reduce-bugs-at-unit-testing-level",
+    "type": "idea",
+    "path": "ideas/reduce-bugs-at-unit-testing-level.md",
+    "title": "Anticipate and reduce bugs introduced at unit testing level",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "reduce-bugs-at-unit-testing-level",
+     "title": "Anticipate and reduce bugs introduced at unit testing level",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "mahesh-k"
+     ],
+     "proposed_on": "2026-08-12",
+     "business_impact": [
+      "reusable-accelerator",
+      "internal-productivity"
+     ],
+     "beneficiaries": "Mainly testers.",
+     "demo_promise": "As described in the linked document.",
+     "inspiration": "internal-challenge",
+     "supporting_material": [
+      "https://drive.google.com/open?id=1Hrt4HCnT4t7gYHuM5wO0EQTFaZ9BzqY5"
+     ],
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 7,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Bugs introduced at unit-testing level are found late.</p>\n<h3>Proposed solution</h3>\n<p>Not stated in the submission beyond the problem line.</p>\n<h3>What they said they'd demo</h3>\n<p>As described in the linked document.</p>\n<h3>Notes</h3>\n<p><strong>Polluted source row.</strong> This row's Idea Title cell in the ideas sheet holds an entire fisheries-traceability meeting-notes dump — project background, commercial model, effort estimates, next steps and named individuals — none of which relates to the row's own Idea Summary. The title here is derived from the Idea Summary cell, which is the row's actual subject. The people named inside the dumped notes are not hackathon participants and were not created. See <code>SOURCE-SEMANTICS.md</code>.</p>"
+   },
+   {
+    "id": "reliable-ai-automated-sdlc",
+    "type": "idea",
+    "path": "ideas/reliable-ai-automated-sdlc.md",
+    "title": "Reliable AI Automated SDLC",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "reliable-ai-automated-sdlc",
+     "title": "Reliable AI Automated SDLC",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "swanand-kulkarni"
+     ],
+     "proposed_on": "2026-08-17",
+     "business_impact": [
+      "solve-for-multiple-customers",
+      "reusable-accelerator",
+      "internal-productivity",
+      "new-business-opportunity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "All employees and customers.",
+     "demo_promise": "How much of the SDLC can be automated using AI.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 16,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Most of the SDLC is still run by hand.</p>\n<h3>Proposed solution</h3>\n<p>Maximum reliable SDLC automation using AI skills, subagents and commands.</p>\n<h3>What they said they'd demo</h3>\n<p>How much of the SDLC can be automated using AI.</p>\n<h3>Notes</h3>\n<p>The submission names Ashwin and Manoj as prospective teammates in free text; not linked, since neither could be resolved to a specific person with confidence.</p>"
+   },
+   {
+    "id": "satyalens-floating-fact-check-lens",
+    "type": "idea",
+    "path": "ideas/satyalens-floating-fact-check-lens.md",
+    "title": "SatyaLens — A Floating Fact-Check Lens for Any App",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "satyalens-floating-fact-check-lens",
+     "title": "SatyaLens — A Floating Fact-Check Lens for Any App",
+     "problem_area": "open-innovation",
+     "proposed_by": [
+      "vaishali-khandagale"
+     ],
+     "proposed_on": "2026-08-13",
+     "business_impact": [
+      "other"
+     ],
+     "beneficiaries": "Everyone.",
+     "demo_promise": "Idea submitted for consideration only at this stage.",
+     "inspiration": "personal-experience",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 11,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Fact-checking something you are reading means leaving the app you are reading it in.</p>\n<h3>Proposed solution</h3>\n<p>A persistent floating bubble on the Android home screen that fact-checks anything being read — inside WhatsApp, Facebook, X, a news app or a screenshot — in two taps, without leaving that app.</p>\n<h3>What they said they'd demo</h3>\n<p>Idea submitted for consideration only at this stage.</p>\n<h3>Notes</h3>\n<p>Business impact recorded as <code>other</code> in the source form; the specifics were not filled in.</p>"
+   },
+   {
+    "id": "smart-api-environment-guard",
+    "type": "idea",
+    "path": "ideas/smart-api-environment-guard.md",
+    "title": "Smart API Environment Guard",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "smart-api-environment-guard",
+     "title": "Smart API Environment Guard",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "abhay-kalshetti"
+     ],
+     "proposed_on": "2026-08-13",
+     "business_impact": [
+      "internal-productivity"
+     ],
+     "beneficiaries": "Developers and QA teams working across Development, QA, Staging and Production environments.",
+     "demo_promise": "Not stated in the submission.",
+     "inspiration": "market-observation",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 13,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Each API environment has different configurations, URLs, keys and tokens, selected manually in tools like Postman. Running a request against the wrong environment can modify production data with test data, delete real records, or use the wrong credentials — and existing workflows offer little protection.</p>\n<h3>Proposed solution</h3>\n<p>Not stated in the submission beyond the problem.</p>\n<h3>What they said they'd demo</h3>\n<p>Not stated in the submission.</p>"
+   },
+   {
+    "id": "smart-traffic-management-system",
+    "type": "idea",
+    "path": "ideas/smart-traffic-management-system.md",
+    "title": "Smart Traffic Management System",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "smart-traffic-management-system",
+     "title": "Smart Traffic Management System",
+     "problem_area": "government-dpi",
+     "proposed_by": [
+      "vishal-adheli"
+     ],
+     "proposed_on": "2026-08-14",
+     "business_impact": [
+      "new-business-opportunity",
+      "open-source-contribution"
+     ],
+     "beneficiaries": "Government and the public.",
+     "demo_promise": "A smart traffic management solution.",
+     "inspiration": "personal-experience",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 14,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Indian road traffic needs a reliable, affordable way to reduce jams and accidents.</p>\n<h3>Proposed solution</h3>\n<p>Not detailed in the submission.</p>\n<h3>What they said they'd demo</h3>\n<p>A smart traffic management solution.</p>\n<h3>Notes</h3>\n<p>The source sheet spells the title \"Smart Traffic Management Systern\"; corrected here as an evident typo.</p>"
+   },
+   {
+    "id": "stop-making-people-re-upload-meetings-we-already-recorded",
+    "type": "idea",
+    "path": "ideas/stop-making-people-re-upload-meetings-we-already-recorded.md",
+    "title": "Stop Making People Re-Upload Meetings We Already Recorded",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "stop-making-people-re-upload-meetings-we-already-recorded",
+     "title": "Stop Making People Re-Upload Meetings We Already Recorded",
+     "problem_area": "internal-productivity-engineering",
+     "business_impact": [
+      "enhance-existing-customer-project",
+      "solve-for-multiple-customers",
+      "internal-productivity"
+     ],
+     "beneficiaries": "Any Voice Insights platform user or client whose meetings already live in Fathom, Granola, Zoom or Google Meet, and delivery teams who would otherwise re-export and re-upload transcripts by hand.",
+     "demo_promise": "A transcript from a connected source shows up in the platform on its own, and an existing insight agent runs against it exactly as it would against a Telegram upload — no adapter-specific handling downstream.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 24,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Ingestion today is OneDrive folder polling and Telegram uploads, both assuming somebody remembers to move a file. Meanwhile many meetings already produce a clean transcript automatically in Fathom, Granola, Zoom or Meet — it just sits there until someone exports and uploads it, recreating the exact manual friction the platform was designed away from.</p>\n<h3>Proposed solution</h3>\n<p>Extend the existing pluggable-storage pattern with source adapters for tools that expose transcripts programmatically, so a connected transcript becomes a normal Recording the existing agents process unmodified.</p>\n<h3>What they said they'd demo</h3>\n<p>A transcript from a connected source shows up in the platform on its own, and an existing insight agent runs against it exactly as it would against a Telegram upload — no adapter-specific handling downstream.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
+   },
+   {
+    "id": "teach-the-voice-platform-to-feed-the-brain",
+    "type": "idea",
+    "path": "ideas/teach-the-voice-platform-to-feed-the-brain.md",
+    "title": "Teach the Voice Platform to Feed the Brain",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "teach-the-voice-platform-to-feed-the-brain",
+     "title": "Teach the Voice Platform to Feed the Brain",
+     "problem_area": "internal-productivity-engineering",
+     "business_impact": [
+      "enhance-existing-customer-project",
+      "internal-productivity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Any Tekdi team or client already using the Voice Insights platform, whose spoken updates would compound into organisational knowledge automatically.",
+     "demo_promise": "Run a real voice note through the existing pipeline, show the new agent deciding what is brain-worthy versus task-only, and show a commit land in the brain repo with no manual step.",
+     "inspiration": "current-tekdi-project",
+     "status": "in-progress",
+     "idea_ref_ideas_sheet": 21,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": [
+      "tekdi-innovators"
+     ]
+    },
+    "body": "<h3>Problem</h3>\n<p>The Voice Insights platform already turns voice notes into structured intelligence — action items, risks, decisions, longitudinal summaries — but none of it reaches the company brain. Somebody has to notice by hand that a voice note mentioned something brain-worthy and feed it in.</p>\n<h3>Proposed solution</h3>\n<p>A Brain Relevance Agent alongside the existing insight agents: read a transcript or longitudinal summary, classify it against the brain's taxonomy, and where it clears the bar, call the ingest skill programmatically.</p>\n<h3>What they said they'd demo</h3>\n<p>Run a real voice note through the existing pipeline, show the new agent deciding what is brain-worthy versus task-only, and show a commit land in the brain repo with no manual step.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet; <code>proposed_by</code> left blank rather than inferred from adjacent rows.</p>"
+   },
+   {
+    "id": "testing-and-validation-of-ut-issues",
+    "type": "idea",
+    "path": "ideas/testing-and-validation-of-ut-issues.md",
+    "title": "Testing and Validation of UT Issues, Deployment Builds, and Sanity Testing",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "testing-and-validation-of-ut-issues",
+     "title": "Testing and Validation of UT Issues, Deployment Builds, and Sanity Testing",
+     "problem_area": "enterprise-business-productivity",
+     "proposed_by": [
+      "amol-kadam"
+     ],
+     "proposed_on": "2026-08-18",
+     "business_impact": [
+      "internal-productivity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "QA teams (less time on unstable builds), development teams (early feedback), product and project teams (build readiness), client teams and end users (more stable releases), and the organisation (less rework and release delay).",
+     "demo_promise": "Analyse UT issues and validate whether fixes work; run sanity tests automatically after a build or deployment; identify P0/P1 failures, broken core flows and deployment problems; compare current against previous build results to find newly introduced issues; generate an automated report of Passed/Failed/Blocked/Reopened; give a build-stability status and a Go/No-Go recommendation.",
+     "inspiration": "current-tekdi-project",
+     "status": "in-progress",
+     "idea_ref_ideas_sheet": 18,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": [
+      "quality-rocks"
+     ]
+    },
+    "body": "<h3>Problem</h3>\n<p>Each build needs its reported UT issues validated, sanity testing after every deployment, and overall functionality verified before further QA or production deployment — to catch critical defects early, confirm fixes work, and confirm no major regressions.</p>\n<h3>Proposed solution</h3>\n<p>Three areas: UT issue validation (including retesting reopened and previously failed issues), post-deployment sanity testing of critical flows, and build stability validation tracking P0/P1, critical, reopened and UT issues with a clear Go/No-Go.</p>\n<h3>What they said they'd demo</h3>\n<p>Analyse UT issues and validate whether fixes work; run sanity tests automatically after a build or deployment; identify P0/P1 failures, broken core flows and deployment problems; compare current against previous build results to find newly introduced issues; generate an automated report of Passed/Failed/Blocked/Reopened; give a build-stability status and a Go/No-Go recommendation.</p>\n<h3>Notes</h3>\n<p>The submission lists its own team as Vishal Chincholi, Priyanka Sahu, Aditya Taware, Aparna Wasmale, Arya Ambekar and Dipali Kesarkar. The teams sheet records <a href=\"#/team/quality-rocks\">Quality Rocks</a> with the same roster except Priyanka Sahu, who appears on Team 5.</p>"
+   },
+   {
+    "id": "trace-to-trust",
+    "type": "idea",
+    "path": "ideas/trace-to-trust.md",
+    "title": "Trace to Trust",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "trace-to-trust",
+     "title": "Trace to Trust",
+     "problem_area": "government-dpi",
+     "proposed_by": [
+      "ashwin"
+     ],
+     "proposed_on": "2026-08-12",
+     "business_impact": [
+      "solve-for-multiple-customers",
+      "reusable-accelerator",
+      "new-business-opportunity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Quality-conscious buyers and exporters.",
+     "demo_promise": "A working demo of a full journey end to end — capture at origin through to the trust-check at the end.",
+     "inspiration": "customer-discussion",
+     "status": "in-progress",
+     "idea_ref_ideas_sheet": 8,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": [
+      "team-9"
+     ]
+    },
+    "body": "<h3>Problem</h3>\n<p>Trust in a food label rests almost entirely on the honesty of everyone in the chain and the paperwork they choose to keep. The challenge is to let food carry its own verifiable history from origin to the person eating it.</p>\n<h3>Proposed solution</h3>\n<p>Capture real-world moments as they happen — a boat leaving harbour, a catch iced, a plot sown, a warehouse hop — and let someone far down the chain reconstruct the story and have reason to believe it. Four questions a strong solution must answer: trust without a trusted middleman (tamper-evidence and provenance); capture by real people with limited digital literacy and patchy connectivity; what the end user actually sees when they scan; and whether the approach survives a completely different food chain without a rebuild.</p>\n<h3>What they said they'd demo</h3>\n<p>A working demo of a full journey end to end — capture at origin through to the trust-check at the end.</p>\n<h3>Notes</h3>\n<p>Fisheries (EU catch certificates) and agriculture (farm plot to retail pack) given as illustrations, not requirements.</p>"
+   },
+   {
+    "id": "whats-actually-in-this-pack",
+    "type": "idea",
+    "path": "ideas/whats-actually-in-this-pack.md",
+    "title": "What's Actually In This Pack?",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "whats-actually-in-this-pack",
+     "title": "What's Actually In This Pack?",
+     "problem_area": "open-innovation",
+     "proposed_by": [
+      "ashwin"
+     ],
+     "proposed_on": "2026-08-13",
+     "business_impact": [
+      "solve-for-multiple-customers",
+      "standalone-product",
+      "open-source-contribution"
+     ],
+     "beneficiaries": "Anyone buying packaged food.",
+     "demo_promise": "Track A: extraction and aggregation, with documents and a spreadsheet of results. Track B: a working prototype. Teams may attempt either or both; each track is judged on its own merits — breadth is not rewarded, depth is.",
+     "inspiration": "personal-experience",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 10,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Every packaged food sold in India carries a legally complete label, but interpreting it is left to the shopper — impossible for someone with lower literacy or no intent to read labels. It is a translation-and-presentation problem, which is to say a UX problem. Assume a low-end Android phone, patchy connectivity, a noisy shop aisle, three seconds of attention and one free hand.</p>\n<h3>Proposed solution</h3>\n<p>Handle at least two of the things labels hide: sugar as an abstraction (normalise independently of a manufacturer-chosen serving size, keep added sugar distinct from intrinsic); ingredient splitting (re-aggregate sugars, refined flours, fats and salts into families and re-sort — the hardest and most valuable part); category truth (an ice cream that is legally a frozen dessert); claim contradiction; opaque and animal-derived additives; sodium; and unrealistic serving sizes.</p>\n<h3>What they said they'd demo</h3>\n<p>Track A: extraction and aggregation, with documents and a spreadsheet of results. Track B: a working prototype. Teams may attempt either or both; each track is judged on its own merits — breadth is not rewarded, depth is.</p>\n<h3>Notes</h3>\n<p>Explicit anti-patterns in the submission: barcode lookup into an existing database; a red/amber/green dial nobody reads correctly; three paragraphs of LLM nutrition advice; a demo that works only on the two tested packs; an output that cannot expand \"6 tsp total sugars\" back into the six listed ingredients; and moral scoring or shaming. Track B requires testing on people outside the team, recording whether the choice switched, how long it took, the reason in their own words, and at least one case where the output misled someone.</p>"
+   },
+   {
+    "id": "whos-allowed-to-write-to-the-brain",
+    "type": "idea",
+    "path": "ideas/whos-allowed-to-write-to-the-brain.md",
+    "title": "Who's Allowed to Write to the Brain?",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "whos-allowed-to-write-to-the-brain",
+     "title": "Who's Allowed to Write to the Brain?",
+     "problem_area": "internal-productivity-engineering",
+     "business_impact": [
+      "internal-productivity",
+      "technology-capability-ip"
+     ],
+     "beneficiaries": "Brain curators and stewards who need confidence in what lands in the wiki, and leadership who need sensitive or client-related content gated before commit.",
+     "demo_promise": "A low-trust user tries to push an update and it lands in pending instead of committing; an approver opens the web view, reads the diff, approves, and it lands for real.",
+     "inspiration": "current-tekdi-project",
+     "status": "unclaimed",
+     "idea_ref_ideas_sheet": 22,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "picked_by": []
+    },
+    "body": "<h3>Problem</h3>\n<p>Anyone using the ingest skill today can write directly to the company brain. There is no notion of who is trusted to commit straight to the wiki versus who should propose a change for review. Fine at today's scale; uncomfortable once the brain holds delivery knowledge or client-sensitive detail.</p>\n<h3>Proposed solution</h3>\n<p>A lightweight permission model mapped from GitHub/org identity deciding direct-write versus propose-and-wait, with a review queue (a PR underneath) and a minimal web view where an approver reads the diff in plain terms and approves or rejects.</p>\n<h3>What they said they'd demo</h3>\n<p>A low-trust user tries to push an update and it lands in pending instead of committing; an approver opens the web view, reads the diff, approves, and it lands for real.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
+   },
+   {
+    "id": "workqueue-ai-work-intelligence",
+    "type": "idea",
+    "path": "ideas/workqueue-ai-work-intelligence.md",
+    "title": "WorkQueue - AI Work Intelligence",
+    "fm": {
+     "schema_version": 1,
+     "type": "idea",
+     "slug": "workqueue-ai-work-intelligence",
+     "title": "WorkQueue - AI Work Intelligence",
+     "problem_area": "internal-productivity-engineering",
+     "proposed_by": [
+      "shashank-malhotra"
+     ],
+     "proposed_on": "2026-08-13",
+     "business_impact": [
+      "internal-productivity"
+     ],
+     "beneficiaries": "Employees across Tekdi working with multiple systems — developers, QA, product and project managers, designers, HR, sales, support, operations and leadership.",
+     "demo_promise": "A working end-to-end prototype using a small set of real integrations and a common AI work model.",
+     "inspiration": "internal-challenge",
+     "supporting_material": [
+      "https://drive.google.com/open?id=1yiPTQDLNbAYfFkMAArBMROYjdH2Cgvk5"
+     ],
+     "status": "in-progress",
+     "idea_ref_ideas_sheet": 9,
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "picked_by": [
+      "threadai"
+     ]
+    },
+    "body": "<h3>Problem</h3>\n<p>Employees work across Gmail, Calendar/Meet, Time Tracker, GitHub/GitLab, Keka and other systems, each holding only part of their work. Discovering pending requests, follow-ups, approvals and reviews means constant application switching; tasks get missed and the same information is later reconstructed by hand for status updates and timesheets.</p>\n<h3>Proposed solution</h3>\n<p>An AI work-intelligence layer that turns scattered signals into one personalised view answering four questions: what needs my attention, why does it matter, where did it come from, what should I do next. Related activity across platforms is linked into a single Work Item with links back to the source systems, and the same evidence drafts the daily status, timesheet entry and KRA summary for review.</p>\n<h3>What they said they'd demo</h3>\n<p>A working end-to-end prototype using a small set of real integrations and a common AI work model.</p>\n<h3>Notes</h3>\n<p>Suraj Kumar named as a prospective teammate on the submission.</p>\n<p>ThreadAI (ThreadAI team) reports a working end-to-end prototype as of 2026-08-22, with Gmail, Calendar/Meet and Time Tracker integrated; GitHub/GitLab and Keka not yet wired up. See <a href=\"#/update/threadai/2026-08-22-prototype-complete\">updates/threadai/2026-08-22-prototype-complete.md</a>.</p>"
+   }
+  ],
+  "team": [
+   {
+    "id": "falcon-forge",
+    "type": "team",
+    "path": "teams/falcon-forge.md",
+    "title": "Falcon Forge",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "falcon-forge",
+     "name": "Falcon Forge",
+     "team_number": 8,
+     "captain": "abhay-kalshetti",
+     "members": [
+      "rishikesh-sonawane",
+      "shubham-jha",
+      "rohan-nene",
+      "tejashri-m",
+      "vaishali-khandagale"
+     ],
+     "idea_unresolved": true,
+     "idea_label_as_stated": "(Idea 16) CivicLens",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p><strong>Unresolved.</strong> The teams sheet records this team's problem statement as <code>(Idea 16) CivicLens</code>. No idea with that title exists in the ideas sheet, and the idea numbers in the two sheets do not correspond — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than matched by number, which would attribute the whole build to the wrong problem statement.</p>\n<p>Ask the team which problem statement they are actually building, then link it.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
+   },
+   {
+    "id": "impact-makers",
+    "type": "team",
+    "path": "teams/impact-makers.md",
+    "title": "Impact Makers",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "impact-makers",
+     "name": "Impact Makers",
+     "team_number": 1,
+     "captain": "mahesh-mahajan",
+     "members": [
+      "ishan-zade",
+      "alfaz-shaikh",
+      "vijay-khollam",
+      "tushar-mahajan",
+      "vaibhav-shinde"
+     ],
+     "idea_unresolved": true,
+     "idea_label_as_stated": "(Idea 13) Agritech Predictive Analytics & Intent",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p><strong>Unresolved.</strong> The teams sheet records this team's problem statement as <code>(Idea 13) Agritech Predictive Analytics &amp;amp; Intent</code>. No idea with that title exists in the ideas sheet, and the idea numbers in the two sheets do not correspond — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than matched by number, which would attribute the whole build to the wrong problem statement.</p>\n<p>Ask the team which problem statement they are actually building, then link it.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
+   },
+   {
+    "id": "quality-rocks",
+    "type": "team",
+    "path": "teams/quality-rocks.md",
+    "title": "Quality Rocks",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "quality-rocks",
+     "name": "Quality Rocks",
+     "team_number": 2,
+     "captain": "amol-kadam",
+     "members": [
+      "vishal-chincholi",
+      "aditya-taware",
+      "dipali-kesarkar",
+      "aparna-wasmale",
+      "arya-ambekar"
+     ],
+     "idea": "testing-and-validation-of-ut-issues",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/testing-and-validation-of-ut-issues\">testing-and-validation-of-ut-issues</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
+   },
+   {
+    "id": "team-5",
+    "type": "team",
+    "path": "teams/team-5.md",
+    "title": "Team 5",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "team-5",
+     "team_number": 5,
+     "captain": "gourav-more",
+     "members": [
+      "imtiyaz-jiwani",
+      "sagar-mallikarjun-salgsr",
+      "mayuri-gautam",
+      "priyanka-sahu"
+     ],
+     "idea": "ai-powered-digital-readiness-and-assessment-companion",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-digital-readiness-and-assessment-companion\">ai-powered-digital-readiness-and-assessment-companion</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
+   },
+   {
+    "id": "team-7",
+    "type": "team",
+    "path": "teams/team-7.md",
+    "title": "Team 7",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "team-7",
+     "team_number": 7,
+     "captain": "amol-patil",
+     "members": [
+      "sagar-k",
+      "chaitali",
+      "rohit",
+      "kamalakanta-biswal"
+     ],
+     "idea": "ai-powered-joomla-to-nodejs-microservice-generator",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-joomla-to-nodejs-microservice-generator\">ai-powered-joomla-to-nodejs-microservice-generator</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
+   },
+   {
+    "id": "team-9",
+    "type": "team",
+    "path": "teams/team-9.md",
+    "title": "Team 9",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "team-9",
+     "team_number": 9,
+     "captain": "deepak-patil",
+     "members": [
+      "shifa-mujawar",
+      "kalpesh-patil",
+      "samriddhi-thakar",
+      "rajkumar-jamdade"
+     ],
+     "idea": "trace-to-trust",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/trace-to-trust\">trace-to-trust</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>\n<h3>Notes</h3>\n<p>This team has <strong>not named itself</strong> — the team name cell is blank in the teams sheet. The slug is a placeholder built from the team number. Rename when the team says what it is called.</p>"
+   },
+   {
+    "id": "tekdi-innovators",
+    "type": "team",
+    "path": "teams/tekdi-innovators.md",
+    "title": "Tekdi Innovators",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "tekdi-innovators",
+     "name": "Tekdi Innovators",
+     "team_number": 4,
+     "captain": "swanand-kulkarni",
+     "members": [
+      "mohammed-ziyad",
+      "vaishnavi",
+      "devendra-jangir",
+      "saurabh-ingle"
+     ],
+     "idea": "teach-the-voice-platform-to-feed-the-brain",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/teach-the-voice-platform-to-feed-the-brain\">teach-the-voice-platform-to-feed-the-brain</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
+   },
+   {
+    "id": "threadai",
+    "type": "team",
+    "path": "teams/threadai.md",
+    "title": "ThreadAI",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "threadai",
+     "name": "ThreadAI",
+     "team_number": 3,
+     "captain": "vishal-chincholi",
+     "members": [
+      "manoj-nath",
+      "siddhi-shinde",
+      "meghraj-d",
+      "anurag-goutam",
+      "charvi-u"
+     ],
+     "idea": "workqueue-ai-work-intelligence",
+     "status": "demo-ready",
+     "stage_gate": "poc-validation",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/workqueue-ai-work-intelligence\">workqueue-ai-work-intelligence</a>.</p>\n<h3>Current state</h3>\n<p>Working end-to-end prototype demoed. Gmail, Calendar/Meet and Time Tracker integrated; GitHub/GitLab and Keka not yet wired up. See <a href=\"#/update/threadai/2026-08-22-prototype-complete\">updates/threadai/2026-08-22-prototype-complete.md</a> for detail.</p>"
+   },
+   {
+    "id": "vowaliens",
+    "type": "team",
+    "path": "teams/vowaliens.md",
+    "title": "vowAliens",
+    "fm": {
+     "schema_version": 1,
+     "type": "team",
+     "slug": "vowaliens",
+     "name": "vowAliens",
+     "team_number": 6,
+     "captain": "rahul-bhagwan-sanap",
+     "members": [
+      "rohan-shinde",
+      "pranoti-patil",
+      "mahesh-vaidya"
+     ],
+     "idea": "ai-agent-for-scam-verification-and-digital-trust",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-agent-for-scam-verification-and-digital-trust\">ai-agent-for-scam-verification-and-digital-trust</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
+   }
+  ],
+  "person": [
+   {
+    "id": "abhay-kalshetti",
+    "type": "person",
+    "path": "people/abhay-kalshetti.md",
+    "title": "Abhay Kalshetti",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "abhay-kalshetti",
+     "name": "Abhay Kalshetti",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "falcon-forge",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "smart-api-environment-guard"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "aditya-taware",
+    "type": "person",
+    "path": "people/aditya-taware.md",
+    "title": "Aditya Taware",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "aditya-taware",
+     "name": "Aditya Taware",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "quality-rocks",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "alfaz-shaikh",
+    "type": "person",
+    "path": "people/alfaz-shaikh.md",
+    "title": "Alfaz Shaikh",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "alfaz-shaikh",
+     "name": "Alfaz Shaikh",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "impact-makers",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "amol-kadam",
+    "type": "person",
+    "path": "people/amol-kadam.md",
+    "title": "Amol Kadam",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "amol-kadam",
+     "name": "Amol Kadam",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "quality-rocks",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "testing-and-validation-of-ut-issues"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>The ideas sheet's email cell for this person holds <code>amol</code>, which is not an address. Left blank rather than guessed.</p>"
+   },
+   {
+    "id": "amol-patil",
+    "type": "person",
+    "path": "people/amol-patil.md",
+    "title": "Amol Patil",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "amol-patil",
+     "name": "Amol Patil",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-7",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "ai-powered-joomla-to-nodejs-microservice-generator"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>The teams sheet lists <strong>Amol P</strong> as Team 7 captain.</p>"
+   },
+   {
+    "id": "anurag-goutam",
+    "type": "person",
+    "path": "people/anurag-goutam.md",
+    "title": "Anurag Goutam",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "anurag-goutam",
+     "name": "Anurag Goutam",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "threadai",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": [
+      "bridging-the-industry-readiness-gap"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>The teams sheet lists <strong>Anurag G</strong> on Team 3; matched to this person by first name and initial. Unverified.</p>"
+   },
+   {
+    "id": "aparna-wasmale",
+    "type": "person",
+    "path": "people/aparna-wasmale.md",
+    "title": "Aparna Wasmale",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "aparna-wasmale",
+     "name": "Aparna Wasmale",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "quality-rocks",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "arya-ambekar",
+    "type": "person",
+    "path": "people/arya-ambekar.md",
+    "title": "Arya Ambekar",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "arya-ambekar",
+     "name": "Arya Ambekar",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "quality-rocks",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "ashwin",
+    "type": "person",
+    "path": "people/ashwin.md",
+    "title": "Ashwin",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "ashwin",
+     "name": "Ashwin",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": [
+      "trace-to-trust",
+      "whats-actually-in-this-pack"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname not recorded in the source sheet.</p>"
+   },
+   {
+    "id": "chaitali",
+    "type": "person",
+    "path": "people/chaitali.md",
+    "title": "Chaitali",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "chaitali",
+     "name": "Chaitali",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-7",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Given name only in the source sheet.</p>"
+   },
+   {
+    "id": "charvi-u",
+    "type": "person",
+    "path": "people/charvi-u.md",
+    "title": "Charvi U",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "charvi-u",
+     "name": "Charvi U",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "threadai",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname recorded as an initial in the source sheet.</p>"
+   },
+   {
+    "id": "deepak-patil",
+    "type": "person",
+    "path": "people/deepak-patil.md",
+    "title": "Deepak Patil",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "deepak-patil",
+     "name": "Deepak Patil",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-9",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "one-click-project-onboarding"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "devendra-jangir",
+    "type": "person",
+    "path": "people/devendra-jangir.md",
+    "title": "Devendra Jangir",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "devendra-jangir",
+     "name": "Devendra Jangir",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "tekdi-innovators",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "dipali-kesarkar",
+    "type": "person",
+    "path": "people/dipali-kesarkar.md",
+    "title": "Dipali Kesarkar",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "dipali-kesarkar",
+     "name": "Dipali Kesarkar",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "quality-rocks",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "gourav-more",
+    "type": "person",
+    "path": "people/gourav-more.md",
+    "title": "Gourav More",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "gourav-more",
+     "name": "Gourav More",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-5",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "ai-powered-digital-readiness-and-assessment-companion"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "imtiyaz-jiwani",
+    "type": "person",
+    "path": "people/imtiyaz-jiwani.md",
+    "title": "Imtiyaz Jiwani",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "imtiyaz-jiwani",
+     "name": "Imtiyaz Jiwani",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-5",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "ishan-zade",
+    "type": "person",
+    "path": "people/ishan-zade.md",
+    "title": "Ishan Zade",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "ishan-zade",
+     "name": "Ishan Zade",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "impact-makers",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "kalpesh-patil",
+    "type": "person",
+    "path": "people/kalpesh-patil.md",
+    "title": "Kalpesh Patil",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "kalpesh-patil",
+     "name": "Kalpesh Patil",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-9",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "kamalakanta-biswal",
+    "type": "person",
+    "path": "people/kamalakanta-biswal.md",
+    "title": "Kamalakanta Biswal",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "kamalakanta-biswal",
+     "name": "Kamalakanta Biswal",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-7",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "mahesh-k",
+    "type": "person",
+    "path": "people/mahesh-k.md",
+    "title": "Mahesh K",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "mahesh-k",
+     "name": "Mahesh K",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": [
+      "intelligent-match-making-app",
+      "reduce-bugs-at-unit-testing-level"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Distinct from <a href=\"mahesh-mahajan.md\">Mahesh Mahajan</a> — different email address. Not recorded on any team.</p>"
+   },
+   {
+    "id": "mahesh-mahajan",
+    "type": "person",
+    "path": "people/mahesh-mahajan.md",
+    "title": "Mahesh Mahajan",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "mahesh-mahajan",
+     "name": "Mahesh Mahajan",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "impact-makers",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "ai-agent-for-scam-verification-and-digital-trust"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "mahesh-vaidya",
+    "type": "person",
+    "path": "people/mahesh-vaidya.md",
+    "title": "Mahesh Vaidya",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "mahesh-vaidya",
+     "name": "Mahesh Vaidya",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "vowaliens",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "manoj-nath",
+    "type": "person",
+    "path": "people/manoj-nath.md",
+    "title": "Manoj Nath",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "manoj-nath",
+     "name": "Manoj Nath",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "threadai",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "mayuri-gautam",
+    "type": "person",
+    "path": "people/mayuri-gautam.md",
+    "title": "Mayuri Gautam",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "mayuri-gautam",
+     "name": "Mayuri Gautam",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-5",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "meghraj-d",
+    "type": "person",
+    "path": "people/meghraj-d.md",
+    "title": "Meghraj D",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "meghraj-d",
+     "name": "Meghraj D",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "threadai",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname recorded as an initial in the source sheet.</p>"
+   },
+   {
+    "id": "mohammed-ziyad",
+    "type": "person",
+    "path": "people/mohammed-ziyad.md",
+    "title": "Mohammed (Ziyad)",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "mohammed-ziyad",
+     "name": "Mohammed (Ziyad)",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "tekdi-innovators",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Recorded as <code>Mohammed(Ziyad)</code> in the source sheet.</p>"
+   },
+   {
+    "id": "namita-gaikwad",
+    "type": "person",
+    "path": "people/namita-gaikwad.md",
+    "title": "Namita Gaikwad",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "namita-gaikwad",
+     "name": "Namita Gaikwad",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": [
+      "ai-reverse-engineer"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "parth-lawate",
+    "type": "person",
+    "path": "people/parth-lawate.md",
+    "title": "Parth Lawate",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "parth-lawate",
+     "name": "Parth Lawate",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": [
+      "give-the-brain-a-memory-for-how-we-actually-deliver"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "pranoti-patil",
+    "type": "person",
+    "path": "people/pranoti-patil.md",
+    "title": "Pranoti Patil",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "pranoti-patil",
+     "name": "Pranoti Patil",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "vowaliens",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "priyanka-sahu",
+    "type": "person",
+    "path": "people/priyanka-sahu.md",
+    "title": "Priyanka Sahu",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "priyanka-sahu",
+     "name": "Priyanka Sahu",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-5",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "rahul-bhagwan-sanap",
+    "type": "person",
+    "path": "people/rahul-bhagwan-sanap.md",
+    "title": "Rahul Bhagwan Sanap",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "rahul-bhagwan-sanap",
+     "name": "Rahul Bhagwan Sanap",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "vowaliens",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "rajkumar-jamdade",
+    "type": "person",
+    "path": "people/rajkumar-jamdade.md",
+    "title": "Rajkumar Jamdade",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "rajkumar-jamdade",
+     "name": "Rajkumar Jamdade",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-9",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "rishikesh-sonawane",
+    "type": "person",
+    "path": "people/rishikesh-sonawane.md",
+    "title": "Rishikesh Sonawane",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "rishikesh-sonawane",
+     "name": "Rishikesh Sonawane",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "falcon-forge",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "rohan-nene",
+    "type": "person",
+    "path": "people/rohan-nene.md",
+    "title": "Rohan Nene",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "rohan-nene",
+     "name": "Rohan Nene",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "falcon-forge",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "rohan-shinde",
+    "type": "person",
+    "path": "people/rohan-shinde.md",
+    "title": "Rohan Shinde",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "rohan-shinde",
+     "name": "Rohan Shinde",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "vowaliens",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "rohit",
+    "type": "person",
+    "path": "people/rohit.md",
+    "title": "Rohit",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "rohit",
+     "name": "Rohit",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-7",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Given name only in the source sheet.</p>"
+   },
+   {
+    "id": "sagar-k",
+    "type": "person",
+    "path": "people/sagar-k.md",
+    "title": "Sagar K",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "sagar-k",
+     "name": "Sagar K",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-7",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname recorded as an initial in the source sheet.</p>"
+   },
+   {
+    "id": "sagar-mallikarjun-salgsr",
+    "type": "person",
+    "path": "people/sagar-mallikarjun-salgsr.md",
+    "title": "Sagar Mallikarjun Salgsr",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "sagar-mallikarjun-salgsr",
+     "name": "Sagar Mallikarjun Salgsr",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-5",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname recorded as <code>Salgsr</code> in the source sheet; kept as stated rather than corrected.</p>"
+   },
+   {
+    "id": "samriddhi-thakar",
+    "type": "person",
+    "path": "people/samriddhi-thakar.md",
+    "title": "Samriddhi Thakar",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "samriddhi-thakar",
+     "name": "Samriddhi Thakar",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-9",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "saurabh-ingle",
+    "type": "person",
+    "path": "people/saurabh-ingle.md",
+    "title": "Saurabh Ingle",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "saurabh-ingle",
+     "name": "Saurabh Ingle",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "tekdi-innovators",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "shashank-malhotra",
+    "type": "person",
+    "path": "people/shashank-malhotra.md",
+    "title": "Shashank Malhotra",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "shashank-malhotra",
+     "name": "Shashank Malhotra",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": [
+      "workqueue-ai-work-intelligence"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "shifa-mujawar",
+    "type": "person",
+    "path": "people/shifa-mujawar.md",
+    "title": "Shifa Mujawar",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "shifa-mujawar",
+     "name": "Shifa Mujawar",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "team-9",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "shubham-jha",
+    "type": "person",
+    "path": "people/shubham-jha.md",
+    "title": "Shubham Jha",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "shubham-jha",
+     "name": "Shubham Jha",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "falcon-forge",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "siddhi-shinde",
+    "type": "person",
+    "path": "people/siddhi-shinde.md",
+    "title": "Siddhi Shinde",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "siddhi-shinde",
+     "name": "Siddhi Shinde",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "threadai",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "suraj-kumar",
+    "type": "person",
+    "path": "people/suraj-kumar.md",
+    "title": "Suraj Kumar",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "suraj-kumar",
+     "name": "Suraj Kumar",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Named as a prospective teammate on Idea 9. Not recorded on any team in the teams sheet.</p>"
+   },
+   {
+    "id": "swanand-kulkarni",
+    "type": "person",
+    "path": "people/swanand-kulkarni.md",
+    "title": "Swanand Kulkarni",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "swanand-kulkarni",
+     "name": "Swanand Kulkarni",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "tekdi-innovators",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "reliable-ai-automated-sdlc"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>The teams sheet lists <strong>Swanand</strong> as Team 4 captain.</p>"
+   },
+   {
+    "id": "tejashri-m",
+    "type": "person",
+    "path": "people/tejashri-m.md",
+    "title": "Tejashri M",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "tejashri-m",
+     "name": "Tejashri M",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "falcon-forge",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname recorded as an initial in the source sheet.</p>"
+   },
+   {
+    "id": "tushar-mahajan",
+    "type": "person",
+    "path": "people/tushar-mahajan.md",
+    "title": "Tushar Mahajan",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "tushar-mahajan",
+     "name": "Tushar Mahajan",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "impact-makers",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "vaibhav-shinde",
+    "type": "person",
+    "path": "people/vaibhav-shinde.md",
+    "title": "Vaibhav Shinde",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "vaibhav-shinde",
+     "name": "Vaibhav Shinde",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "impact-makers",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "vaishali-khandagale",
+    "type": "person",
+    "path": "people/vaishali-khandagale.md",
+    "title": "Vaishali Khandagale",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "vaishali-khandagale",
+     "name": "Vaishali Khandagale",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "falcon-forge",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": [
+      "satyalens-floating-fact-check-lens"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "vaishnavi",
+    "type": "person",
+    "path": "people/vaishnavi.md",
+    "title": "Vaishnavi",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "vaishnavi",
+     "name": "Vaishnavi",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "tekdi-innovators",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Given name only in the source sheet.</p>"
+   },
+   {
+    "id": "vijay-khollam",
+    "type": "person",
+    "path": "people/vijay-khollam.md",
+    "title": "Vijay Khollam",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "vijay-khollam",
+     "name": "Vijay Khollam",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "impact-makers",
+       "role": "member"
+      }
+     ],
+     "proposed_ideas": []
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "vinod",
+    "type": "person",
+    "path": "people/vinod.md",
+    "title": "Vinod",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "vinod",
+     "name": "Vinod",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": [
+      "ai-classroom-engagement-monitor"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname not recorded in the source sheet.</p>"
+   },
+   {
+    "id": "vishal-adheli",
+    "type": "person",
+    "path": "people/vishal-adheli.md",
+    "title": "Vishal Adheli",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "vishal-adheli",
+     "name": "Vishal Adheli",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [],
+     "proposed_ideas": [
+      "real-time-public-transport-tracking-for-small-cities",
+      "smart-traffic-management-system"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
+   },
+   {
+    "id": "vishal-chincholi",
+    "type": "person",
+    "path": "people/vishal-chincholi.md",
+    "title": "Vishal Chincholi",
+    "fm": {
+     "schema_version": 1,
+     "type": "person",
+     "slug": "vishal-chincholi",
+     "name": "Vishal Chincholi",
+     "origin": "pre-seeded",
+     "first_logged": "2026-08-21",
+     "last_updated": "2026-08-21",
+     "sources": [
+      {
+       "system": "teams-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      },
+      {
+       "system": "ideas-sheet",
+       "method": "document",
+       "date": "2026-08-21"
+      }
+     ],
+     "teams": [
+      {
+       "team": "quality-rocks",
+       "role": "member"
+      },
+      {
+       "team": "threadai",
+       "role": "captain"
+      }
+     ],
+     "proposed_ideas": [
+      "ai-accessibility-reviewer"
+     ]
+    },
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>The teams sheet spells this <strong>Vishal Chincoli</strong>. Treated as one person: same first name, adjacent spelling, and the ideas sheet's Idea 18 member list uses the <em>other</em> spelling for the same team. Split into two entries if that turns out to be wrong.</p>"
+   }
+  ],
+  "update": [
+   {
+    "id": "threadai/2026-08-22-prototype-complete",
+    "type": "update",
+    "path": "updates/threadai/2026-08-22-prototype-complete.md",
+    "title": "End-to-end WorkQueue prototype working, with Gmail, Calendar/Meet and Time Tracker integrated.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "threadai",
+     "date": "2026-08-22",
+     "stage": "poc-validation",
+     "record_kind": "demo",
+     "reported_by": "vishal-chincholi",
+     "logged_by": "vishal-chincholi",
+     "what_changed": "End-to-end WorkQueue prototype working, with Gmail, Calendar/Meet and Time Tracker integrated.",
+     "decisions": [],
+     "learnings": [],
+     "metrics": [],
+     "artifacts": [],
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Built a working end-to-end prototype of WorkQueue. Three of the five planned integrations are wired up and functioning: Gmail, Calendar/Meet, and Time Tracker. GitHub/GitLab and Keka are not yet integrated. The demo shows both the unified Work Item view (pulling signals from the connected systems into one place) and auto-drafted status/timesheet entries generated from that evidence.</p>\n<h3>What broke</h3>\n<p>Not reported.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not reported.</p>"
+   },
+   {
+    "id": "threadai/2026-08-22-ui-live",
+    "type": "update",
+    "path": "updates/threadai/2026-08-22-ui-live.md",
+    "title": "Login screen live at localhost:3000/login (Google OAuth, ThreadAI branding).",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "threadai",
+     "date": "2026-08-22",
+     "stage": "ux-validation",
+     "record_kind": "artifact",
+     "reported_by": "vishal-chincholi",
+     "logged_by": "vishal-chincholi",
+     "what_changed": "Login screen live at localhost:3000/login (Google OAuth, ThreadAI branding).",
+     "decisions": [],
+     "learnings": [],
+     "metrics": [],
+     "artifacts": [
+      {
+       "kind": "screenshot",
+       "description": "ThreadAI login page — \"Continue with Google\", landing copy \"8 Connected Sources\""
+      }
+     ],
+     "confidence": "contested",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "supersedes": null
+    },
+    "body": "<h3>What we did</h3>\n<p>UI is live and reachable — login screen at <code>localhost:3000/login</code> with Google OAuth (\"Continue with Google\") and ThreadAI branding.</p>\n<h3>What broke</h3>\n<p>Not reported.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>Contested</h3>\n<p>The login page's landing copy reads <strong>\"8 Connected Sources\"</strong>. This conflicts with the 2026-08-22 update (<a href=\"2026-08-22-prototype-complete.md\"><code>2026-08-22-prototype-complete.md</code></a>), which reported only 3 integrations actually working (Gmail, Calendar/Meet, Time Tracker). Not resolved — Vishal confirmed the UI itself is live but did not confirm whether \"8\" reflects the current integration count or is target/marketing copy. Recorded as contested rather than picking a number.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not reported.</p>"
+   }
+  ],
+  "decision": [],
+  "learning": []
+ },
+ "commits": [
+  {
+   "sha": "4769846",
+   "author": "Ashwin Date",
+   "date": "2026-08-22T01:04:01+05:30",
+   "subject": "Merge pull request #1 from tekdi/claude/adoring-faraday-5xtk5e"
+  },
+  {
+   "sha": "7693ee6",
+   "author": "Claude",
+   "date": "2026-08-21T19:23:38Z",
+   "subject": "hack: make the first publish work against a repo that does not exist yet"
+  },
+  {
+   "sha": "8434f60",
+   "author": "Claude",
+   "date": "2026-08-21T19:20:22Z",
+   "subject": "hack: publish the visualiser to a public site repo instead of Pages here"
+  },
+  {
+   "sha": "51ae104",
+   "author": "Claude",
+   "date": "2026-08-21T18:54:06Z",
+   "subject": "hack: a public dashboard over this brain, rebuilt on every push"
+  },
+  {
+   "sha": "a36c211",
+   "author": "Vishal Chincholi",
+   "date": "2026-08-22T00:17:47+05:30",
+   "subject": "hack: threadai — UI live, flag contested source-count claim"
+  },
+  {
+   "sha": "8271a11",
+   "author": "Vishal Chincholi",
+   "date": "2026-08-22T00:08:45+05:30",
+   "subject": "hack: workqueue-ai-work-intelligence — note ThreadAI prototype progress"
+  },
+  {
+   "sha": "9cec41b",
+   "author": "Vishal Chincholi",
+   "date": "2026-08-22T00:08:30+05:30",
+   "subject": "hack: threadai — status demo-ready, stage_gate poc-validation"
+  },
+  {
+   "sha": "2f0a8be",
+   "author": "Vishal Chincholi",
+   "date": "2026-08-22T00:08:22+05:30",
+   "subject": "hack: threadai — WorkQueue prototype complete (Gmail, Calendar, Time Tracker)"
+  },
+  {
+   "sha": "0db40ed",
+   "author": "Parth Lawate",
+   "date": "2026-08-21T23:17:49+05:30",
+   "subject": "hack: participant install instructions — this brain only"
+  },
+  {
+   "sha": "3197a9c",
+   "author": "Parth Lawate",
+   "date": "2026-08-21T23:07:32+05:30",
+   "subject": "hack: declare this brain's scope, so routing can be driven by the wiki"
+  },
+  {
+   "sha": "cfb3366",
+   "author": "Parth Lawate",
+   "date": "2026-08-21T22:57:07+05:30",
+   "subject": "hack: correct the connector setup instructions"
+  },
+  {
+   "sha": "39f73bf",
+   "author": "Parth Lawate",
+   "date": "2026-08-21T22:56:28+05:30",
+   "subject": "hack: bootstrap hackathon brain — schema, validators, seeded ideas/teams/people"
+  },
+  {
+   "sha": "bc6a99f",
+   "author": "Parth Lawate",
+   "date": "2026-08-21T22:36:55+05:30",
+   "subject": "hack: design spec for hackathon brain schema and elicitation"
+  }
+ ]
+}
