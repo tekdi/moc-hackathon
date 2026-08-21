@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-21T19:34:12+00:00",
+ "built_at": "2026-08-21T19:38:09+00:00",
  "public": true,
- "commit": "4769846",
+ "commit": "d23cbd1",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 1,
  "vocabularies": {
@@ -3217,6 +3217,43 @@
   ],
   "update": [
    {
+    "id": "threadai/2026-08-22-dashboard-homepage",
+    "type": "update",
+    "path": "updates/threadai/2026-08-22-dashboard-homepage.md",
+    "title": "Homepage dashboard live at threadai.proskillnest.com, logged in as Vishal Chincholi.",
+    "fm": {
+     "schema_version": 1,
+     "type": "update",
+     "team": "threadai",
+     "date": "2026-08-22",
+     "stage": "demo-prep",
+     "record_kind": "artifact",
+     "reported_by": "vishal-chincholi",
+     "logged_by": "vishal-chincholi",
+     "what_changed": "Homepage dashboard live at threadai.proskillnest.com, logged in as Vishal Chincholi.",
+     "decisions": [],
+     "learnings": [],
+     "metrics": [],
+     "artifacts": [
+      {
+       "kind": "screenshot",
+       "description": "ThreadAI homepage dashboard — sidebar nav (My ThreadAI, Risk Radar, Timeline, AI Assistant, Calendar & Meet, Gmail & Inbox, Daily Status, Draft Timesheet, KRA & KPI Evaluation, PR Reviewer, Org Insights, MCP Access), banner text \"connected emails, PRs, Jira tickets, and meeting notes\", stat tiles read Real-Time KPI Score 92% (5 Keka Categories Evaluated), Total Signals 0 (6 Systems Connected), Need Attention 0, High Priority 0, Blocked 0, Due Today 0."
+      }
+     ],
+     "confidence": "contested",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Dashboard is deployed and reachable at a public domain (threadai.proskillnest.com), not just localhost. Homepage shows a \"6 Systems Connected\" stat and sidebar navigation covering more surfaces than previously reported (Calendar &amp; Meet, Gmail &amp; Inbox, PR Reviewer, KRA &amp; KPI Evaluation, MCP Access), plus banner copy mentioning PRs and Jira tickets as connected sources. All live counts (Total Signals, Need Attention, High Priority, Blocked, Due Today) currently read 0.</p>\n<h3>What broke</h3>\n<p>Not reported.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>Contested</h3>\n<p>Three different numbers have now been seen for source/system count across sessions: <strong>3</strong> integrations reported working (2026-08-22, prototype-complete), <strong>8 Connected Sources</strong> on the login page (2026-08-22, ui-live), and now <strong>6 Systems Connected</strong> on this homepage. Not reconciled. Also unclear whether the 0-valued counters reflect an unpopulated/demo state or a genuine current read of zero signals — not confirmed either way.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not reported.</p>"
+   },
+   {
     "id": "threadai/2026-08-22-prototype-complete",
     "type": "update",
     "path": "updates/threadai/2026-08-22-prototype-complete.md",
@@ -3291,6 +3328,12 @@
   "learning": []
  },
  "commits": [
+  {
+   "sha": "d23cbd1",
+   "author": "Vishal Chincholi",
+   "date": "2026-08-22T01:07:58+05:30",
+   "subject": "hack: threadai — homepage live on public domain, flag conflicting system counts"
+  },
   {
    "sha": "4769846",
    "author": "Ashwin Date",
