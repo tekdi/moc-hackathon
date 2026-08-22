@@ -1,9 +1,9 @@
 {
- "built_at": "2026-08-22T03:27:58+00:00",
+ "built_at": "2026-08-22T03:57:26+00:00",
  "public": true,
- "commit": "74f77e8",
+ "commit": "678846d",
  "repo": "tekdi/moihackathon-brain",
- "schema_version": 1,
+ "schema_version": 2,
  "vocabularies": {
   "problem_area": [
    "internal-productivity-engineering",
@@ -206,7 +206,7 @@
     "path": "ideas/ai-accessibility-reviewer.md",
     "title": "AI Accessibility Reviewer",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "ai-accessibility-reviewer",
      "title": "AI Accessibility Reviewer",
@@ -236,7 +236,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Accessibility is considered late in product development. Designers and developers don't know what issues exist until formal QA or an accessibility audit, making fixes costly and delaying inclusive design.</p>\n<h3>Proposed solution</h3>\n<p>Analyse designs early and explain findings rather than just flagging them. Accessibility is often reduced to visual constraints; building at scale for education and underserved users needs a broader view than standard visual guidelines.</p>\n<h3>What they said they'd demo</h3>\n<p>An AI tool that analyses designs for risk across visual, interaction, content and cognitive domains — explaining what the issue is, who it affects, why it matters, its severity, and how the design could improve. Shown through a sample UI with AI findings and suggested fixes.</p>"
    },
@@ -246,7 +247,7 @@
     "path": "ideas/ai-agent-for-scam-verification-and-digital-trust.md",
     "title": "AI Agent for Scam Verification & Digital Trust",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "ai-agent-for-scam-verification-and-digital-trust",
      "title": "AI Agent for Scam Verification & Digital Trust",
@@ -276,7 +277,8 @@
      ],
      "picked_by": [
       "vowaliens"
-     ]
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>People receive suspicious messages, payment requests and links daily. Existing solutions classify them as scam or not-scam, which produces false positives and never establishes whether the claims in a message are actually true.</p>\n<h3>Proposed solution</h3>\n<p>TrustLens investigates rather than classifies — RAG over trusted policies and scam patterns, plus verification tools for URLs, sender identity and claims such as transactions or bills.</p>\n<h3>What they said they'd demo</h3>\n<p>End-to-end agent taking a suspicious SMS/WhatsApp screenshot: extract via AI/OCR, identify claims and URLs, retrieve trusted policies and known scam patterns via RAG, verify URL/sender/claims against trusted sources, produce a risk assessment (Likely Safe / Needs Verification / High Risk) with an explainable evidence trail and a recommended next action. Both a legitimate and a scam message shown, to prove it does not label everything fraud.</p>\n<h3>Notes</h3>\n<p><strong>Contested mapping.</strong> This idea's own stated team (Vijay Khollam, Tushar Mahajan, Alfaz Shaikh, Ishan Zade, Mahesh Mahajan) is the roster of <a href=\"#/team/impact-makers\">Impact Makers</a> — Team 1. But the teams sheet assigns this title to <a href=\"#/team/vowaliens\">vowAliens</a> — Team 6 — and gives Team 1 an unrelated Agritech statement that exists in neither sheet. Linked to Team 6 as the teams sheet states; the disagreement is recorded rather than resolved. Ask both teams.</p>"
    },
@@ -286,7 +288,7 @@
     "path": "ideas/ai-classroom-engagement-monitor.md",
     "title": "AI Classroom Engagement Monitor",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "ai-classroom-engagement-monitor",
      "title": "AI Classroom Engagement Monitor",
@@ -313,7 +315,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>A student, especially in a rural school, may find the classroom passive without the teacher realising why students are disengaged. School leadership has little objective information about teaching quality.</p>\n<h3>Proposed solution</h3>\n<p>Help leadership understand teaching quality and student engagement, identify the gap, and address it.</p>\n<h3>What they said they'd demo</h3>\n<p>A prototype of the solution, or at minimum a workflow.</p>"
    },
@@ -323,7 +326,7 @@
     "path": "ideas/ai-powered-digital-readiness-and-assessment-companion.md",
     "title": "AI-Powered Digital Readiness & Assessment Companion",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "ai-powered-digital-readiness-and-assessment-companion",
      "title": "AI-Powered Digital Readiness & Assessment Companion",
@@ -359,7 +362,8 @@
      ],
      "picked_by": [
       "team-5"
-     ]
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Many children in rural and government schools have little experience with computers or tablets, and struggle with mouse, keyboard, navigation, microphone and headphones before any learning activity can start. Formal assessment also makes children anxious, which changes how they read and speak.</p>\n<h3>Proposed solution</h3>\n<p>Combine device readiness, AI guidance and child-friendly assessment in one environment. The child learns the device through a game, then the same environment becomes the assessment — reading as part of a story rather than sitting a test. The child experiences a game; the teacher receives structured results.</p>\n<h3>What they said they'd demo</h3>\n<p>A first-time learner taken through mouse practice, keyboard interaction, listening, microphone and voice check, navigation, AI guidance when stuck, a readiness check, then a game-like oral reading activity with background speech analysis and a simple teacher-facing result.</p>"
    },
@@ -369,7 +373,7 @@
     "path": "ideas/ai-powered-joomla-to-nodejs-microservice-generator.md",
     "title": "AI-Powered Joomla-to-Node.js Microservice Generator",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "ai-powered-joomla-to-nodejs-microservice-generator",
      "title": "AI-Powered Joomla-to-Node.js Microservice Generator",
@@ -405,7 +409,8 @@
      ],
      "picked_by": [
       "team-7"
-     ]
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Mature Joomla extension logic cannot be reused in a Node-centric stack without rebuilding it by hand.</p>\n<h3>Proposed solution</h3>\n<p>Ingest a Joomla extension's files, codebase and database schema, analyse its features, and generate an equivalent Node.js microservice.</p>\n<h3>What they said they'd demo</h3>\n<p>Feed a real Joomla extension — code, structure and database — into the tool and show it generating a working Node.js microservice that replicates the extension's core features.</p>"
    },
@@ -415,7 +420,7 @@
     "path": "ideas/ai-reverse-engineer.md",
     "title": "AI Reverse Engineer",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "ai-reverse-engineer",
      "title": "AI Reverse Engineer",
@@ -444,7 +449,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Nobody can predict what an unfamiliar application will do when it is changed.</p>\n<h3>Proposed solution</h3>\n<p>Given an unknown application, reconstruct how it works, identify risks, and predict what could break before a change: understand, reconstruct, simulate, predict, explain, recommend.</p>\n<h3>What they said they'd demo</h3>\n<p>\"What will break if I change or delete this?\" as the hero feature, \"why is this production error happening?\" second, and automatic architecture reconstruction as the visual centrepiece.</p>"
    },
@@ -454,7 +460,7 @@
     "path": "ideas/bridging-the-industry-readiness-gap.md",
     "title": "Bridging the Industry Readiness Gap",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "bridging-the-industry-readiness-gap",
      "title": "Bridging the Industry Readiness Gap",
@@ -481,7 +487,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>India produces many technical graduates while employers struggle to find industry-ready talent. Curricula change slowly, students optimise for marks over mastery, and unlimited learning resources come with no direction on what to learn or build next. Mentoring does not scale, and students, colleges and employers all lack visibility into actual skill development.</p>\n<h3>Proposed solution</h3>\n<p>A continuous industry-readiness platform covering the whole path rather than one fragment of it.</p>\n<h3>What they said they'd demo</h3>\n<p>A platform taking students from learning to industry readiness: structured paths, daily DSA and development practice, AI-guided implementation, project building, skill assessment, progress tracking and portfolio-based proof.</p>"
    },
@@ -491,7 +498,7 @@
     "path": "ideas/get-our-agents-out-of-our-own-harness.md",
     "title": "Get Our Agents Out of Our Own Harness",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "get-our-agents-out-of-our-own-harness",
      "title": "Get Our Agents Out of Our Own Harness",
@@ -518,7 +525,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>The Tekdi Agent Platform hosts real, working intelligence that teams already rely on, but it is locked inside one custom harness and cannot be used from Claude, Antigravity or wherever people actually work. That caps internal adoption and caps turning the intelligence into something licensable.</p>\n<h3>Proposed solution</h3>\n<p>Package a first slice of 10–15 existing agents as a portable skill/plugin bundle, each a thin wrapper whose tool calls route back through an authenticated Tekdi API that checks subscription entitlement before the underlying agent runs. Distributed from many surfaces, monetised and controlled from one place.</p>\n<h3>What they said they'd demo</h3>\n<p>Package one or two real agents as a Claude-compatible skill, run them from inside Claude with a live entitlement check, and show — even via a stubbed call — that the same wrapper contract would work unchanged from a different AI surface.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
    },
@@ -528,7 +536,7 @@
     "path": "ideas/give-the-brain-a-memory-for-how-we-actually-deliver.md",
     "title": "Give the Brain a Memory for How We Actually Deliver",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "give-the-brain-a-memory-for-how-we-actually-deliver",
      "title": "Give the Brain a Memory for How We Actually Deliver",
@@ -556,7 +564,10 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [
+      "t-brain"
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>The company brain knows who the clients are, what was sold and who was involved — but almost nothing about how the work is actually built. There is no structured place for why Postgres was chosen over Mongo, why an integration was reworked mid-flight, what a retro flagged, or what a senior engineer would tell a team walking into a similar build. That knowledge lives in Slack threads and people's heads and evaporates when someone rolls off.</p>\n<h3>Proposed solution</h3>\n<p>Design a delivery/engineering knowledge schema — decisions, trade-offs, retro learnings — with the same discipline the wiki already uses (typed frontmatter, sourced provenance, additive schema versioning), and extend the ingest skill to recognise this content and route it to the right repo.</p>\n<h3>What they said they'd demo</h3>\n<p>Feed the skill a real conversation about a delivery decision and show it land — correctly shaped, correctly routed, correctly attributed — in the right brain repo, without a human picking where it goes.</p>\n<h3>Notes</h3>\n<p><strong>This wiki is a live pilot of that schema.</strong> Its <code>decisions/</code> and <code>learnings/</code> entities are the proposal, running against real work.</p>"
    },
@@ -566,7 +577,7 @@
     "path": "ideas/intelligent-match-making-app.md",
     "title": "Intelligent match making app",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "intelligent-match-making-app",
      "title": "Intelligent match making app",
@@ -597,7 +608,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Matchmaking today matches on stated preferences rather than underlying values.</p>\n<h3>Proposed solution</h3>\n<p>A values-based compatibility matcher with a social-media insight scan.</p>\n<h3>What they said they'd demo</h3>\n<p>An app.</p>\n<h3>Notes</h3>\n<p>The submission is brief; the summary field repeats the submission header. Detail lives in the linked document.</p>"
    },
@@ -607,7 +619,7 @@
     "path": "ideas/make-the-brain-explorable-not-just-queryable.md",
     "title": "Make the Brain Explorable, Not Just Queryable",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "make-the-brain-explorable-not-just-queryable",
      "title": "Make the Brain Explorable, Not Just Queryable",
@@ -632,7 +644,10 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": [
+      "t-brain"
+     ]
     },
     "body": "<h3>Problem</h3>\n<p>The brain's value is in its connections, but the only way to see them is to be an agent reading raw markdown or a person clicking through files on GitHub. Once there is more than one brain repo there is no way to see them as one connected thing at all.</p>\n<h3>Proposed solution</h3>\n<p>A web UI reading structured frontmatter across one or more brain repos and rendering it as an explorable knowledge graph — entities as nodes, frontmatter relationships as edges — with a chat panel grounded in the underlying data.</p>\n<h3>What they said they'd demo</h3>\n<p>Load tekdibraincore, show a graph a non-engineer can navigate, click into an entity, and ask a real question in a chat panel to get a real, sourced answer.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
    },
@@ -642,7 +657,7 @@
     "path": "ideas/one-click-project-onboarding.md",
     "title": "One-Click Project Onboarding",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "one-click-project-onboarding",
      "title": "One-Click Project Onboarding",
@@ -671,7 +686,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>A developer joining an existing project spends significant time understanding it before any development starts. Information is spread across repositories, READMEs, technical documents, API docs, database scripts and project management tools — and sometimes exists only in existing team members' heads.</p>\n<h3>Proposed solution</h3>\n<p>Connect a repository and its available documentation and produce a single onboarding view: overview, stack, architecture, setup, key modules, APIs, database, guidelines, links and contacts — also identifying what project information is missing or outdated.</p>\n<h3>What they said they'd demo</h3>\n<p>Not stated in the submission.</p>"
    },
@@ -681,7 +697,7 @@
     "path": "ideas/real-time-public-transport-tracking-for-small-cities.md",
     "title": "Real-Time Public Transport Tracking for Small Cities",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "real-time-public-transport-tracking-for-small-cities",
      "title": "Real-Time Public Transport Tracking for Small Cities",
@@ -710,7 +726,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Small cities have no real-time public transport tracking.</p>\n<h3>Proposed solution</h3>\n<p>Not detailed in the submission.</p>\n<h3>What they said they'd demo</h3>\n<p>Live tracking of a public transport system.</p>"
    },
@@ -720,7 +737,7 @@
     "path": "ideas/reduce-bugs-at-unit-testing-level.md",
     "title": "Anticipate and reduce bugs introduced at unit testing level",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "reduce-bugs-at-unit-testing-level",
      "title": "Anticipate and reduce bugs introduced at unit testing level",
@@ -751,7 +768,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Bugs introduced at unit-testing level are found late.</p>\n<h3>Proposed solution</h3>\n<p>Not stated in the submission beyond the problem line.</p>\n<h3>What they said they'd demo</h3>\n<p>As described in the linked document.</p>\n<h3>Notes</h3>\n<p><strong>Polluted source row.</strong> This row's Idea Title cell in the ideas sheet holds an entire fisheries-traceability meeting-notes dump — project background, commercial model, effort estimates, next steps and named individuals — none of which relates to the row's own Idea Summary. The title here is derived from the Idea Summary cell, which is the row's actual subject. The people named inside the dumped notes are not hackathon participants and were not created. See <code>SOURCE-SEMANTICS.md</code>.</p>"
    },
@@ -761,7 +779,7 @@
     "path": "ideas/reliable-ai-automated-sdlc.md",
     "title": "Reliable AI Automated SDLC",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "reliable-ai-automated-sdlc",
      "title": "Reliable AI Automated SDLC",
@@ -792,7 +810,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Most of the SDLC is still run by hand.</p>\n<h3>Proposed solution</h3>\n<p>Maximum reliable SDLC automation using AI skills, subagents and commands.</p>\n<h3>What they said they'd demo</h3>\n<p>How much of the SDLC can be automated using AI.</p>\n<h3>Notes</h3>\n<p>The submission names Ashwin and Manoj as prospective teammates in free text; not linked, since neither could be resolved to a specific person with confidence.</p>"
    },
@@ -802,7 +821,7 @@
     "path": "ideas/satyalens-floating-fact-check-lens.md",
     "title": "SatyaLens — A Floating Fact-Check Lens for Any App",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "satyalens-floating-fact-check-lens",
      "title": "SatyaLens — A Floating Fact-Check Lens for Any App",
@@ -829,7 +848,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Fact-checking something you are reading means leaving the app you are reading it in.</p>\n<h3>Proposed solution</h3>\n<p>A persistent floating bubble on the Android home screen that fact-checks anything being read — inside WhatsApp, Facebook, X, a news app or a screenshot — in two taps, without leaving that app.</p>\n<h3>What they said they'd demo</h3>\n<p>Idea submitted for consideration only at this stage.</p>\n<h3>Notes</h3>\n<p>Business impact recorded as <code>other</code> in the source form; the specifics were not filled in.</p>"
    },
@@ -839,7 +859,7 @@
     "path": "ideas/smart-api-environment-guard.md",
     "title": "Smart API Environment Guard",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "smart-api-environment-guard",
      "title": "Smart API Environment Guard",
@@ -866,7 +886,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Each API environment has different configurations, URLs, keys and tokens, selected manually in tools like Postman. Running a request against the wrong environment can modify production data with test data, delete real records, or use the wrong credentials — and existing workflows offer little protection.</p>\n<h3>Proposed solution</h3>\n<p>Not stated in the submission beyond the problem.</p>\n<h3>What they said they'd demo</h3>\n<p>Not stated in the submission.</p>"
    },
@@ -876,7 +897,7 @@
     "path": "ideas/smart-traffic-management-system.md",
     "title": "Smart Traffic Management System",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "smart-traffic-management-system",
      "title": "Smart Traffic Management System",
@@ -904,7 +925,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Indian road traffic needs a reliable, affordable way to reduce jams and accidents.</p>\n<h3>Proposed solution</h3>\n<p>Not detailed in the submission.</p>\n<h3>What they said they'd demo</h3>\n<p>A smart traffic management solution.</p>\n<h3>Notes</h3>\n<p>The source sheet spells the title \"Smart Traffic Management Systern\"; corrected here as an evident typo.</p>"
    },
@@ -914,7 +936,7 @@
     "path": "ideas/stop-making-people-re-upload-meetings-we-already-recorded.md",
     "title": "Stop Making People Re-Upload Meetings We Already Recorded",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "stop-making-people-re-upload-meetings-we-already-recorded",
      "title": "Stop Making People Re-Upload Meetings We Already Recorded",
@@ -939,7 +961,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Ingestion today is OneDrive folder polling and Telegram uploads, both assuming somebody remembers to move a file. Meanwhile many meetings already produce a clean transcript automatically in Fathom, Granola, Zoom or Meet — it just sits there until someone exports and uploads it, recreating the exact manual friction the platform was designed away from.</p>\n<h3>Proposed solution</h3>\n<p>Extend the existing pluggable-storage pattern with source adapters for tools that expose transcripts programmatically, so a connected transcript becomes a normal Recording the existing agents process unmodified.</p>\n<h3>What they said they'd demo</h3>\n<p>A transcript from a connected source shows up in the platform on its own, and an existing insight agent runs against it exactly as it would against a Telegram upload — no adapter-specific handling downstream.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
    },
@@ -949,7 +972,7 @@
     "path": "ideas/teach-the-voice-platform-to-feed-the-brain.md",
     "title": "Teach the Voice Platform to Feed the Brain",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "teach-the-voice-platform-to-feed-the-brain",
      "title": "Teach the Voice Platform to Feed the Brain",
@@ -976,7 +999,8 @@
      ],
      "picked_by": [
       "tekdi-innovators"
-     ]
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>The Voice Insights platform already turns voice notes into structured intelligence — action items, risks, decisions, longitudinal summaries — but none of it reaches the company brain. Somebody has to notice by hand that a voice note mentioned something brain-worthy and feed it in.</p>\n<h3>Proposed solution</h3>\n<p>A Brain Relevance Agent alongside the existing insight agents: read a transcript or longitudinal summary, classify it against the brain's taxonomy, and where it clears the bar, call the ingest skill programmatically.</p>\n<h3>What they said they'd demo</h3>\n<p>Run a real voice note through the existing pipeline, show the new agent deciding what is brain-worthy versus task-only, and show a commit land in the brain repo with no manual step.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet; <code>proposed_by</code> left blank rather than inferred from adjacent rows.</p>"
    },
@@ -986,7 +1010,7 @@
     "path": "ideas/testing-and-validation-of-ut-issues.md",
     "title": "Testing and Validation of UT Issues, Deployment Builds, and Sanity Testing",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "testing-and-validation-of-ut-issues",
      "title": "Testing and Validation of UT Issues, Deployment Builds, and Sanity Testing",
@@ -1016,7 +1040,8 @@
      ],
      "picked_by": [
       "quality-rocks"
-     ]
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Each build needs its reported UT issues validated, sanity testing after every deployment, and overall functionality verified before further QA or production deployment — to catch critical defects early, confirm fixes work, and confirm no major regressions.</p>\n<h3>Proposed solution</h3>\n<p>Three areas: UT issue validation (including retesting reopened and previously failed issues), post-deployment sanity testing of critical flows, and build stability validation tracking P0/P1, critical, reopened and UT issues with a clear Go/No-Go.</p>\n<h3>What they said they'd demo</h3>\n<p>Analyse UT issues and validate whether fixes work; run sanity tests automatically after a build or deployment; identify P0/P1 failures, broken core flows and deployment problems; compare current against previous build results to find newly introduced issues; generate an automated report of Passed/Failed/Blocked/Reopened; give a build-stability status and a Go/No-Go recommendation.</p>\n<h3>Notes</h3>\n<p>The submission lists its own team as Vishal Chincholi, Priyanka Sahu, Aditya Taware, Aparna Wasmale, Arya Ambekar and Dipali Kesarkar. The teams sheet records <a href=\"#/team/quality-rocks\">Quality Rocks</a> with the same roster except Priyanka Sahu, who appears on Team 5.</p>"
    },
@@ -1026,7 +1051,7 @@
     "path": "ideas/trace-to-trust.md",
     "title": "Trace to Trust",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "trace-to-trust",
      "title": "Trace to Trust",
@@ -1058,7 +1083,8 @@
      ],
      "picked_by": [
       "trust-builders"
-     ]
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Trust in a food label rests almost entirely on the honesty of everyone in the chain and the paperwork they choose to keep. The challenge is to let food carry its own verifiable history from origin to the person eating it.</p>\n<h3>Proposed solution</h3>\n<p>Capture real-world moments as they happen — a boat leaving harbour, a catch iced, a plot sown, a warehouse hop — and let someone far down the chain reconstruct the story and have reason to believe it. Four questions a strong solution must answer: trust without a trusted middleman (tamper-evidence and provenance); capture by real people with limited digital literacy and patchy connectivity; what the end user actually sees when they scan; and whether the approach survives a completely different food chain without a rebuild.</p>\n<h3>What they said they'd demo</h3>\n<p>A working demo of a full journey end to end — capture at origin through to the trust-check at the end.</p>\n<h3>Notes</h3>\n<p>Fisheries (EU catch certificates) and agriculture (farm plot to retail pack) given as illustrations, not requirements.</p>"
    },
@@ -1068,7 +1094,7 @@
     "path": "ideas/whats-actually-in-this-pack.md",
     "title": "What's Actually In This Pack?",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "whats-actually-in-this-pack",
      "title": "What's Actually In This Pack?",
@@ -1097,7 +1123,8 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Every packaged food sold in India carries a legally complete label, but interpreting it is left to the shopper — impossible for someone with lower literacy or no intent to read labels. It is a translation-and-presentation problem, which is to say a UX problem. Assume a low-end Android phone, patchy connectivity, a noisy shop aisle, three seconds of attention and one free hand.</p>\n<h3>Proposed solution</h3>\n<p>Handle at least two of the things labels hide: sugar as an abstraction (normalise independently of a manufacturer-chosen serving size, keep added sugar distinct from intrinsic); ingredient splitting (re-aggregate sugars, refined flours, fats and salts into families and re-sort — the hardest and most valuable part); category truth (an ice cream that is legally a frozen dessert); claim contradiction; opaque and animal-derived additives; sodium; and unrealistic serving sizes.</p>\n<h3>What they said they'd demo</h3>\n<p>Track A: extraction and aggregation, with documents and a spreadsheet of results. Track B: a working prototype. Teams may attempt either or both; each track is judged on its own merits — breadth is not rewarded, depth is.</p>\n<h3>Notes</h3>\n<p>Explicit anti-patterns in the submission: barcode lookup into an existing database; a red/amber/green dial nobody reads correctly; three paragraphs of LLM nutrition advice; a demo that works only on the two tested packs; an output that cannot expand \"6 tsp total sugars\" back into the six listed ingredients; and moral scoring or shaming. Track B requires testing on people outside the team, recording whether the choice switched, how long it took, the reason in their own words, and at least one case where the output misled someone.</p>"
    },
@@ -1107,7 +1134,7 @@
     "path": "ideas/whos-allowed-to-write-to-the-brain.md",
     "title": "Who's Allowed to Write to the Brain?",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "whos-allowed-to-write-to-the-brain",
      "title": "Who's Allowed to Write to the Brain?",
@@ -1131,7 +1158,10 @@
        "date": "2026-08-21"
       }
      ],
-     "picked_by": []
+     "picked_by": [],
+     "related_teams": [
+      "t-brain"
+     ]
     },
     "body": "<h3>Problem</h3>\n<p>Anyone using the ingest skill today can write directly to the company brain. There is no notion of who is trusted to commit straight to the wiki versus who should propose a change for review. Fine at today's scale; uncomfortable once the brain holds delivery knowledge or client-sensitive detail.</p>\n<h3>Proposed solution</h3>\n<p>A lightweight permission model mapped from GitHub/org identity deciding direct-write versus propose-and-wait, with a review queue (a PR underneath) and a minimal web view where an approver reads the diff in plain terms and approves or rejects.</p>\n<h3>What they said they'd demo</h3>\n<p>A low-trust user tries to push an update and it lands in pending instead of committing; an approver opens the web view, reads the diff, approves, and it lands for real.</p>\n<h3>Notes</h3>\n<p>No submitter or timestamp recorded in the source sheet.</p>"
    },
@@ -1141,7 +1171,7 @@
     "path": "ideas/workqueue-ai-work-intelligence.md",
     "title": "WorkQueue - AI Work Intelligence",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "idea",
      "slug": "workqueue-ai-work-intelligence",
      "title": "WorkQueue - AI Work Intelligence",
@@ -1178,7 +1208,8 @@
      ],
      "picked_by": [
       "threadai"
-     ]
+     ],
+     "related_teams": []
     },
     "body": "<h3>Problem</h3>\n<p>Employees work across Gmail, Calendar/Meet, Time Tracker, GitHub/GitLab, Keka and other systems, each holding only part of their work. Discovering pending requests, follow-ups, approvals and reviews means constant application switching; tasks get missed and the same information is later reconstructed by hand for status updates and timesheets.</p>\n<h3>Proposed solution</h3>\n<p>An AI work-intelligence layer that turns scattered signals into one personalised view answering four questions: what needs my attention, why does it matter, where did it come from, what should I do next. Related activity across platforms is linked into a single Work Item with links back to the source systems, and the same evidence drafts the daily status, timesheet entry and KRA summary for review.</p>\n<h3>What they said they'd demo</h3>\n<p>A working end-to-end prototype using a small set of real integrations and a common AI work model.</p>\n<h3>Notes</h3>\n<p>Suraj Kumar named as a prospective teammate on the submission.</p>\n<p>ThreadAI (ThreadAI team) reports a working end-to-end prototype as of 2026-08-22, with Gmail, Calendar/Meet and Time Tracker integrated; GitHub/GitLab and Keka not yet wired up. See <a href=\"#/update/threadai/2026-08-22-prototype-complete\">updates/threadai/2026-08-22-prototype-complete.md</a>.</p>"
    }
@@ -1190,7 +1221,7 @@
     "path": "teams/falcon-forge.md",
     "title": "Falcon Forge",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "falcon-forge",
      "name": "Falcon Forge",
@@ -1224,7 +1255,7 @@
     "path": "teams/impact-makers.md",
     "title": "Impact Makers",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "impact-makers",
      "name": "Impact Makers",
@@ -1258,7 +1289,7 @@
     "path": "teams/quality-rocks.md",
     "title": "Quality Rocks",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "quality-rocks",
      "name": "Quality Rocks",
@@ -1286,12 +1317,80 @@
     "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/testing-and-validation-of-ut-issues\">testing-and-validation-of-ut-issues</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
    },
    {
+    "id": "t-brain",
+    "type": "team",
+    "path": "teams/t-brain.md",
+    "title": "T Brain",
+    "fm": {
+     "schema_version": 2,
+     "type": "team",
+     "slug": "t-brain",
+     "name": "T Brain",
+     "captain": "parth-lawate",
+     "members": [
+      "ashwin"
+     ],
+     "idea": "give-the-brain-a-memory-for-how-we-actually-deliver",
+     "related_ideas": [
+      "whos-allowed-to-write-to-the-brain",
+      "make-the-brain-explorable-not-just-queryable"
+     ],
+     "repos": [
+      "https://github.com/tekdi/moihackathon-brain",
+      "https://github.com/tekdi/brain-ingest-skill",
+      "https://github.com/tekdi/moc-hackathon"
+     ],
+     "demo_url": "https://tekdi.github.io/moc-hackathon",
+     "stack": [
+      "python",
+      "yaml",
+      "markdown",
+      "github-actions",
+      "javascript"
+     ],
+     "status": "demo-ready",
+     "stage_gate": "productisation",
+     "stages_completed": [
+      "pre-analysis",
+      "discovery",
+      "solution-design",
+      "prd",
+      "tech-design",
+      "tech-selection",
+      "environment-setup",
+      "implementation",
+      "integration",
+      "poc-validation",
+      "security-privacy-review"
+     ],
+     "current_summary": "This brain and its schema, the multi-brain routing in the ingest skill, and the live visualiser — all in production use by the other teams.",
+     "last_update": "2026-08-22",
+     "origin": "self-registered",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What they're building</h3>\n<p>Three things, all of which the rest of the hackathon is already using:</p>\n<ol>\n<li><strong>This wiki</strong> — the entity model, the vocabularies, the validators, the</li>\n</ol>\n<p>seeded backlog. Primary idea: <a href=\"#/idea/give-the-brain-a-memory-for-how-we-actually-deliver\">Give the Brain a Memory for How We Actually Deliver</a>.</p>\n<ol>\n<li><strong>Multi-brain routing in <code>brain-ingest-skill</code></strong> — one install serving several</li>\n</ol>\n<p>wikis, choosing its target at install or on first use, and refusing to write into a wiki it was not given. Touches <a href=\"#/idea/whos-allowed-to-write-to-the-brain\">Who's Allowed to Write to the Brain?</a>.</p>\n<ol>\n<li><strong>The visualiser</strong> at &lt;<a href=\"https://tekdi.github.io/moc-hackathon&amp;gt;,\" target=\"_blank\" rel=\"noopener noreferrer\">https://tekdi.github.io/moc-hackathon&gt;,</a> built by</li>\n</ol>\n<p>Ashwin — a public, schema-driven page over this brain, rebuilt on every push. That is <a href=\"#/idea/make-the-brain-explorable-not-just-queryable\">Make the Brain Explorable, Not Just Queryable</a>.</p>\n<h3>Current state</h3>\n<p><code>demo-ready</code>, and past that in practice: five other contributors have pushed into this wiki and the visualiser serves it publicly. <code>stage_gate</code> is <code>productisation</code> because what remains is operational — who may write, what CI gates, how it merges into <code>tekdibraincore</code> after the event.</p>\n<h3>Notes</h3>\n<p><strong>Not on the organisers' teams sheet.</strong> This team registered itself in the wiki rather than through the sign-up sheet, so it has no <code>team_number</code>. Its idea entries were pre-seeded from the ideas sheet like everyone else's.</p>"
+   },
+   {
     "id": "team-5",
     "type": "team",
     "path": "teams/team-5.md",
     "title": "Linguistic Legends",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "team-5",
      "name": "Linguistic Legends",
@@ -1330,7 +1429,7 @@
     "path": "teams/team-7.md",
     "title": "Team 7",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "team-7",
      "team_number": 7,
@@ -1376,7 +1475,7 @@
     "path": "teams/team-9.md",
     "title": "Team 9",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "team-9",
      "deprecated": true,
@@ -1391,7 +1490,7 @@
     "path": "teams/tekdi-innovators.md",
     "title": "Tekdi Innovators",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "tekdi-innovators",
      "name": "Tekdi Innovators",
@@ -1423,7 +1522,7 @@
     "path": "teams/threadai.md",
     "title": "ThreadAI",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "threadai",
      "name": "ThreadAI",
@@ -1463,7 +1562,7 @@
     "path": "teams/trust-builders.md",
     "title": "Trust Builders",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "trust-builders",
      "name": "Trust Builders",
@@ -1504,7 +1603,7 @@
     "path": "teams/vowaliens.md",
     "title": "vowAliens",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "team",
      "slug": "vowaliens",
      "name": "vowAliens",
@@ -1537,7 +1636,7 @@
     "path": "people/abhay-kalshetti.md",
     "title": "Abhay Kalshetti",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "abhay-kalshetti",
      "name": "Abhay Kalshetti",
@@ -1574,7 +1673,7 @@
     "path": "people/aditya-taware.md",
     "title": "Aditya Taware",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "aditya-taware",
      "name": "Aditya Taware",
@@ -1609,7 +1708,7 @@
     "path": "people/alfaz-shaikh.md",
     "title": "Alfaz Shaikh",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "alfaz-shaikh",
      "name": "Alfaz Shaikh",
@@ -1639,7 +1738,7 @@
     "path": "people/amol-kadam.md",
     "title": "Amol Kadam",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "amol-kadam",
      "name": "Amol Kadam",
@@ -1676,7 +1775,7 @@
     "path": "people/amol-patil.md",
     "title": "Amol Patil",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "amol-patil",
      "name": "Amol Patil",
@@ -1713,7 +1812,7 @@
     "path": "people/anurag-goutam.md",
     "title": "Anurag Goutam",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "anurag-goutam",
      "name": "Anurag Goutam",
@@ -1750,7 +1849,7 @@
     "path": "people/aparna-wasmale.md",
     "title": "Aparna Wasmale",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "aparna-wasmale",
      "name": "Aparna Wasmale",
@@ -1785,7 +1884,7 @@
     "path": "people/arya-ambekar.md",
     "title": "Arya Ambekar",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "arya-ambekar",
      "name": "Arya Ambekar",
@@ -1820,7 +1919,7 @@
     "path": "people/ashwin.md",
     "title": "Ashwin",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "ashwin",
      "name": "Ashwin",
@@ -1834,7 +1933,12 @@
        "date": "2026-08-21"
       }
      ],
-     "teams": [],
+     "teams": [
+      {
+       "team": "t-brain",
+       "role": "member"
+      }
+     ],
      "proposed_ideas": [
       "trace-to-trust",
       "whats-actually-in-this-pack"
@@ -1848,7 +1952,7 @@
     "path": "people/chaitali.md",
     "title": "Chaitali",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "chaitali",
      "name": "Chaitali",
@@ -1878,7 +1982,7 @@
     "path": "people/charvi-u.md",
     "title": "Charvi U",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "charvi-u",
      "name": "Charvi U",
@@ -1908,7 +2012,7 @@
     "path": "people/deepak-patil.md",
     "title": "Deepak Patil",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "deepak-patil",
      "name": "Deepak Patil",
@@ -1945,7 +2049,7 @@
     "path": "people/devendra-jangir.md",
     "title": "Devendra Jangir",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "devendra-jangir",
      "name": "Devendra Jangir",
@@ -1975,7 +2079,7 @@
     "path": "people/dipali-kesarkar.md",
     "title": "Dipali Kesarkar",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "dipali-kesarkar",
      "name": "Dipali Kesarkar",
@@ -2010,7 +2114,7 @@
     "path": "people/gourav-more.md",
     "title": "Gourav More",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "gourav-more",
      "name": "Gourav More",
@@ -2047,7 +2151,7 @@
     "path": "people/imtiyaz-jiwani.md",
     "title": "Imtiyaz Jiwani",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "imtiyaz-jiwani",
      "name": "Imtiyaz Jiwani",
@@ -2077,7 +2181,7 @@
     "path": "people/ishan-zade.md",
     "title": "Ishan Zade",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "ishan-zade",
      "name": "Ishan Zade",
@@ -2107,7 +2211,7 @@
     "path": "people/kalpesh-patil.md",
     "title": "Kalpesh Patil",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "kalpesh-patil",
      "name": "Kalpesh Patil",
@@ -2137,7 +2241,7 @@
     "path": "people/kamalakanta-biswal.md",
     "title": "Kamalakanta Biswal",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "kamalakanta-biswal",
      "name": "Kamalakanta Biswal",
@@ -2167,7 +2271,7 @@
     "path": "people/mahesh-k.md",
     "title": "Mahesh K",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "mahesh-k",
      "name": "Mahesh K",
@@ -2195,7 +2299,7 @@
     "path": "people/mahesh-mahajan.md",
     "title": "Mahesh Mahajan",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "mahesh-mahajan",
      "name": "Mahesh Mahajan",
@@ -2232,7 +2336,7 @@
     "path": "people/mahesh-vaidya.md",
     "title": "Mahesh Vaidya",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "mahesh-vaidya",
      "name": "Mahesh Vaidya",
@@ -2262,7 +2366,7 @@
     "path": "people/manoj-nath.md",
     "title": "Manoj Nath",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "manoj-nath",
      "name": "Manoj Nath",
@@ -2292,7 +2396,7 @@
     "path": "people/mayuri-gautam.md",
     "title": "Mayuri Gautam",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "mayuri-gautam",
      "name": "Mayuri Gautam",
@@ -2322,7 +2426,7 @@
     "path": "people/meghraj-d.md",
     "title": "Meghraj D",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "meghraj-d",
      "name": "Meghraj D",
@@ -2352,7 +2456,7 @@
     "path": "people/mohammed-ziyad.md",
     "title": "Mohammed (Ziyad)",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "mohammed-ziyad",
      "name": "Mohammed (Ziyad)",
@@ -2382,7 +2486,7 @@
     "path": "people/namita-gaikwad.md",
     "title": "Namita Gaikwad",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "namita-gaikwad",
      "name": "Namita Gaikwad",
@@ -2409,7 +2513,7 @@
     "path": "people/parth-lawate.md",
     "title": "Parth Lawate",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "parth-lawate",
      "name": "Parth Lawate",
@@ -2428,7 +2532,12 @@
        "date": "2026-08-21"
       }
      ],
-     "teams": [],
+     "teams": [
+      {
+       "team": "t-brain",
+       "role": "captain"
+      }
+     ],
      "proposed_ideas": [
       "give-the-brain-a-memory-for-how-we-actually-deliver"
      ]
@@ -2441,7 +2550,7 @@
     "path": "people/pranoti-patil.md",
     "title": "Pranoti Patil",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "pranoti-patil",
      "name": "Pranoti Patil",
@@ -2471,7 +2580,7 @@
     "path": "people/priyanka-sahu.md",
     "title": "Priyanka Sahu",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "priyanka-sahu",
      "name": "Priyanka Sahu",
@@ -2506,7 +2615,7 @@
     "path": "people/rahul-bhagwan-sanap.md",
     "title": "Rahul Bhagwan Sanap",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "rahul-bhagwan-sanap",
      "name": "Rahul Bhagwan Sanap",
@@ -2536,7 +2645,7 @@
     "path": "people/rajkumar-jamdade.md",
     "title": "Rajkumar Jamdade",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "rajkumar-jamdade",
      "name": "Rajkumar Jamdade",
@@ -2566,7 +2675,7 @@
     "path": "people/rishikesh-sonawane.md",
     "title": "Rishikesh Sonawane",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "rishikesh-sonawane",
      "name": "Rishikesh Sonawane",
@@ -2596,7 +2705,7 @@
     "path": "people/rohan-nene.md",
     "title": "Rohan Nene",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "rohan-nene",
      "name": "Rohan Nene",
@@ -2626,7 +2735,7 @@
     "path": "people/rohan-shinde.md",
     "title": "Rohan Shinde",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "rohan-shinde",
      "name": "Rohan Shinde",
@@ -2656,7 +2765,7 @@
     "path": "people/rohit.md",
     "title": "Rohit",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "rohit",
      "name": "Rohit",
@@ -2686,7 +2795,7 @@
     "path": "people/sagar-k.md",
     "title": "Sagar K",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "sagar-k",
      "name": "Sagar K",
@@ -2716,7 +2825,7 @@
     "path": "people/sagar-mallikarjun-salgsr.md",
     "title": "Sagar Mallikarjun Salgsr",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "sagar-mallikarjun-salgsr",
      "name": "Sagar Mallikarjun Salgsr",
@@ -2746,7 +2855,7 @@
     "path": "people/samriddhi-thakar.md",
     "title": "Samriddhi Thakar",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "samriddhi-thakar",
      "name": "Samriddhi Thakar",
@@ -2776,7 +2885,7 @@
     "path": "people/saurabh-ingle.md",
     "title": "Saurabh Ingle",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "saurabh-ingle",
      "name": "Saurabh Ingle",
@@ -2806,7 +2915,7 @@
     "path": "people/shashank-malhotra.md",
     "title": "Shashank Malhotra",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "shashank-malhotra",
      "name": "Shashank Malhotra",
@@ -2833,7 +2942,7 @@
     "path": "people/shifa-mujawar.md",
     "title": "Shifa Mujawar",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "shifa-mujawar",
      "name": "Shifa Mujawar",
@@ -2863,7 +2972,7 @@
     "path": "people/shubham-jha.md",
     "title": "Shubham Jha",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "shubham-jha",
      "name": "Shubham Jha",
@@ -2893,7 +3002,7 @@
     "path": "people/siddhi-shinde.md",
     "title": "Siddhi Shinde",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "siddhi-shinde",
      "name": "Siddhi Shinde",
@@ -2923,7 +3032,7 @@
     "path": "people/suraj-kumar.md",
     "title": "Suraj Kumar",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "suraj-kumar",
      "name": "Suraj Kumar",
@@ -2948,7 +3057,7 @@
     "path": "people/swanand-kulkarni.md",
     "title": "Swanand Kulkarni",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "swanand-kulkarni",
      "name": "Swanand Kulkarni",
@@ -2985,7 +3094,7 @@
     "path": "people/tejashri-m.md",
     "title": "Tejashri M",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "tejashri-m",
      "name": "Tejashri M",
@@ -3015,7 +3124,7 @@
     "path": "people/tushar-mahajan.md",
     "title": "Tushar Mahajan",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "tushar-mahajan",
      "name": "Tushar Mahajan",
@@ -3045,7 +3154,7 @@
     "path": "people/vaibhav-shinde.md",
     "title": "Vaibhav Shinde",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "vaibhav-shinde",
      "name": "Vaibhav Shinde",
@@ -3075,7 +3184,7 @@
     "path": "people/vaishali-khandagale.md",
     "title": "Vaishali Khandagale",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "vaishali-khandagale",
      "name": "Vaishali Khandagale",
@@ -3112,7 +3221,7 @@
     "path": "people/vaishnavi.md",
     "title": "Vaishnavi",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "vaishnavi",
      "name": "Vaishnavi",
@@ -3142,7 +3251,7 @@
     "path": "people/vijay-khollam.md",
     "title": "Vijay Khollam",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "vijay-khollam",
      "name": "Vijay Khollam",
@@ -3172,7 +3281,7 @@
     "path": "people/vinod.md",
     "title": "Vinod",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "vinod",
      "name": "Vinod",
@@ -3199,7 +3308,7 @@
     "path": "people/vishal-adheli.md",
     "title": "Vishal Adheli",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "vishal-adheli",
      "name": "Vishal Adheli",
@@ -3227,7 +3336,7 @@
     "path": "people/vishal-chincholi.md",
     "title": "Vishal Chincholi",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "person",
      "slug": "vishal-chincholi",
      "name": "Vishal Chincholi",
@@ -3265,12 +3374,430 @@
   ],
   "update": [
    {
+    "id": "t-brain/2026-08-21-bootstrap-and-seed",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-21-bootstrap-and-seed.md",
+    "title": "Bootstrapped the wiki — schema, validators, CI, generated vocabularies — and seeded the backlog from the sheets",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-21",
+     "stage": "implementation",
+     "record_kind": "progress",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Bootstrapped the wiki — schema, validators, CI, generated vocabularies — and seeded the backlog from the sheets",
+     "decisions": [
+      "2026-08-21-schema-as-data-not-code"
+     ],
+     "learnings": [
+      "2026-08-21-yaml-turns-a-bare-on-into-true"
+     ],
+     "metrics": {
+      "ideas": 25,
+      "teams": 9,
+      "people": 55,
+      "validation_errors": 0,
+      "validation_warnings": 0,
+      "sample": "the whole wiki at the bootstrap commit",
+      "method": "scripts/validate_wiki.py . --stats"
+     },
+     "artifacts": [
+      {
+       "kind": "repo",
+       "url": "https://github.com/tekdi/moihackathon-brain",
+       "note": "SCHEMA.yml, generic validator, rollup and MASTERS generators, CI"
+      }
+     ],
+     "confidence": "corroborated",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>SCHEMA.yml as the machine-readable authority, a schema-driven validator, rollup and MASTERS generators, CI, then 25 ideas, 9 teams and 55 people seeded with <code>method: document</code> against the sheets.</p>\n<h3>What broke</h3>\n<p>A field named <code>on</code> in provenance entries — YAML 1.1 reads it as a boolean, so a hand-written entry would have lost it silently. Renamed to <code>date</code> before anyone else wrote a record.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Generate the human-readable vocabulary file from the machine-readable one. The copy people read is the copy that goes stale otherwise.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-design-spec-committed",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-21-design-spec-committed.md",
+    "title": "Wrote and committed the design spec: six entity types, two-axis record model, per-stage elicitation bank",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-21",
+     "stage": "prd",
+     "record_kind": "artifact",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Wrote and committed the design spec: six entity types, two-axis record model, per-stage elicitation bank",
+     "decisions": [
+      "2026-08-21-hackathon-native-entity-model",
+      "2026-08-21-file-per-update",
+      "2026-08-21-decisions-and-learnings-as-entities"
+     ],
+     "artifacts": [
+      {
+       "kind": "prd",
+       "url": "https://github.com/tekdi/moihackathon-brain/blob/main/docs/superpowers/specs/2026-08-21-moihackathon-brain-design.md",
+       "note": "the design spec, committed before any entity was written"
+      }
+     ],
+     "confidence": "corroborated",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Turned the entity model, the 16-stage SDLC vocabulary, the AI-leverage layer and the elicitation design into a spec, reviewed it, and committed it before writing a single entity file.</p>\n<h3>What we decided</h3>\n<p>The two-axis model — <code>stage</code> x <code>record_kind</code> — so that \"every model-choice across all nine teams\" is a question the wiki can answer.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>The spec took one pass and paid for itself immediately: seeding 89 entities was mechanical afterwards. Deciding the shape while writing the data is how you get a shape nobody chose.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-guard-verified",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-21-guard-verified.md",
+    "title": "Turned the routing guard into which_brain.py and verified the refusal against three real wikis",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-21",
+     "stage": "poc-validation",
+     "record_kind": "metric",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Turned the routing guard into which_brain.py and verified the refusal against three real wikis",
+     "decisions": [
+      "2026-08-21-guard-as-code-not-prose"
+     ],
+     "learnings": [
+      "2026-08-21-code-exposed-what-prose-hid"
+     ],
+     "metrics": {
+      "cwd_cases_tested": 5,
+      "wikis_covered": 3,
+      "refusals_correct": 2,
+      "false_refusals": 0,
+      "sample": "three real wikis on the author's machine plus an ordinary project repo and a non-git directory, under both a single-brain and a two-brain registry",
+      "method": "scripts/which_brain.py run per directory, exit codes checked (0 decided, 3 refuse, 4 unconfigured)"
+     },
+     "confidence": "corroborated",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Implemented the guard as a script and ran it across every directory shape that matters.</p>\n<h3>Evidence</h3>\n<p>Under a participant's single-brain registry: the hackathon wiki targets, the customer wiki refuses, the company wiki refuses, an ordinary project repo does not fire at all. Under a two-brain registry: each wiki targets itself, the customer wiki still refuses, an ordinary repo falls through to scope classification.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Verify from the installed copy, not the source tree. They are different files and only one of them is what runs.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-multi-brain-routing-merged",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-21-multi-brain-routing-merged.md",
+    "title": "Gave the ingest skill a brain registry, working-directory routing and a refusal path; merged as PR #1",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-21",
+     "stage": "integration",
+     "record_kind": "progress",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Gave the ingest skill a brain registry, working-directory routing and a refusal path; merged as PR #1",
+     "decisions": [
+      "2026-08-21-registry-ships-empty",
+      "2026-08-21-refuse-rather-than-redirect",
+      "2026-08-21-bake-the-brain-into-the-artifact"
+     ],
+     "learnings": [
+      "2026-08-21-a-default-encodes-who-you-think-installs-it",
+      "2026-08-21-read-the-api-not-the-runbook"
+     ],
+     "artifacts": [
+      {
+       "kind": "pr",
+       "url": "https://github.com/tekdi/brain-ingest-skill/pull/1",
+       "note": "multi-brain routing; merged"
+      },
+      {
+       "kind": "pr",
+       "url": "https://github.com/tekdi/brain-ingest-skill/pull/2",
+       "note": "merges the work into main, so a participant cloning the default branch gets it"
+      }
+     ],
+     "confidence": "corroborated",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "human_intervention": "Parth caught that the registry shipped defaulting to the company brain, which participants cannot access, and set the constraint that the customer brain must never be a routing target for any Tekdi install.",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>The skill could reach exactly one hardcoded wiki. It now carries a registry, and picks a target before writing: the user's explicit choice, then the working directory, then each brain's declared <code>## Scope</code>, then the default — naming the target every time.</p>\n<h3>What broke</h3>\n<p>Two things, both found by testing rather than review: retargeting the default silently shrank the registry, and an empty registry did not adopt the default brain, leaving the config inert.</p>\n<h3>What we decided</h3>\n<p>Ship unconfigured. Refuse rather than redirect when standing in an unregistered wiki.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>The interesting rule was not \"how do we route\" but \"what do we do when we are clearly not allowed to\". Answering that first shaped everything else.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-read-the-launch-sheets",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-21-read-the-launch-sheets.md",
+    "title": "Read both launch spreadsheets and found the idea numbering irreconcilable between them",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-21",
+     "stage": "discovery",
+     "record_kind": "progress",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Read both launch spreadsheets and found the idea numbering irreconcilable between them",
+     "decisions": [
+      "2026-08-21-never-match-ideas-by-number"
+     ],
+     "metrics": {
+      "ideas_submitted": 25,
+      "teams_recorded": 9,
+      "teams_whose_idea_cannot_be_resolved": 2,
+      "sample": "both launch spreadsheets read in full via the Google Drive connector on 2026-08-21",
+      "method": "title-by-title comparison of the teams sheet's problem-statement labels against the ideas sheet"
+     },
+     "confidence": "asserted",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "high",
+     "harness_pattern": "mcp-tool",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Read the idea submissions and the team consolidation sheet, and compared them.</p>\n<h3>What broke</h3>\n<p>The sheets disagree. Idea numbers do not correspond, two team labels exist in neither sheet, one row's title cell holds an unrelated meeting-notes dump, and six ideas have no submitter recorded.</p>\n<h3>What we decided</h3>\n<p>Match by title-slug only; flag what does not match. Everything measured is written into SOURCE-SEMANTICS.md rather than left in a conversation.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Read both sources before designing the join. The mapping you assume exists between two spreadsheets maintained by different people usually does not.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-ashwin-visualiser-live",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-22-ashwin-visualiser-live.md",
+    "title": "Ashwin's visualiser for this brain is live at tekdi.github.io/moc-hackathon, rebuilt on every push",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-22",
+     "stage": "implementation",
+     "record_kind": "demo",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Ashwin's visualiser for this brain is live at tekdi.github.io/moc-hackathon, rebuilt on every push",
+     "artifacts": [
+      {
+       "kind": "demo-video",
+       "url": "https://tekdi.github.io/moc-hackathon",
+       "note": "the live page (not a video — the running site)"
+      },
+      {
+       "kind": "repo",
+       "url": "https://github.com/tekdi/moc-hackathon",
+       "note": "generated publish target, force-pushed by the publish-site workflow"
+      }
+     ],
+     "confidence": "corroborated",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Ashwin built and shipped a public page over this wiki: <code>site/</code> and <code>scripts/build_site.py</code> here, published to <code>tekdi/moc-hackathon</code> by a <code>publish-site</code> workflow that rebuilds and force-pushes on every push to <code>main</code>. It shows teams, ideas, people, the SDLC stage each team has reached, and a feed of every update, decision and learning.</p>\n<p>The builder is schema-driven — it reads <code>SCHEMA.yml</code>, so a new field or entity type appears on the page without a code change. <code>REDACTED_FIELDS</code> in the builder controls what is published, since the wiki is private and the page is not.</p>\n<h3>What we decided</h3>\n<p>Publish to a separate public repository rather than Pages on this one, so a private wiki is never served from the repo that holds it.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Two independent tools now derive from <code>SCHEMA.yml</code> — the validator and this page. Neither knows what a hackathon is. That is the payoff from putting the model in data rather than in code.</p>\n<h3>Notes</h3>\n<p>Reported by Parth; corroborated against this repo — PR #1 merged by Ashwin Date, the <code>site/</code> tree, the workflow, and the live URL named in <code>site/README.md</code>. What is <em>not</em> recorded here: how it is hosted beyond Pages, and what Ashwin plans next. He should log that himself.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-installed-across-surfaces",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-22-installed-across-surfaces.md",
+    "title": "Installed the routing-capable skill across four local runtimes and built the chat-surface artifacts",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-22",
+     "stage": "environment-setup",
+     "record_kind": "progress",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Installed the routing-capable skill across four local runtimes and built the chat-surface artifacts",
+     "decisions": [
+      "2026-08-21-bake-the-brain-into-the-artifact"
+     ],
+     "metrics": {
+      "runtimes_installed": 4,
+      "skill_version": "2.4.0",
+      "artifacts_built": 2,
+      "sample": "Claude Code, Codex, Gemini CLI and the shared ~/.agents location on the author's machine",
+      "method": "install.sh --brain, then the config block and which_brain.py checked in each installed copy"
+     },
+     "confidence": "corroborated",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "medium",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Installed from the merged branch across four runtimes, and built two packaged artifacts: one for participants (hackathon brain only) and one for Parth (both brains).</p>\n<h3>What broke</h3>\n<p>The merge had landed on a feature branch rather than <code>main</code>, so anyone following the README on the default branch would still get the old single-repo skill, silently pointed at a repo participants cannot read. PR #2 fixes that and is open.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Check what the default branch gives a new person. That is what your install instructions actually install.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-schema-v2",
+    "type": "update",
+    "path": "updates/t-brain/2026-08-22-schema-v2.md",
+    "title": "Schema v2: fixed the validator bugs that had CI red for a day, and made renames and mapping-form metrics first-class",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "t-brain",
+     "date": "2026-08-22",
+     "stage": "implementation",
+     "record_kind": "progress",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Schema v2: fixed the validator bugs that had CI red for a day, and made renames and mapping-form metrics first-class",
+     "decisions": [
+      "2026-08-22-fix-the-schema-not-the-contributors"
+     ],
+     "learnings": [
+      "2026-08-22-a-contributor-inventing-a-field-is-a-schema-gap",
+      "2026-08-22-a-join-key-with-two-natural-spellings-needs-to-accept-both",
+      "2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it",
+      "2026-08-22-file-per-update-held-under-real-concurrency"
+     ],
+     "metrics": {
+      "validation_errors_before": 9,
+      "validation_errors_after": 0,
+      "spurious_errors": 7,
+      "files_migrated": 106,
+      "contributors_whose_pushes_were_failing_ci": 3,
+      "sample": "the whole wiki at 74f77e8, after 14 commits from five contributors",
+      "method": "scripts/validate_wiki.py . before and after; gh run list for the CI history"
+     },
+     "confidence": "corroborated",
+     "ai_tool": "claude-code",
+     "ai_role": "generated",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Read the nine accumulated validation errors. Seven were the validator being wrong: nested records were only addressable by their qualified name, and mapping-form metrics were rejected though two teams had independently written them that way. The other two were a rename tombstone the schema had no word for.</p>\n<p>Schema v2 is additive — <code>team.related_ideas</code>, <code>idea.related_teams</code>, <code>team.deprecated</code>, <code>team.renamed_to</code>; references resolve by bare filename; metrics accept either shape; tombstones are exempt from the requirements of a live entity. 106 files carry the new version stamp and nothing else changed.</p>\n<h3>What broke</h3>\n<p>CI had been failing on six consecutive pushes while <code>publish-site</code> succeeded, and everybody kept pushing, because nothing gated on it.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>When several people independently write something your schema rejects, they are telling you about your schema. Fix the schema, not their files.</p>"
+   },
+   {
     "id": "team-7/2026-08-21-gemini-llm-provider",
     "type": "update",
     "path": "updates/team-7/2026-08-21-gemini-llm-provider.md",
     "title": "Added a working Google Gemini LLM provider (GeminiLLMProvider) alongside the existing Anthropic and Mock providers, using the official @google/genai SDK, with zero changes to the existing pipeline/schema/correction-loop architecture.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "team-7",
      "date": "2026-08-21",
@@ -3304,7 +3831,7 @@
     "path": "updates/team-7/2026-08-21-github-backup-and-security-pass.md",
     "title": "Ran a full security cleanup ahead of an external GitHub backup — found and redacted a real-looking hardcoded Google API key vendored inside the BaForms third-party PHP source — then hit a GitHub App permission/installation block on the backup itself and worked around it by exporting a verified, secret-scrubbed ZIP.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "team-7",
      "date": "2026-08-21",
@@ -3342,7 +3869,7 @@
     "path": "updates/team-7/2026-08-21-migration-skills-package.md",
     "title": "Built and delivered 17 product-level Joomla2Node migration skills (00-joomla2node-overview plus 01-16 stage skills) for an AI agent to migrate an arbitrary Joomla extension using the existing engine — explicitly distinct from the existing joomla2node-engine-dev skill (engine development, not usage). Every skill maps to a real function, CLI command, or schema field, verified by direct reads of the current source (analyzer, blueprint, ai, generator, agent, cli packages) plus 4 parallel research subagents. Ran an independent audit subagent afterward that caught and fixed 6 real defects before delivery. Delivered SKILL-VALIDATION.md (a skill-by-skill mapping to implementation/validation/limitations), 17 individual .skill files, a combined bundle, and the standalone validation doc, all via SendUserFile.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "team-7",
      "date": "2026-08-21",
@@ -3390,7 +3917,7 @@
     "path": "updates/team-7/2026-08-21-productization-pass.md",
     "title": "Completed a final productization pass — npm-publishing readiness across all @joomla2node/* packages, a root LICENSE, a rewritten root README, and full pipeline re-verification against the real BaForms extension — with the whole repo at 278 passing tests and clean typecheck/build/genericity audit.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "team-7",
      "date": "2026-08-21",
@@ -3431,7 +3958,7 @@
     "path": "updates/team-7/2026-08-21-sandbox-network-blockers.md",
     "title": "Real Gemini/Anthropic API calls and Prisma generation are blocked in the current sandbox by network restrictions — confirmed to be an environment limitation, not a code defect.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "team-7",
      "date": "2026-08-21",
@@ -3465,7 +3992,7 @@
     "path": "updates/threadai/2026-08-22-dashboard-homepage.md",
     "title": "Homepage dashboard live at threadai.proskillnest.com, logged in as Vishal Chincholi.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "threadai",
      "date": "2026-08-22",
@@ -3502,7 +4029,7 @@
     "path": "updates/threadai/2026-08-22-prototype-complete.md",
     "title": "End-to-end WorkQueue prototype working, with Gmail, Calendar/Meet and Time Tracker integrated.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "threadai",
      "date": "2026-08-22",
@@ -3534,7 +4061,7 @@
     "path": "updates/threadai/2026-08-22-ui-live.md",
     "title": "Login screen live at localhost:3000/login (Google OAuth, ThreadAI branding).",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "threadai",
      "date": "2026-08-22",
@@ -3572,7 +4099,7 @@
     "path": "updates/trust-builders/2026-08-22-backend-complete-verify-page-live.md",
     "title": "Backend complete — full NestJS traceability chain (Farmer → Crop Cycle → Growing Activities → Harvest Lot → Collection Batch → Processing Batch → Quality Check → Finished Product), including HashService. Frontend in progress — public /verify page live (product details, full traceability, multiple source farmers/harvest lots, quantity flow, quality info, integrity verification status, tampering/affected-record warnings), plus admin foundation and the Farmers module. Next up — Crop Cycles module, then the remaining admin modules.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "update",
      "team": "trust-builders",
      "date": "2026-08-22",
@@ -3601,12 +4128,509 @@
   ],
   "decision": [
    {
+    "id": "t-brain/2026-08-21-bake-the-brain-into-the-artifact",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-bake-the-brain-into-the-artifact.md",
+    "title": "Configure chat-surface installs at build time with build.py --brain",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "integration",
+     "decision_type": "pattern-choice",
+     "decision": "Configure chat-surface installs at build time with build.py --brain",
+     "options_considered": [
+      {
+       "option": "Have the skill ask in each conversation",
+       "why_not": "There is no filesystem on those surfaces, so the answer cannot be saved and the question repeats forever."
+      },
+      {
+       "option": "Store the choice in the wiki itself",
+       "why_not": "Reading it requires already knowing which wiki to read, which is the question."
+      }
+     ],
+     "chosen_because": "The packaged artifact is the only durable configuration surface a shell-less client has. Artifacts are named after the brain so one build per audience does not overwrite the last.",
+     "tradeoff_accepted": "An admin has to build one artifact per audience instead of distributing one file.",
+     "constraints": [
+      "infra"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Consequences</h3>\n<p>Two artifacts built: one for participants (hackathon brain only) and one for Parth (both brains, defaulting to tekdibraincore). Staging happens in a temp copy, so building for one audience never leaves the source tree pointed at whoever was built last.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-decisions-and-learnings-as-entities",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-decisions-and-learnings-as-entities.md",
+    "title": "Make decisions and learnings first-class entities, not a record_kind inside updates",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "tech-design",
+     "decision_type": "architecture-choice",
+     "decision": "Make decisions and learnings first-class entities, not a record_kind inside updates",
+     "options_considered": [
+      {
+       "option": "Type them inside update files as record_kind: decision | learning",
+       "why_not": "Fewer shapes for a contributor to learn, but a decision buried in a day's status blob is unfindable — no cross-team query, and no way to supersede one without rewriting the update it sat in."
+      }
+     ],
+     "chosen_because": "A decision is addressable, individually promotable into tekdibraincore, and can be superseded on its own. 'Show me every model-choice across all nine teams' becomes a grep.",
+     "tradeoff_accepted": "Two more entity shapes. Mitigated by the contributor never filling them by hand — the assistant does, from conversation.",
+     "constraints": [
+      "time"
+     ],
+     "reversible": "costly",
+     "revisit_if": "Contributors start writing updates and skipping decisions because the extra shape is friction.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>The whole premise — Idea 20 — is that delivery <em>decisions</em> are the asset and they currently evaporate. Filing them inside status updates would have reproduced exactly the problem being solved.</p>\n<h3>Rationale</h3>\n<p>Two rules do the real work and only make sense on a first-class entity: a decision needs at least one rejected option with a reason, and a learning needs evidence and a cost. Both are enforced by the validator.</p>\n<h3>Consequences</h3>\n<p>Team 7 has since logged two decisions and two learnings of its own in this shape.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-file-per-update",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-file-per-update.md",
+    "title": "One file per update, append-only, rather than a timeline inside each team's page",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "solution-design",
+     "decision_type": "pattern-choice",
+     "decision": "One file per update, append-only, rather than a timeline inside each team's page",
+     "options_considered": [
+      {
+       "option": "Append each update to the team's own file",
+       "why_not": "Readable end to end, but six teammates pushing at once collide on one file and somebody's note gets clobbered or retried."
+      },
+      {
+       "option": "One shared file per day, all teams appended",
+       "why_not": "Matches the company brain's activities/ pattern, but every team writes the same file all day — the worst case for conflicts."
+      }
+     ],
+     "chosen_because": "Concurrent writers never touch the same file. Team pages hold current state only; history lives in updates/.",
+     "tradeoff_accepted": "More files, and a team's story has to be assembled from a directory rather than read top to bottom.",
+     "constraints": [
+      "time",
+      "skills"
+     ],
+     "reversible": "yes",
+     "revisit_if": "The volume of records per team makes a directory listing unreadable.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "corroborated",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>Nine teams, six or so people each, all logging during the same two days, several of them through an agent that commits immediately.</p>\n<h3>Rationale</h3>\n<p>The failure mode of the alternative is silent: a clobbered note looks exactly like a note nobody wrote.</p>\n<h3>Consequences</h3>\n<p><strong>Corroborated after the fact.</strong> By 2026-08-22 this wiki had taken 14 commits from five contributors — Vishal Chincholi, Gourav More, Deepak Patil, Ashwin Date and one more — with no conflict resolution and no lost record. That is the evidence the choice was right; it was a prediction when it was made.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-guard-as-code-not-prose",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-guard-as-code-not-prose.md",
+    "title": "Implement the routing guard as which_brain.py instead of leaving it as instructions in SKILL.md",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "tech-selection",
+     "decision_type": "pattern-choice",
+     "decision": "Implement the routing guard as which_brain.py instead of leaving it as instructions in SKILL.md",
+     "options_considered": [
+      {
+       "option": "Leave it as prose in Step 0a for the model to follow",
+       "why_not": "The failure mode is silent. A rule that depends on recall fires most of the time, and the times it does not are exactly the times nobody notices."
+      }
+     ],
+     "chosen_because": "Deterministic exit codes — 0 decided, 3 refuse, 4 unconfigured — for the part of routing that has one right answer.",
+     "tradeoff_accepted": "Chat surfaces cannot run it, so on those surfaces the prose is still all there is.",
+     "constraints": [
+      "skills"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Rationale</h3>\n<p>Parth asked for the refusal to be verified rather than assumed. Self-reporting compliance with one's own instructions is weak evidence, so the honest response was to make it testable.</p>\n<h3>Consequences</h3>\n<p>Writing it as code immediately exposed a bug the prose had hidden — see <a href=\"#/learning/t-brain/2026-08-21-code-exposed-what-prose-hid\">a wiki is a repo with CONVENTIONS.md</a>.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-hackathon-native-entity-model",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-hackathon-native-entity-model.md",
+    "title": "Model the event natively — ideas, teams, people, updates — rather than reusing the company brain's five folders",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "solution-design",
+     "decision_type": "architecture-choice",
+     "decision": "Model the event natively — ideas, teams, people, updates — rather than reusing the company brain's five folders",
+     "options_considered": [
+      {
+       "option": "Reuse tekdibraincore's organizations/people/projects/products/activities",
+       "why_not": "Nothing here is a client engagement. 'Team' and 'problem statement' would have no home and would be crammed into projects/, losing the idea-to-team mapping entirely."
+      },
+      {
+       "option": "Minimal: one file per team plus an append-only log",
+       "why_not": "Fastest to stand up, but the 25 submitted ideas stay trapped in a spreadsheet and nothing links a team's build back to the problem statement it chose."
+      }
+     ],
+     "chosen_because": "The event produces ideas, teams and per-team records. Modelling those directly keeps the idea backlog queryable and lets a build be traced to its problem statement.",
+     "tradeoff_accepted": "A second schema to maintain alongside tekdibraincore, and a promotion step later instead of a shared model.",
+     "constraints": [
+      "time"
+     ],
+     "reversible": "costly",
+     "revisit_if": "The brain outlives the event and needs merging into tekdibraincore — at which point the promotion path in CONVENTIONS.md is the migration.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>An empty repo and a live 48-hour event. The company brain's model was the obvious reuse candidate.</p>\n<h3>Options</h3>\n<p>Reusing the five folders was tempting because the skill already understood them — zero new schema to learn. It fails on the central relationship: 25 ideas, 9 teams, and a many-to-one mapping between them that <code>projects/</code> cannot express.</p>\n<h3>Rationale</h3>\n<p>The thing worth keeping from a hackathon is which problem statements got picked up, by whom, and what they learned. That is the mapping. A model that loses it would have been cheaper to build and worth less.</p>\n<h3>Consequences</h3>\n<p>Two schemas now exist. <code>CONVENTIONS.md</code> carries a promotion path — reusable work becomes an entry in <code>tekdibraincore</code> linking back to slugs here, never a copy.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-never-match-ideas-by-number",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-never-match-ideas-by-number.md",
+    "title": "Reconcile teams to ideas by title-slug only; flag what does not match instead of guessing",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "discovery",
+     "decision_type": "data-choice",
+     "decision": "Reconcile teams to ideas by title-slug only; flag what does not match instead of guessing",
+     "options_considered": [
+      {
+       "option": "Match on the idea numbers the teams sheet gives",
+       "why_not": "The two sheets number ideas differently. Team 1's '(Idea 13) Agritech Predictive Analytics' is 'Smart API Environment Guard' in the ideas sheet, and the Agritech title exists in neither. Matching by number attributes a team's entire build to the wrong problem statement."
+      },
+      {
+       "option": "Fuzzy-match the titles",
+       "why_not": "Two of the nine labels — 'Agritech Predictive Analytics & Intent' and 'CivicLens' — have no counterpart in the ideas sheet at all, so fuzzing would invent a nearest neighbour and it would look authoritative."
+      }
+     ],
+     "chosen_because": "A wrong link is worse than a missing one: nothing downstream questions it. Unmatched teams carry idea_unresolved plus the label verbatim, so somebody can ask the team.",
+     "tradeoff_accepted": "Two of nine teams have no idea linked, and the wiki looks incomplete until a human resolves them.",
+     "constraints": [
+      "data"
+     ],
+     "reversible": "yes",
+     "revisit_if": "An organiser publishes a canonical idea-number mapping.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>Seeding from two spreadsheets written at different times by different people.</p>\n<h3>Consequences</h3>\n<p>Team 1 and Falcon Forge (Team 8) are still unresolved and need asking. Recorded in SOURCE-SEMANTICS.md so the next person does not rediscover it.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-refuse-rather-than-redirect",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-refuse-rather-than-redirect.md",
+    "title": "Standing in an unregistered wiki writes nothing, rather than falling back to the default brain",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "security-privacy-review",
+     "decision_type": "architecture-choice",
+     "decision": "Standing in an unregistered wiki writes nothing, rather than falling back to the default brain",
+     "options_considered": [
+      {
+       "option": "Fall back to the configured default brain",
+       "why_not": "Content plainly meant for the wiki you are standing in ends up in one with a different audience, validates cleanly there, and nothing afterwards says it is misfiled."
+      },
+      {
+       "option": "Warn and write anyway",
+       "why_not": "Same outcome, with a message that gets skimmed. A warning is not a control."
+      }
+     ],
+     "chosen_because": "A refusal is loud, immediate and recoverable. A misroute is silent and permanent.",
+     "tradeoff_accepted": "A legitimate capture is occasionally blocked and needs the registry widened deliberately.",
+     "constraints": [
+      "compliance",
+      "access"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>Parth's constraint, stated plainly: the customer brain he is building must never be a routing target for his install or anyone's at Tekdi.</p>\n<h3>Rationale</h3>\n<p>Its absence from the registry is what enforces that — so the behaviour when standing inside it has to be refusal, not redirection. Redirecting would take customer-context content and put it in the company brain, which is the exact outcome the exclusion exists to prevent.</p>\n<h3>Consequences</h3>\n<p>Verified from the installed copy: in that repo the guard returns <code>REFUSE</code>, exit 3, and names the repository. In an ordinary project repo it does not fire at all.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-registry-ships-empty",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-registry-ships-empty.md",
+    "title": "Ship the skill with no brain configured, and ask at install or on first use",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "solution-design",
+     "decision_type": "scope-cut",
+     "decision": "Ship the skill with no brain configured, and ask at install or on first use",
+     "options_considered": [
+      {
+       "option": "Default to tekdi/tekdibraincore, as the skill already did",
+       "why_not": "A hackathon participant has no access to that repo. Their first capture 404s and the error looks like their own mistake — the worst possible first impression of a tool nobody asked them to install."
+      },
+      {
+       "option": "Ask in every conversation instead of persisting an answer",
+       "why_not": "Tolerable with a shell, unusable on a chat surface, where there is nowhere to save the answer and the question therefore never stops."
+      }
+     ],
+     "chosen_because": "Which wiki an install serves depends entirely on who installed it, so there is no defensible default. A single-entry registry then behaves exactly like the old single-repo config: no routing, no questions.",
+     "tradeoff_accepted": "One extra question at install time for everybody.",
+     "constraints": [
+      "access"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "asserted",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>The assistant had already implemented this with <code>[tekdibraincore, moihackathon-brain]</code> shipped and the company brain as default.</p>\n<h3>Rationale</h3>\n<p><strong>Parth caught it mid-implementation</strong>: hackathon participants will install this pointed only at the hackathon brain and will not have the company brain at all. The shipped default encoded an assumption about who installs the skill, and that assumption was wrong for the largest group of installers.</p>\n<h3>Consequences</h3>\n<p><code>install.sh</code> asks; where it was not asked, the skill asks once on first use, verifies reachability, and offers to persist the answer. See the learning <a href=\"#/learning/t-brain/2026-08-21-a-default-encodes-who-you-think-installs-it\">a default is an assumption about your user</a>.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-schema-as-data-not-code",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-21-schema-as-data-not-code.md",
+    "title": "Put the entity model in a machine-readable SCHEMA.yml and write a generic validator, rather than patching the company brain's validator",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "tech-selection",
+     "decision_type": "build-vs-reuse",
+     "decision": "Put the entity model in a machine-readable SCHEMA.yml and write a generic validator, rather than patching the company brain's validator",
+     "options_considered": [
+      {
+       "option": "Patch the existing 961-line validate_wiki.py",
+       "why_not": "It is welded to the five-folder model — the entity graph, per-folder required fields, and several rules keyed on `projects` and `people`. Untangling it during a live event was the wrong risk for the wrong reward."
+      },
+      {
+       "option": "Keep CONVENTIONS.md prose as the authority and parse it",
+       "why_not": "Prose parsing is fragile, and the parser would silently disagree with the prose the moment either changed."
+      }
+     ],
+     "chosen_because": "The wiki holds its own model as data. The validator is an engine that reads it and knows nothing about hackathons; MASTERS.md is generated from it, so the prose humans read cannot drift from what CI enforces.",
+     "tradeoff_accepted": "A second validator to maintain, and SCHEMA.yml becomes a file that must not rot.",
+     "constraints": [
+      "time"
+     ],
+     "reversible": "costly",
+     "revisit_if": "The two validators diverge enough that a contributor's file passes one and fails the other.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-21",
+     "confidence": "corroborated",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>Context</h3>\n<p>Parth's constraint: nothing hardcoded — the brain store should power how the tooling behaves.</p>\n<h3>Rationale</h3>\n<p>Everything the checker needs is a fact about the model, and facts belong in data.</p>\n<h3>Consequences</h3>\n<p><strong>Corroborated independently.</strong> Ashwin's visualiser (<code>scripts/build_site.py</code>) reads <code>SCHEMA.yml</code> too, and picks up new fields and entity types without a code change. Two tools now derive from one declaration, which was the argument for the choice before there was a second tool to make it.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-fix-the-schema-not-the-contributors",
+    "type": "decision",
+    "path": "decisions/t-brain/2026-08-22-fix-the-schema-not-the-contributors.md",
+    "title": "Accept the shapes contributors actually wrote — mapping-form metrics, rename tombstones — instead of correcting their files",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "t-brain",
+     "stage": "implementation",
+     "decision_type": "pattern-choice",
+     "decision": "Accept the shapes contributors actually wrote — mapping-form metrics, rename tombstones — instead of correcting their files",
+     "options_considered": [
+      {
+       "option": "Enforce the documented list form and rewrite the offending records",
+       "why_not": "Two teams independently reached for the compact mapping. That is the schema being unnatural, not two people being careless — and editing somebody's record to satisfy a validator points the correction the wrong way."
+      },
+      {
+       "option": "Leave CI red and tell people to fix their own files",
+       "why_not": "CI had already failed on six consecutive pushes while everybody kept pushing. A check nobody can act on gets ignored, and then the real errors are invisible too."
+      }
+     ],
+     "chosen_because": "Both metric shapes carry the same information, and the rule that matters — no number without a sample and a method — holds in either. The rename fields were invented because the schema had no way to say 'renamed'.",
+     "tradeoff_accepted": "The validator accepts two shapes for one field, which is more code and more to document.",
+     "constraints": [
+      "time"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "drafted",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Context</h3>\n<p>Nine validation errors had accumulated from other teams' pushes. Reading them, seven were the validator being wrong, not the records.</p>\n<h3>Rationale</h3>\n<p>Contributors inventing a field is a schema gap. Contributors converging on an undocumented shape is a design signal. Neither is a user error.</p>\n<h3>Consequences</h3>\n<p>Schema v2, additive: <code>team.related_ideas</code>, <code>idea.related_teams</code>, <code>team.deprecated</code>, <code>team.renamed_to</code>; references resolve by bare filename as well as <code>team/filename</code>; metrics accept the mapping form; tombstones are exempt from the requirements of a live entity. Nine errors to zero. The specific call was the assistant's, under Parth's standing instruction that the schema serve the brain rather than the reverse.</p>"
+   },
+   {
     "id": "team-7/2026-08-21-github-backup-workaround",
     "type": "decision",
     "path": "decisions/team-7/2026-08-21-github-backup-workaround.md",
     "title": "Export the complete, secret-scrubbed project as a ZIP for manual push to a private GitHub repo, instead of an automated backup.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "decision",
      "team": "team-7",
      "stage": "security-privacy-review",
@@ -3649,7 +4673,7 @@
     "path": "decisions/team-7/2026-08-21-per-stage-skills-vs-monolith.md",
     "title": "Split the migration guidance into 17 separate per-stage skills (00 overview + 01-16 stages) rather than one large end-to-end migration skill.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "decision",
      "team": "team-7",
      "stage": "productisation",
@@ -3689,12 +4713,307 @@
   ],
   "learning": [
    {
+    "id": "t-brain/2026-08-21-a-default-encodes-who-you-think-installs-it",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-21-a-default-encodes-who-you-think-installs-it.md",
+    "title": "A shipped default is an assumption about who installs the thing, and it was wrong for the largest group of installers",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "solution-design",
+     "kind": "failed",
+     "learning": "A shipped default is an assumption about who installs the thing, and it was wrong for the largest group of installers",
+     "evidence": "The registry was implemented shipping `[tekdibraincore, moihackathon-brain]` with the company brain as default. Hackathon participants have no access to tekdibraincore, so every participant's first capture would have 404'd against a private repo — and the error message would have looked like their own misconfiguration. Caught by Parth mid-implementation, not by the person writing it.",
+     "generalises_to": "Any tool with a default target: the default encodes a belief about the median user, and that belief should be stated out loud before it is compiled in.",
+     "would_do_differently": "Ask who the largest group of installers is before choosing a default, and prefer shipping unconfigured when the answer differs by audience.",
+     "cost_of_lesson": "One implementation round reworked; caught before anything shipped",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-21",
+     "ai_role": "generated",
+     "ai_failure_mode": "overconfident-wrong",
+     "harness_pattern": "skill",
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>What happened</h3>\n<p>The assistant designed the registry around its own context — a machine with the company brain on it — and defaulted to that.</p>\n<h3>Evidence</h3>\n<p>The shipped config was <code>repo: tekdi/tekdibraincore</code> until Parth pointed out that participants will only ever have the hackathon brain.</p>\n<h3>What we'd do differently</h3>\n<p>The registry now ships empty, which has no default to be wrong about.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-code-exposed-what-prose-hid",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-21-code-exposed-what-prose-hid.md",
+    "title": "Writing a rule as code exposed a case the prose version had silently gotten wrong",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "tech-selection",
+     "kind": "worked",
+     "learning": "Writing a rule as code exposed a case the prose version had silently gotten wrong",
+     "evidence": "The prose said 'the working directory wins'. Implementing it forced the question of what counts as a wiki — and the first test matrix showed the naive version would refuse in every ordinary project repo, blocking all captures from application code. The fix (a wiki is a repo with CONVENTIONS.md at its root) only became visible once it had to be written down as a condition.",
+     "generalises_to": "Any rule stated as prose for a model to follow: implementing it is a completeness check on the rule itself, independent of whether the code ever runs.",
+     "would_do_differently": "Write the deterministic part first, then write the prose from it — not the other way round.",
+     "cost_of_lesson": "~20 minutes, before anything was installed",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-21",
+     "ai_role": "generated",
+     "harness_pattern": "skill",
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>What happened</h3>\n<p>The routing guard existed as instructions in SKILL.md. Turning it into <code>which_brain.py</code> required deciding what \"inside a wiki\" means, which the prose had left to intuition.</p>\n<h3>Evidence</h3>\n<p>First run of the matrix: an ordinary project repo would have been treated the same as a wiki, so the refusal would have fired everywhere.</p>\n<h3>What we'd do differently</h3>\n<p>Treat prose rules with a silent failure mode as unfinished until something deterministic can answer them.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-read-the-api-not-the-runbook",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-21-read-the-api-not-the-runbook.md",
+    "title": "The documented cause of a connector failure was wrong, and it was asserted twice before anyone checked the API",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "integration",
+     "kind": "failed",
+     "learning": "The documented cause of a connector failure was wrong, and it was asserted twice before anyone checked the API",
+     "evidence": "USAGE.md and docs/adopting.md both said a private-repo connector failure means an org admin has not approved the OAuth app. `gh api /orgs/tekdi/installations` showed the app was installed and `repository_selection: selected` — the actual cause was simply that a newly created repo was not in the installation's list. The wrong diagnosis was given to Parth twice, including as an action item.",
+     "generalises_to": "Any 'ask your admin' runbook step: the API usually knows the real state, and a plausible documented cause survives unchallenged precisely because it is documented.",
+     "would_do_differently": "Query the state before repeating a documented diagnosis — one command would have replaced a paragraph of confident wrong advice.",
+     "cost_of_lesson": "~30 minutes of wrong advice, plus doc corrections in two repositories",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-21",
+     "ai_role": "generated",
+     "ai_failure_mode": "overconfident-wrong",
+     "confidence": "corroborated",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>What happened</h3>\n<p>The skill's own documentation named a cause, and it was repeated as diagnosis rather than treated as a hypothesis.</p>\n<h3>Evidence</h3>\n<p>The app installation existed with <code>scope=selected</code>, which no amount of OAuth approval would have fixed.</p>\n<h3>What we'd do differently</h3>\n<p>Both docs now describe the two distinct causes and give the <code>gh api</code> query that distinguishes them.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-21-yaml-turns-a-bare-on-into-true",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-21-yaml-turns-a-bare-on-into-true.md",
+    "title": "A field named `on` silently disappears from hand-written YAML frontmatter",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "implementation",
+     "kind": "surprised",
+     "learning": "A field named `on` silently disappears from hand-written YAML frontmatter",
+     "evidence": "YAML 1.1 parses bare `on`, `off`, `yes` and `no` as booleans, so a source entry written `on: 2026-08-21` becomes the key `True` and every lookup for `on` misses. Confirmed with a probe file: the validator reported the key as `True`, a bool.",
+     "generalises_to": "Any hand-authored YAML schema: field names that collide with YAML 1.1 booleans are a trap, and the failure is a missing field rather than a parse error.",
+     "would_do_differently": "Avoid the reserved words entirely when naming fields — the rename cost nothing on day one and would have cost a migration later.",
+     "cost_of_lesson": "~15 minutes, plus a field rename across 89 files before anyone else had written any",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-21",
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-21"
+    },
+    "body": "<h3>What happened</h3>\n<p>Provenance entries were <code>{system, method, on}</code>. Generated files quoted the key and worked; a hand-written entry would not have.</p>\n<h3>Evidence</h3>\n<p>A probe file with <code>on: 2026-08-21</code> produced <code>key True parsed as a bool</code>.</p>\n<h3>What we'd do differently</h3>\n<p>The field is now <code>date</code>, and the validator rejects any non-string key with an explanation, so the next instance of this is a clear error rather than a vanishing field.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-a-contributor-inventing-a-field-is-a-schema-gap",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-22-a-contributor-inventing-a-field-is-a-schema-gap.md",
+    "title": "When a contributor invents frontmatter fields, the schema is missing a concept — it is not user error",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "implementation",
+     "kind": "surprised",
+     "learning": "When a contributor invents frontmatter fields, the schema is missing a concept — it is not user error",
+     "evidence": "Whoever renamed Team 9 to Trust Builders left the old file behind with `deprecated: true` and `renamed_to: trust-builders` — fields that did not exist in the schema. It was exactly the right thing to do (a slug is a join key other files point at) and the validator reported it as three errors and three warnings. Separately, two teams independently wrote `metrics:` as a compact mapping rather than the documented list.",
+     "generalises_to": "Any shared schema: divergence that several people reach for independently is a design signal, and treating it as non-compliance points the correction the wrong way.",
+     "would_do_differently": "Watch what people actually write in the first day and treat it as a design review, rather than checking their files against what was specified.",
+     "cost_of_lesson": "Nine validation errors, seven of them spurious; ~40 minutes to make the schema accept reality",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "harness_pattern": "skill",
+     "confidence": "corroborated",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>Two independent inventions, both sensible, both reported as errors.</p>\n<h3>Evidence</h3>\n<p><code>teams/team-9.md</code> carries a tombstone the schema had no word for. <code>updates/team-7/*</code> and the productisation pass both use mapping-form metrics.</p>\n<h3>What we'd do differently</h3>\n<p>Nothing about the contributors' behaviour. Schema v2 now supports renames as a first-class thing and accepts both metric shapes, with the rule that mattered — no number without a sample and a method — enforced in both.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-a-join-key-with-two-natural-spellings-needs-to-accept-both",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-22-a-join-key-with-two-natural-spellings-needs-to-accept-both.md",
+    "title": "The validator demanded qualified references while every contributor wrote the bare filename, producing dangling-reference errors against files that plainly existed",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "poc-validation",
+     "kind": "failed",
+     "learning": "The validator demanded qualified references while every contributor wrote the bare filename, producing dangling-reference errors against files that plainly existed",
+     "evidence": "`updates/team-7/2026-08-21-migration-skills-package.md` referenced `2026-08-21-per-stage-skills-vs-monolith`, which exists at `decisions/team-7/2026-08-21-per-stage-skills-vs-monolith.md`. The validator registered nested records only as `team-7/<filename>` and reported the reference as unresolved.",
+     "generalises_to": "Any identifier with a short local form and a long qualified one — accept both and normalise, rather than picking one and calling the other a mistake.",
+     "would_do_differently": "Write the reference examples in CONVENTIONS.md and test the validator against them, instead of testing only against files the same author generated.",
+     "cost_of_lesson": "Two false errors contributing to a day of red CI",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>Seeded data was written by the same script that defined the convention, so every reference in it was qualified and the bug could not surface until somebody else wrote a record by hand.</p>\n<h3>Evidence</h3>\n<p>Two <code>does not resolve in decisions/</code> errors against files present in the repo.</p>\n<h3>What we'd do differently</h3>\n<p>Both forms now resolve, and CONVENTIONS.md documents the short one as normal.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it.md",
+    "title": "Validation failed on six consecutive pushes and everybody kept pushing, because nothing gated on it",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "environment-setup",
+     "kind": "surprised",
+     "learning": "Validation failed on six consecutive pushes and everybody kept pushing, because nothing gated on it",
+     "evidence": "`gh run list` for this repo: `validate failure` on 74f77e8, f8f462e, a546861, 634ae49 and earlier, while `publish-site success` ran on the same commits. Nine accumulated errors were sitting in the wiki, and no contributor had reason to notice.",
+     "generalises_to": "Any check added to a shared repo mid-project: without a gate or an owner watching it, a red build becomes background noise within a day, and then real errors are invisible too.",
+     "would_do_differently": "Either make the check block the merge, or have it comment on the push so the failure reaches the person who caused it. An unwatched check is decoration.",
+     "cost_of_lesson": "About a day of red CI; seven of the nine errors turned out to be validator bugs rather than bad records",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "harness_pattern": "hooks",
+     "confidence": "corroborated",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>CI was wired on day one and then nobody looked at it, including the person who wired it.</p>\n<h3>Evidence</h3>\n<p>Six failing <code>validate</code> runs across pushes from three different contributors, none of which stopped anything.</p>\n<h3>What we'd do differently</h3>\n<p>Read the first few CI runs after adding a check to somebody else's workflow. The information was one command away for a full day.</p>"
+   },
+   {
+    "id": "t-brain/2026-08-22-file-per-update-held-under-real-concurrency",
+    "type": "learning",
+    "path": "learnings/t-brain/2026-08-22-file-per-update-held-under-real-concurrency.md",
+    "title": "The append-only file-per-record design took five concurrent contributors with no conflicts and no lost records",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "t-brain",
+     "stage": "poc-validation",
+     "kind": "worked",
+     "learning": "The append-only file-per-record design took five concurrent contributors with no conflicts and no lost records",
+     "evidence": "14 commits landed on main from five contributors (Vishal Chincholi, Gourav More, Deepak Patil, Ashwin Date and one other) between the bootstrap and 2026-08-22, several of them agent-driven and committing immediately. No conflict resolution, no clobbered records, no force pushes.",
+     "generalises_to": "Any multi-writer markdown store: one file per immutable record removes the whole class of write conflicts that a shared timeline file creates.",
+     "would_do_differently": "Nothing — but the prediction was untested when it was made, and it is worth noticing that it was a prediction.",
+     "cost_of_lesson": "None; this is the choice paying off rather than costing",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, PRs and CI runs read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Evidence</h3>\n<p><code>git log</code> on this repo: five distinct authors, 14 commits, zero conflict commits. Team pages were edited concurrently with per-record files being added under <code>updates/</code>, <code>decisions/</code> and <code>learnings/</code>.</p>"
+   },
+   {
     "id": "team-7/2026-08-21-independent-audit-catches-fabrication",
     "type": "learning",
     "path": "learnings/team-7/2026-08-21-independent-audit-catches-fabrication.md",
     "title": "Running an independent audit subagent — with no memory of how the first draft was produced — against the same real source caught 6 real defects in AI-authored skill documentation, including one outright fabricated import and a stale architecture diagram copied from a stale README, that the original drafting pass had missed.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "learning",
      "team": "team-7",
      "stage": "productisation",
@@ -3731,7 +5050,7 @@
     "path": "learnings/team-7/2026-08-21-security-cleanup.md",
     "title": "A full repo-wide secret scan ahead of an external backup caught a real-looking hardcoded Google API key vendored inside the BaForms third-party PHP source.",
     "fm": {
-     "schema_version": 1,
+     "schema_version": 2,
      "type": "learning",
      "team": "team-7",
      "stage": "security-privacy-review",
@@ -3762,6 +5081,18 @@
   ]
  },
  "commits": [
+  {
+   "sha": "678846d",
+   "author": "Parth Lawate",
+   "date": "2026-08-22T09:27:14+05:30",
+   "subject": "hack: T Brain — the brain itself, multi-brain routing, and the visualiser"
+  },
+  {
+   "sha": "409f900",
+   "author": "Parth Lawate",
+   "date": "2026-08-22T09:27:14+05:30",
+   "subject": "hack: schema v2 — renames, mapping-form metrics, references by filename"
+  },
   {
    "sha": "74f77e8",
    "author": "Gourav More",
