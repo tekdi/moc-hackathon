@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T07:10:36+00:00",
+ "built_at": "2026-08-22T07:40:11+00:00",
  "public": true,
- "commit": "8abfd2b",
+ "commit": "bacdf17",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 3,
  "vocabularies": {
@@ -6798,7 +6798,7 @@
       "priyanka-sahu"
      ],
      "idea": "ai-powered-digital-readiness-and-assessment-companion",
-     "status": "building",
+     "status": "demo-ready",
      "stage_gate": "integration",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
@@ -6819,7 +6819,7 @@
       "team-5--ai-powered-digital-readiness-and"
      ]
     },
-    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-digital-readiness-and-assessment-companion\">ai-powered-digital-readiness-and-assessment-companion</a>.</p>\n<h3>Current state</h3>\n<p>Building, currently at the integration stage. No further detail reported yet.</p>\n<h3>Notes</h3>\n<p>Team name confirmed as <strong>Linguistic Legends</strong> by team captain Gourav More (2026-08-22). The slug remains <code>team-5</code> per convention (slugs are not renamed once other entities reference them).</p>"
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/ai-powered-digital-readiness-and-assessment-companion\">ai-powered-digital-readiness-and-assessment-companion</a>.</p>\n<h3>Current state</h3>\n<p>Demo-ready. No further detail reported yet.</p>\n<h3>Notes</h3>\n<p>Team name confirmed as <strong>Linguistic Legends</strong> by team captain Gourav More (2026-08-22). The slug remains <code>team-5</code> per convention (slugs are not renamed once other entities reference them).</p>"
    },
    {
     "id": "team-7",
@@ -12424,6 +12424,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "bacdf17",
+   "author": "Gourav More",
+   "date": "2026-08-22T13:10:01+05:30",
+   "subject": "hack: team-5 (Linguistic Legends) status -> demo-ready"
+  },
   {
    "sha": "8abfd2b",
    "author": "Vaishali K",
