@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T04:45:19+00:00",
+ "built_at": "2026-08-22T04:46:14+00:00",
  "public": true,
- "commit": "e9876d0",
+ "commit": "c8226d5",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 2,
  "vocabularies": {
@@ -1270,18 +1270,45 @@
      ],
      "idea_unresolved": true,
      "idea_label_as_stated": "(Idea 13) Agritech Predictive Analytics & Intent",
+     "repos": [
+      "https://github.com/mahajanmahesh935/khetisetu"
+     ],
+     "status": "building",
+     "stage_gate": "poc-validation",
+     "stages_completed": [
+      "solution-design",
+      "tech-design",
+      "tech-selection",
+      "environment-setup",
+      "implementation",
+      "integration",
+      "poc-validation"
+     ],
+     "current_summary": "Building KhetiSetu (also FasalCast in the API title) — an agritech decision-support platform pairing a farmer-facing crop-opportunity score with a business-facing fertilizer-demand forecast. FastAPI + PostgreSQL/pgvector backend, TanStack Start frontend, XGBoost batch forecasting, pgvector RAG over agronomic guides.",
+     "last_update": "2026-08-22",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "probed with git rather than gh (gh CLI unavailable) — 21 commits on branch hack, 7 authors matching this roster"
       }
      ]
     },
-    "body": "<h3>What they're building</h3>\n<p><strong>Unresolved.</strong> The teams sheet records this team's problem statement as <code>(Idea 13) Agritech Predictive Analytics &amp;amp; Intent</code>. No idea with that title exists in the ideas sheet, and the idea numbers in the two sheets do not correspond — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than matched by number, which would attribute the whole build to the wrong problem statement.</p>\n<p>Ask the team which problem statement they are actually building, then link it.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
+    "body": "<h3>What they're building</h3>\n<p><strong>KhetiSetu</strong> — \"From Crop Decisions to Smart Supply.\" Two audiences off one data model:</p>\n<ul>\n<li><strong>Farmers</strong> get a crop-opportunity score for their district and sowing month,</li>\n</ul>\n<p>computed live from a weighted formula so their acreage, irrigation answer and a rainfall what-if slider all affect it. Four components (weather fit, demand vs supply, demand trend, stability) are shown separately with a plain-language reason each, and confidence is reported as a second, independent number.</p>\n<ul>\n<li><strong>Agri-businesses</strong> get a fertilizer-demand forecast with intervals, plus stock</li>\n</ul>\n<p>actions derived from it, written nightly to <code>forecast</code> and <code>recommendations</code>.</p>\n<p>Stack: FastAPI, PostgreSQL 16 with pgvector, psycopg3, XGBoost, TanStack Start / React 19 / Tailwind. Maharashtra only — 7 districts, 13 crops, 29 products.</p>\n<p><code>stack</code> is left blank in the frontmatter deliberately: the <code>technology</code> vocabulary in <code>SCHEMA.yml</code> is still empty, and populating it is a shared schema change rather than one team's capture. The stack is recorded in prose here instead.</p>\n<h3>Idea link — still unresolved</h3>\n<p>Unchanged from the seeded state, and deliberately so. The teams sheet records <code>(Idea 13) Agritech Predictive Analytics &amp;amp; Intent</code>; no idea with that title exists in <code>ideas/</code>, and <code>ideas-sheet</code> was unreachable when this was written, so it could not be checked under another title. The build is unmistakably agritech predictive analytics with a farmer-intent table — but matching it to an idea slug on that resemblance is the same guess the original note warned against.</p>\n<p>Someone on the team should either name the real idea slug, or create a <code>self-registered</code> idea for it.</p>\n<h3>Current state</h3>\n<p>At <code>poc-validation</code>. Both analytics layers are built and the backend suite is green (101 tests). Frontend is wired to the live API.</p>\n<p>Known open items as of this update: two data migrations are written but not applied, so one district still shows an uncultivated crop at 100% opportunity; the RAG layer retrieves without a crop filter in ask-mode, so one crop's question can be answered from another crop's document.</p>\n<p>See <code>updates/impact-makers/</code> for the narrative log and <code>decisions/impact-makers/</code> for trade-offs.</p>"
    },
    {
     "id": "quality-rocks",
@@ -3416,6 +3443,85 @@
   ],
   "update": [
    {
+    "id": "impact-makers/2026-08-22-ml-and-scoring-layers",
+    "type": "update",
+    "path": "updates/impact-makers/2026-08-22-ml-and-scoring-layers.md",
+    "title": "Built and shipped both analytics layers of KhetiSetu — a nightly fertilizer-demand forecast and a live crop-opportunity score — and fixed three defects that were visible to users",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "impact-makers",
+     "date": "2026-08-22",
+     "stage": "poc-validation",
+     "record_kind": "progress",
+     "reported_by": "mahesh-mahajan",
+     "logged_by": "mahajanmahesh935",
+     "what_changed": "Built and shipped both analytics layers of KhetiSetu — a nightly fertilizer-demand forecast and a live crop-opportunity score — and fixed three defects that were visible to users",
+     "decisions": [
+      "2026-08-22-forecast-at-district-quarter",
+      "2026-08-22-crop-score-formula-not-model",
+      "2026-08-22-etc-not-field-water"
+     ],
+     "learnings": [
+      "2026-08-22-measure-the-baseline-first",
+      "2026-08-22-adversarial-pass-on-ai-sourced-domain-data",
+      "2026-08-22-step-function-killed-the-slider"
+     ],
+     "metrics": {
+      "forecast_wape_district_quarter": 0.576,
+      "baseline_wape_district_quarter": 0.722,
+      "forecast_wape_product_month": 1.003,
+      "interval_coverage_before_calibration": 0.407,
+      "interval_coverage_after_calibration": 0.704,
+      "forecast_rows_written": 2898,
+      "backend_tests_passing": 101,
+      "crops_with_sourced_agronomic_bands": 13,
+      "agronomic_corrections_from_verify_pass": 22,
+      "sample": "2024 holdout for WAPE; 4598 ACTUAL sales rows over 2020-2024, 7 districts, 25 products",
+      "method": "walk-forward split, train <=2022 / validate 2023 / test 2024; ml/baseline.py and ml/train.py"
+     },
+     "artifacts": [
+      {
+       "kind": "repo",
+       "url": "https://github.com/mahajanmahesh935/khetisetu",
+       "note": "backend/ml (features, baseline, train, predict, recommend, nightly runner), app/services/scoring.py, app/services/crop_requirements.py"
+      },
+      {
+       "kind": "eval-results",
+       "note": "ml/artifacts/*_meta.json — per-run WAPE at both levels, interval coverage, calibration offsets"
+      },
+      {
+       "kind": "dataset",
+       "note": "crop_requirements_provenance.json — 13 crops, citations, verifier disagreements, 22 corrections applied"
+      }
+     ],
+     "confidence": "asserted",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "ai_failure_mode": "overconfident-wrong",
+     "harness_pattern": "workflow",
+     "human_intervention": "Deciding that a 97.6% WAPE model was not shippable, and re-scoping the forecast granularity rather than filling the declared table with noise. The model reported its own numbers accurately; the judgement that they meant \"do not ship this\" was human. Also: choosing not to link the team's idea rather than guess it.",
+     "acceleration": "~2h lost to fitting the wrong granularity before the baseline exposed it; ~30min of verification spend that caught a 2x error in farmer-facing agronomic advice",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "probed with git rather than gh (gh CLI unavailable) — 21 commits on branch hack, 7 authors matching the team roster"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Two layers, deliberately different in kind.</p>\n<p><strong>Job 1 — nightly fertilizer-demand forecast.</strong> XGBoost over a pooled panel built from 4,598 real sales rows, writing <code>forecast</code> and <code>recommendations</code> for the business dashboard. Forecasts at district x quarter and allocates down to product-month; intervals are recalibrated from held-out residuals rather than trusted from the model's quantile heads. Runs as one flocked nightly script.</p>\n<p><strong>Job 2 — live crop-opportunity score.</strong> A deterministic weighted formula, not a model, so the farmer's acreage, irrigation answer and rainfall slider all reach it at request time. Four components at 0-100, each returned separately with a plain-language reason. Confidence is a second, independent number.</p>\n<h3>What broke</h3>\n<p>Three things, all user-visible, none of which errored:</p>\n<ol>\n<li>The rainfall slider was inert across its whole UI range. Threshold-based scoring.</li>\n<li>Every crop in a district got an identical weather score — same root cause, the</li>\n</ol>\n<p>function took no crop argument.</p>\n<ol>\n<li>The same crop showed different scores on the list and its own detail page, because</li>\n</ol>\n<p>the detail endpoint ignored <code>sowing_month</code> and silently scored a different month.</p>\n<p>Also found and fixed: <code>quantity_mt</code> / <code>forecast_mt</code> / <code>current_stock_mt</code> on the business API were a 1000x mislabel — the pipeline produces packets, not metric tons — on fields feeding a dispatch decision.</p>\n<h3>What we decided</h3>\n<p>The three linked decisions. The one worth reading is the granularity choice: the table's declared shape was treated as a specification, and measuring first showed it could not be honoured honestly.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Compute the stupid baseline before you believe your model — predicting zero scored 100% and our \"winning\" model scored 97.6%. Sweep the range of any control you ship, because a slider that returns 200 and a plausible number on every drag looks fine until someone drags it twice. And when an AI sources domain data you cannot check by eye, run a second pass told to refute rather than review: ours produced 22 corrections, and the worst error was the one the first pass had explicitly justified.</p>"
+   },
+   {
     "id": "t-brain/2026-08-21-bootstrap-and-seed",
     "type": "update",
     "path": "updates/t-brain/2026-08-21-bootstrap-and-seed.md",
@@ -4280,6 +4386,159 @@
   ],
   "decision": [
    {
+    "id": "impact-makers/2026-08-22-crop-score-formula-not-model",
+    "type": "decision",
+    "path": "decisions/impact-makers/2026-08-22-crop-score-formula-not-model.md",
+    "title": "Score crop opportunity for farmers with a deterministic weighted formula, not a trained model",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "impact-makers",
+     "stage": "solution-design",
+     "decision_type": "architecture-choice",
+     "decision": "Score crop opportunity for farmers with a deterministic weighted formula, not a trained model",
+     "options_considered": [
+      {
+       "option": "Train a model on the same panel the fertilizer forecast uses",
+       "why_not": "A model fitted last night cannot see what the farmer typed this morning. The form collects acreage and irrigation, and the what-if screen lets them drag a rainfall slider — none of which reaches a nightly artifact. It would also inherit the same sparsity that made product-month forecasting noise."
+      },
+      {
+       "option": "Serve a nightly-precomputed score per district/crop/month",
+       "why_not": "Same problem in cheaper form. Precomputation cannot respond to a slider, and the slider is the demo's headline interaction."
+      }
+     ],
+     "chosen_because": "The farmer's own inputs are the most informative signal available, and they only exist at request time. A formula recomputes from them instantly, and every term can be shown to the farmer and argued with — four components at 0-100 (weather fit 35%, demand vs supply 30%, demand trend 20%, stability 15%), each returned separately with a plain-language reason.",
+     "tradeoff_accepted": "Gives up any ability to learn interactions the weights do not encode. The weights are a judgement call, not a fit — they live as one named constant block so they are visibly tunable rather than buried.",
+     "constraints": [
+      "data",
+      "time"
+     ],
+     "reversible": "yes",
+     "revisit_if": "Enough labelled outcome data accumulates to fit crop-choice outcomes rather than assert weights — i.e. once actual farmer results, not just intents, are recorded.",
+     "decided_by": "mahesh-mahajan",
+     "decided_on": "2026-08-22",
+     "confidence": "asserted",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "workflow",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Context</h3>\n<p>Two jobs looked similar and are not. Predicting next month's fertilizer demand for the business is a batch forecasting problem. Scoring which crops are worth growing for a specific farmer is an interactive one.</p>\n<h3>Options</h3>\n<p>As above. The deciding question was not \"which is more accurate\" but \"which can see the farmer's answers at all\".</p>\n<h3>Rationale</h3>\n<p>Confidence is reported as a second, separate number — how much real data sits behind the score — so \"high opportunity, low confidence\" stays sayable. Folding it into the score would have hidden exactly the cases worth flagging. It currently caps at 70% because ACTUAL production data covers only 2016-17, and five crops have none at all.</p>\n<h3>Consequences</h3>\n<p>Scores differentiate meaningfully across crops for the first time (Soybean 73 down to Maize 54 for Nashik in June), and the rainfall slider moves. The per-crop agronomic bands the weather term needs had to be sourced separately — see the ETc decision and the adversarial-pass learning.</p>"
+   },
+   {
+    "id": "impact-makers/2026-08-22-etc-not-field-water",
+    "type": "decision",
+    "path": "decisions/impact-makers/2026-08-22-etc-not-field-water.md",
+    "title": "Express every crop's water requirement as ETc (crop evapotranspiration) rather than field water requirement, and correct the one crop that had been sourced the other way",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "impact-makers",
+     "stage": "tech-design",
+     "decision_type": "data-choice",
+     "decision": "Express every crop's water requirement as ETc (crop evapotranspiration) rather than field water requirement, and correct the one crop that had been sourced the other way",
+     "options_considered": [
+      {
+       "option": "Keep the figure each source reported most naturally",
+       "why_not": "Breaks cross-crop comparability, which is the only thing the score uses the number for. Paddy was sourced as 900-1400 mm FIELD water — which correctly includes puddling plus seepage and percolation — while every other crop was 250-700 mm ETc. Scoring rice against that band would have made it unrecommendable in every district, on a units mismatch rather than on agronomy."
+      },
+      {
+       "option": "Convert field water to ETc ourselves",
+       "why_not": "Requires assumptions about percolation rates on black cotton soil that we cannot source, so it would replace a visible error with an invisible one."
+      }
+     ],
+     "chosen_because": "The score compares one crop's water need against one district-month's rainfall, so the only property that matters is that all 13 crops are measured the same way. ETc is the figure FAO publishes per crop and the one the other 12 were already on.",
+     "tradeoff_accepted": "The rice figure now understates what a farmer must actually supply to a puddled paddy field, because puddling and percolation are excluded. Acceptable for ranking crops against each other; not a basis for sizing irrigation.",
+     "constraints": [
+      "data"
+     ],
+     "reversible": "yes",
+     "revisit_if": "The score ever drives an irrigation-volume recommendation rather than a crop ranking, at which point field water becomes the correct figure and every crop needs re-sourcing on that basis.",
+     "decided_by": "mahesh-mahajan",
+     "decided_on": "2026-08-22",
+     "confidence": "asserted",
+     "ai_role": "reviewed",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "workflow",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Context</h3>\n<p>The farmer-facing weather term needs, per crop, an ideal temperature band and a water requirement. Thirteen crops were sourced against FAO, ICAR, MPKV, Dr. PDKV and TNAU references.</p>\n<h3>Options</h3>\n<p>As above.</p>\n<h3>Rationale</h3>\n<p>The error was found by an independent verification pass instructed to refute rather than confirm, and it was the only MAJOR finding among 13 crops. It is a good example of a defect that reads as diligence: the original figure was correctly sourced, correctly cited, and explicitly justified in the researcher's own notes — it was simply the wrong quantity for this comparison.</p>\n<h3>Consequences</h3>\n<p>Rice moved from 900-1400 to 450-700, and all 13 crops now sit between 87 and 159 mm/month derived need. A unit-guard test now fails any requirement whose monthly need exceeds 250 mm, so this specific mistake cannot return silently.</p>"
+   },
+   {
+    "id": "impact-makers/2026-08-22-forecast-at-district-quarter",
+    "type": "decision",
+    "path": "decisions/impact-makers/2026-08-22-forecast-at-district-quarter.md",
+    "title": "Forecast fertilizer demand at district x quarter and allocate down to product-month, rather than forecasting district x product x month directly",
+    "fm": {
+     "schema_version": 2,
+     "type": "decision",
+     "team": "impact-makers",
+     "stage": "poc-validation",
+     "decision_type": "data-choice",
+     "decision": "Forecast fertilizer demand at district x quarter and allocate down to product-month, rather than forecasting district x product x month directly",
+     "options_considered": [
+      {
+       "option": "Forecast district x product x month directly, the granularity the forecast table declares",
+       "why_not": "Measured on a 2024 holdout it carries no signal. Seasonal-naive scored 136.8% WAPE and XGBoost 97.6%, against 100.0% for predicting zero — so the model only \"won\" by hedging everything toward zero (bias -35.3 packets/cell). 144 series average 10.2 observed months each out of 60; 63 of them have fewer than 6."
+      },
+      {
+       "option": "Forecast district x category x month, then split to product by mix share",
+       "why_not": "102.9% WAPE — still worse than predicting nothing. Category is denser than product (41 series, 22.5 months average) but monthly is still too fine."
+      },
+      {
+       "option": "Forecast state total x quarter, the strongest signal available (24.7% WAPE)",
+       "why_not": "Too coarse to serve the business dashboard, which queries by district_id. More of the final number would be allocation than forecast."
+      }
+     ],
+     "chosen_because": "District x quarter is the finest granularity where a model beats its own baseline by a real margin — 57.6% WAPE against 72.2% seasonal-naive. Everything finer was measured first and rejected on the numbers, not on taste.",
+     "tradeoff_accepted": "Every per-product monthly row written to the forecast table is an ALLOCATION of a coarser forecast, not a forecast at that granularity. Accepted only because forecast.confidence carries the word \"Allocated\" on all 2,898 rows and recommendations.reason repeats it in full, so no consumer can mistake one for the other.",
+     "constraints": [
+      "data",
+      "time"
+     ],
+     "reversible": "yes",
+     "revisit_if": "More Sales_Bio history lands, or more districts are onboarded. The binding constraint is 4,598 real sales rows over 5 years across 7 districts and 25 products — not the choice of model.",
+     "decided_by": "mahesh-mahajan",
+     "decided_on": "2026-08-22",
+     "confidence": "asserted",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "plain-chat",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Context</h3>\n<p><code>schema.sql</code> reserves <code>forecast</code> and <code>recommendations</code> for a batch ML job and the business dashboard reads them directly, so the table's own granularity — (district, product, year, month) — looked like the specification. Three dashboard panels were empty until something filled it.</p>\n<h3>Options</h3>\n<p>The three above, all evaluated on the same 2024 holdout with the same features. The baseline was built before any model, which is the only reason the failure was visible: a 97.6% WAPE reads like a working model until you notice predicting zero scores exactly 100%.</p>\n<h3>Rationale</h3>\n<p>Aggregation was pushed upward only as far as it had to go. Measured seasonal-naive WAPE by level: district x product x month 135.9%, district x category x month 129.3%, product x month 108.5%, district x month 94.9%, category x month 81.6%, district x quarter 72.2%, state x quarter 24.7%. District x quarter is where a trained model first earns its place.</p>\n<h3>Consequences</h3>\n<p>The nightly job writes 2,898 allocated rows for 2025-2026 and the three dead dashboard panels populate. The honesty cost is carried by the <code>confidence</code> column rather than by a footnote. Sales data ends 2024-12, so 2026 rows are a 7-8 quarter extrapolation and are labelled <code>Allocated: Very Low</code>.</p>"
+   },
+   {
     "id": "t-brain/2026-08-21-bake-the-brain-into-the-artifact",
     "type": "decision",
     "path": "decisions/t-brain/2026-08-21-bake-the-brain-into-the-artifact.md",
@@ -4865,6 +5124,117 @@
   ],
   "learning": [
    {
+    "id": "impact-makers/2026-08-22-adversarial-pass-on-ai-sourced-domain-data",
+    "type": "learning",
+    "path": "learnings/impact-makers/2026-08-22-adversarial-pass-on-ai-sourced-domain-data.md",
+    "title": "AI-sourced domain data needs a second pass instructed to REFUTE, not review. The refute framing caught errors that were correctly sourced, correctly cited, and explicitly justified by the first pass.",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "impact-makers",
+     "stage": "tech-design",
+     "kind": "worked",
+     "learning": "AI-sourced domain data needs a second pass instructed to REFUTE, not review. The refute framing caught errors that were correctly sourced, correctly cited, and explicitly justified by the first pass.",
+     "evidence": "Sourcing ideal temperature and water ranges for 13 crops ran as 4 research agents followed by 4 independent verification agents told to consult sources themselves and try to refute the figures (8 agents, 622K tokens, 335 tool calls, 0 errors). The verify pass produced 22 corrections. One was MAJOR — rice reported at 900-1400 mm field water against 450-700 mm ETc for every other crop, which would have made paddy unrecommendable everywhere on a units mismatch. It also cut Potato's band by ~40% (500-700 to 350-500), RAISED Chilli's (600 to 700 max — the one error pointing in the dangerous direction, toward under-watering advice), downgraded Grapes from \"sourced\" to \"uncertain\" because the lower bound could not be traced, and flagged a real MPKV document that did not say what the first pass claimed it said.",
+     "generalises_to": "Any AI-generated factual table that will be trusted at face value downstream, especially domain data a reviewer cannot check by eye. \"Review this\" and \"try to refute this\" produce measurably different results from the same model on the same input — the second finds errors the first rationalises. Pair it with a schema that carries per-row certainty so an unsourced figure cannot silently read like a sourced one.",
+     "would_do_differently": "Ask the research pass for the QUANTITY definition explicitly (ETc vs field water) rather than a bare number with units. The rice error was a units-semantics failure, not a lookup failure, and a required \"what exactly does this figure measure\" field would have surfaced it in the first pass instead of the second.",
+     "cost_of_lesson": "622K tokens and about 30 minutes wall-clock for the verification half, against shipping farmer-facing agronomic advice with a 2x error on one crop and a fabricated citation on another. The cheapest thing we did all day.",
+     "learned_by": "mahesh-mahajan",
+     "learned_on": "2026-08-22",
+     "ai_role": "reviewed",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "ai_failure_mode": "overconfident-wrong",
+     "harness_pattern": "workflow",
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>The crop-opportunity score needed per-crop agronomic bands. Writing 13 crops x 4 numbers from model memory would have been exactly the fabricated-agronomy failure this project had been avoiding elsewhere, so it was run as a two-phase workflow: research with real citations, then independent verification instructed to refute.</p>\n<h3>Evidence</h3>\n<p>22 corrections applied, recorded field-by-field with the disagreement text and the verifier's own sources in <code>crop_requirements_provenance.json</code>. Distribution of verdicts: 4 CONFIRMED, 8 MINOR_DISAGREEMENT, 1 MAJOR_DISAGREEMENT.</p>\n<p>The MAJOR one is the instructive case. The first pass sourced it correctly, cited FAO and IRRI accurately, and wrote a note explaining precisely why it had chosen field water over ETc. It was diligent and wrong, and no amount of re-reading the first pass's own output would have caught it — the error was only visible against the other 12 crops.</p>\n<h3>What we'd do differently</h3>\n<p>Require the research pass to state what each figure measures, not just its value and unit. Also carry certainty per row — two crops ended as <code>uncertain</code> rather than <code>sourced</code>, which is more useful than a uniformly confident table.</p>"
+   },
+   {
+    "id": "impact-makers/2026-08-22-measure-the-baseline-first",
+    "type": "learning",
+    "path": "learnings/impact-makers/2026-08-22-measure-the-baseline-first.md",
+    "title": "A model can beat its baseline and still be worse than predicting nothing — and you only see it if you compute the trivial baseline before you believe the model.",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "impact-makers",
+     "stage": "poc-validation",
+     "kind": "surprised",
+     "learning": "A model can beat its baseline and still be worse than predicting nothing — and you only see it if you compute the trivial baseline before you believe the model.",
+     "evidence": "On a 2024 holdout at district x product x month, seasonal-naive scored 136.8% WAPE and XGBoost 97.6%. Read alone, that is a 39-point improvement and looks like a working model. But predicting zero scores exactly 100.0% WAPE by definition, and the model's bias was -35.3 packets per cell — it had learned to hedge toward zero against a target that is 62% zeros, which is the rational move and useless for planning. The same pipeline at district x quarter scored 57.6% against a 72.2% baseline, which is a real win. Both numbers came from the same code; only the granularity differed.",
+     "generalises_to": "Any forecasting or scoring task on sparse or intermittent data. Compute the degenerate baselines — predict zero, predict the mean, predict last period — before the model, and report them next to it permanently. Also: prefer WAPE to MAPE on intermittent series, because MAPE divides by the actual and a single zero month makes it infinite.",
+     "would_do_differently": "Write the baseline script before the feature pipeline, not after. We built features first and nearly reported a 97.6% model as the deliverable; the baseline was what stopped it.",
+     "cost_of_lesson": "Roughly two hours of pipeline work aimed at the wrong granularity, plus the near-miss of shipping a forecast into a dashboard that presents it as fact. Cheap only because the baseline existed before anything was written to the database.",
+     "learned_by": "mahesh-mahajan",
+     "learned_on": "2026-08-22",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "medium",
+     "ai_failure_mode": "none",
+     "harness_pattern": "plain-chat",
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>The <code>forecast</code> table declares (district, product, year, month), so that is where the first model was fitted. It beat seasonal-naive comfortably and would have been reported as working. Because a baseline module had been written first, the predict-zero reference was also on screen — at exactly 100% — which made the 97.6% legible as a failure instead of a success.</p>\n<h3>Evidence</h3>\n<p>Measured seasonal-naive WAPE by aggregation level, same holdout, same features:</p>\n<table><thead><tr><th>level</th><th>zeros</th><th>naive WAPE</th></tr></thead><tbody><tr><td>district x product x month</td><td>62%</td><td>135.9%</td></tr><tr><td>district x category x month</td><td>41%</td><td>129.3%</td></tr><tr><td>product x month</td><td>27%</td><td>108.5%</td></tr><tr><td>district x month</td><td>19%</td><td>94.9%</td></tr><tr><td>category x month</td><td>4%</td><td>81.6%</td></tr><tr><td>district x quarter</td><td>4%</td><td>72.2%</td></tr><tr><td>state total x quarter</td><td>0%</td><td>24.7%</td></tr></tbody></table>\n<p>Pareto did not rescue it either: the top 20 of 144 series are only 62% of volume.</p>\n<h3>What we'd do differently</h3>\n<p>Baseline first, always, and keep it in the metrics output permanently rather than as a one-off check. A model's error is meaningless without the trivial alternatives beside it.</p>"
+   },
+   {
+    "id": "impact-makers/2026-08-22-step-function-killed-the-slider",
+    "type": "learning",
+    "path": "learnings/impact-makers/2026-08-22-step-function-killed-the-slider.md",
+    "title": "A scoring function built from threshold penalties made the demo's headline interaction silently inert — the rainfall slider recomputed correctly on every drag and always returned the same number.",
+    "fm": {
+     "schema_version": 2,
+     "type": "learning",
+     "team": "impact-makers",
+     "stage": "ux-validation",
+     "kind": "failed",
+     "learning": "A scoring function built from threshold penalties made the demo's headline interaction silently inert — the rainfall slider recomputed correctly on every drag and always returned the same number.",
+     "evidence": "The what-if screen offers a rainfall slider across -30% to +30%. Every stop in that range returned \"No change\", and testing beyond the UI range showed -100% rainfall also produced an identical score. Cause: weather suitability subtracted fixed penalties at hard rainfall thresholds (<10mm, <20mm, >250mm, >350mm), so any change that did not cross a threshold changed nothing — and Nashik's January mean of 6.4mm sits below the lowest threshold already, so nothing downward could ever move it. Replacing the thresholds with a continuous trapezoid (full marks inside the crop's ideal band, decaying linearly to zero at its absolute limits) made every step move: -30% now reads -3 to -4 points, +30% reads +2 to +3.",
+     "generalises_to": "Any user-facing control wired to a banded or thresholded score. The bug is invisible in code review, invisible in unit tests that assert a single value, and invisible in a demo where nobody drags the control — it only shows as \"the slider does nothing\", which reads as a frontend fault. Test the CONTROL's range, not the function's output at one point.",
+     "would_do_differently": "Write the range test at the same time as the control — assert that the endpoints of whatever the UI exposes produce different values. We now have exactly that test, plus a monotonicity test on the underlying band function, because the second-order risk is someone \"simplifying\" the curve back into bands.",
+     "cost_of_lesson": "The interaction was dead for the whole first build and nobody noticed, because the endpoint returned 200 and a plausible number every time. Found only by sweeping the slider range deliberately rather than spot-checking one value. Fix itself was under an hour once diagnosed.",
+     "learned_by": "mahesh-mahajan",
+     "learned_on": "2026-08-22",
+     "ai_role": "refactored",
+     "ai_tool": "claude-code",
+     "ai_leverage": "medium",
+     "ai_failure_mode": "test-theatre",
+     "harness_pattern": "plain-chat",
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>The scenario endpoint accepted a rainfall delta, recomputed a score, and returned it. It worked in the sense that it never errored. The existing test asserted that a 0% change produced \"No change\" and that a 300% change produced something different — both true, and both blind to the fact that the entire range the UI actually offers produced nothing.</p>\n<h3>Evidence</h3>\n<p>Measured across the real slider range, before and after:</p>\n<p>before   -30%: No change   -15%: No change   0%: No change   +15%: No change   +30%: No change after    -30%: -3 pts      -15%: -2 pts      0%: no change   +15%: +2 pts      +30%: +3 pts</p>\n<p>The same fix resolved a second symptom nobody had connected to it: every crop in a district scored an identical weather value, because the function took no crop argument at all.</p>\n<h3>What we'd do differently</h3>\n<p>Two tests now guard it: one sweeps the slider's own endpoints through the API and asserts the values differ, one asserts the band function is strictly monotonic outside its plateau. A plateau inside the ideal band is correct agronomy and is deliberately kept — the bug was the discontinuity, not the flat region.</p>"
+   },
+   {
     "id": "t-brain/2026-08-21-a-default-encodes-who-you-think-installs-it",
     "type": "learning",
     "path": "learnings/t-brain/2026-08-21-a-default-encodes-who-you-think-installs-it.md",
@@ -5233,6 +5603,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "c8226d5",
+   "author": "Mahesh Mahajan",
+   "date": "2026-08-22T10:16:02+05:30",
+   "subject": "brain: impact-makers — KhetiSetu ML and scoring layers, 3 decisions, 3 learnings"
+  },
   {
    "sha": "e9876d0",
    "author": "Ziyad K",
