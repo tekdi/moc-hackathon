@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T04:16:45+00:00",
+ "built_at": "2026-08-22T04:45:19+00:00",
  "public": true,
- "commit": "4b4e543",
+ "commit": "e9876d0",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 2,
  "vocabularies": {
@@ -1503,18 +1503,25 @@
       "saurabh-ingle"
      ],
      "idea": "teach-the-voice-platform-to-feed-the-brain",
+     "status": "demo-ready",
+     "stage_gate": "implementation",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
       }
      ]
     },
-    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/teach-the-voice-platform-to-feed-the-brain\">teach-the-voice-platform-to-feed-the-brain</a>.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
+    "body": "<h3>What they're building</h3>\n<p>See <a href=\"#/idea/teach-the-voice-platform-to-feed-the-brain\">teach-the-voice-platform-to-feed-the-brain</a>.</p>\n<h3>Current state</h3>\n<p>Standalone <code>brain-ingest-service</code> running the real <code>company-brain-capture</code> skill via the Claude Agent SDK, with session resume, wired into the live UI behind a feature flag. Demoed end-to-end: a transcript produces a yes/edit/skip question, answering it resumes the same SDK session, and \"skip\" cleanly cancels — the session/round-trip plumbing is proven. The skill's actual reasoning quality, and whether it can commit or open a PR against <code>tekdibraincore</code>, remain untested — blocked by an Anthropic account credit-balance error on every attempt so far. See <a href=\"#/update/tekdi-innovators/2026-08-22-brain-ingest-service-sdk-demo\">updates/tekdi-innovators/2026-08-22-brain-ingest-service-sdk-demo.md</a> for detail.</p>"
    },
    {
     "id": "threadai",
@@ -4022,6 +4029,38 @@
     "body": "<h3>What we did</h3>\n<p>Confirmed that real Gemini/Anthropic API calls and Prisma generation are currently blocked in the sandbox by network restrictions, not by anything wrong in the code. Full pipeline correctness has instead been verified end-to-end against the real BaForms extension via the CLI (see the productization-pass update).</p>\n<h3>What broke</h3>\n<p>Live LLM API calls (Gemini, Anthropic) and Prisma client/schema generation don't reach the network from this sandbox.</p>\n<h3>What we decided</h3>\n<p>No workaround decision recorded for this blocker — flagged as a known open item pending a sandbox with network access.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>A second real Joomla extension migration (beyond BaForms) remains as future validation work.</p>"
    },
    {
+    "id": "tekdi-innovators/2026-08-22-brain-ingest-service-sdk-demo",
+    "type": "update",
+    "path": "updates/tekdi-innovators/2026-08-22-brain-ingest-service-sdk-demo.md",
+    "title": "Built a standalone brain-ingest-service that runs the real company-brain-capture skill via the Claude Agent SDK (with session resume across rounds), replacing the old hand-ported reimplementation, and wired it into the live UI behind a feature flag; demoed end-to-end, proving the session/round-trip plumbing works.",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "tekdi-innovators",
+     "date": "2026-08-22",
+     "stage": "integration",
+     "record_kind": "demo",
+     "reported_by": "mohammed-ziyad",
+     "logged_by": "mohammed-ziyad",
+     "what_changed": "Built a standalone brain-ingest-service that runs the real company-brain-capture skill via the Claude Agent SDK (with session resume across rounds), replacing the old hand-ported reimplementation, and wired it into the live UI behind a feature flag; demoed end-to-end, proving the session/round-trip plumbing works.",
+     "decisions": [],
+     "learnings": [],
+     "metrics": [],
+     "artifacts": [],
+     "confidence": "asserted",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Built a standalone <code>brain-ingest-service</code> that runs the real <code>company-brain-capture</code> skill via the Claude Agent SDK, with session resume across rounds, replacing the old hand-ported reimplementation of the skill's logic. Wired it into the live UI behind a feature flag, so the skill's response surfaces as a single yes/edit/skip question in the existing brain ingestion tab. Demoed end-to-end with a real transcript uploaded through the platform: a question appeared, answering it correctly resumed the same SDK session for round two, and answering \"skip\" cleanly cancelled it — proving the session/round-trip plumbing works.</p>\n<h3>What broke</h3>\n<p>Nothing broke in the demoed path, but the skill's actual reasoning quality is still unproven, and so is whether it can really commit or open a PR against <code>tekdibraincore</code> — the Anthropic account has returned \"credit balance too low\" on every attempt so far, so that path is untested.</p>\n<h3>What we decided</h3>\n<p>Not reported.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Not reported.</p>"
+   },
+   {
     "id": "threadai/2026-08-22-architecture-decisions",
     "type": "update",
     "path": "updates/threadai/2026-08-22-architecture-decisions.md",
@@ -5194,6 +5233,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "e9876d0",
+   "author": "Ziyad K",
+   "date": "2026-08-22T10:11:48+05:30",
+   "subject": "hack: tekdi-innovators — brain-ingest-service SDK demo, status demo-ready"
+  },
   {
    "sha": "4b4e543",
    "author": "Vishal Chincholi",
