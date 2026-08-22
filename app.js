@@ -27,17 +27,13 @@
   const titleCase = (s) => String(s ?? "").replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
   const key = (type, id) => `${type}:${id}`;
   const get = (type, id) => state.byId.get(key(type, id));
+  const isRetired = (type, id) => Boolean(get(type, id)?.fm?.deprecated);
 
   const listOf = (v) => (Array.isArray(v) ? v : v == null || v === "" ? [] : [v]);
 
   function initials(name) {
     const parts = String(name || "?").trim().split(/\s+/).slice(0, 2);
     return parts.map((p) => p[0]).join("").toUpperCase();
-  }
-
-  function personName(slug) {
-    const p = get("person", slug);
-    return p ? p.fm.name || p.title : titleCase(slug);
   }
 
   function entityName(type, id) {
@@ -72,19 +68,60 @@
     return `<a href="#/${type}/${encodeURI(id)}"${cls ? ` class="${cls}"` : ""}>${esc(text ?? entityName(type, id))}</a>`;
   }
 
-  const STATUS_TONE = {
-    "demo-ready": "good", demoed: "good", building: "accent", forming: "warm",
-    dropped: "quiet", "in-progress": "accent", unclaimed: "quiet", parked: "warm",
-    worked: "good", failed: "bad", surprised: "alt", "wasted-time": "warm", reusable: "accent",
-    blocker: "bad", demo: "good", metric: "alt", progress: "accent",
-  };
-  const pill = (value, tone) =>
-    value ? `<span class="pill ${tone || STATUS_TONE[value] || ""}">${esc(titleCase(value))}</span>` : "";
+  /* A value's colour comes from where it sits in its own vocabulary, so a
+     brain with vocabularies this page has never seen still gets stable,
+     distinguishable pills. No value names appear here. */
+  const TONES = ["accent", "good", "warm", "alt", "bad", "quiet"];
+
+  function toneFor(value) {
+    if (!value) return "";
+    for (const values of Object.values(state.data.vocabularies || {})) {
+      const at = (values || []).indexOf(value);
+      if (at !== -1) return TONES[at % TONES.length];
+    }
+    return "";
+  }
+  const pill = (value, tone, field) =>
+    value
+      ? `<span class="pill ${tone || toneFor(value)}"${
+          field ? ` title="${esc(titleCase(field))}"` : ""
+        }>${esc(titleCase(value))}</span>`
+      : "";
 
   /* ---------------- indexing ---------------- */
 
-  const RECORD_DATE = { update: "date", decision: "decided_on", learning: "learned_on" };
-  const RECORD_ACTOR = { update: "reported_by", decision: "decided_by", learning: "learned_by" };
+  const meta = (type) => (state.data.entity_meta || {})[type] || {};
+  const fieldsOf = (type) => meta(type).fields || {};
+  const spec = (type, field) => fieldsOf(type)[field] || {};
+  /* Entity types you browse, and the ones that are records in a log. Both come
+     from `layout` in SCHEMA.yml, so a new entity type gets a tab by itself. */
+  const listTypes = () => {
+    const flat = (state.data.entity_order || []).filter((t) => meta(t).list_view);
+    /* The type records are filed against leads: it is what the event is
+       organised around, and it read oddly buried behind the others. Derived
+       from the record types' parent, never named. */
+    const parent = (state.data.entity_order || [])
+      .filter((t) => !meta(t).list_view)
+      .map((t) => meta(t).parent_type)
+      .find((t) => t && flat.includes(t));
+    return parent ? [parent, ...flat.filter((t) => t !== parent)] : flat;
+  };
+  const recordTypes = () => (state.data.entity_order || []).filter((t) => !meta(t).list_view);
+  const folderOf = (type) => (state.data.entity_folders || {})[type] || type;
+  const typeOfFolder = (folder) =>
+    Object.keys(state.data.entity_folders || {}).find((t) => folderOf(t) === folder);
+  const dateFieldOf = (type) => meta(type).date_field;
+  const actorFieldOf = (type) => meta(type).actor_field;
+  const recordDate = (e) =>
+    e.fm[dateFieldOf(e.type)] || e.fm.date || e.fm.last_updated || "";
+  const edges = (type, id, dir) =>
+    ((state.data.graph || {})[`${type}:${id}`] || {})[dir] || [];
+  /* A renamed entity leaves a tombstone so old links still resolve. It is not
+     a thing to list or count — it is a redirect. Reachable by URL, absent from
+     every list. */
+  const all = (type) =>
+    ((state.data.entities || {})[type] || []).filter((e) => !e.fm.deprecated);
+  const allIncludingRetired = (type) => (state.data.entities || {})[type] || [];
 
   function index(data) {
     state.byId.clear();
@@ -93,11 +130,11 @@
       for (const e of list) state.byId.set(key(type, e.id), e);
     }
     const records = [];
-    for (const type of ["update", "decision", "learning"]) {
+    for (const type of recordTypes()) {
       for (const e of data.entities[type] || []) {
-        const date = e.fm[RECORD_DATE[type]] || e.fm.date || e.fm.last_updated || "";
+        const date = e.fm[data.entity_meta[type].date_field] || e.fm.date || e.fm.last_updated || "";
         records.push({ ...e, date });
-        const team = e.fm.team;
+        const team = e.fm[data.entity_meta[type].parent_field];
         if (team) {
           if (!state.updatesByTeam.has(team)) state.updatesByTeam.set(team, []);
           state.updatesByTeam.get(team).push({ ...e, date });
@@ -111,9 +148,48 @@
     state.records = records;
   }
 
-  const teams = () => state.data.entities.team || [];
-  const ideas = () => state.data.entities.idea || [];
-  const people = () => state.data.entities.person || [];
+  const is_blank_value = (v) =>
+    v == null || v === "" || (Array.isArray(v) && !v.length);
+
+  /* One colour per vocabulary value, taken from its position in the vocabulary
+     so an unfamiliar brain still gets a stable, distinguishable palette. */
+  const SEGMENT_VARS = ["--accent", "--good", "--warm", "--accent-2", "--bad", "--line"];
+  const colorFor = (vocab, value) => {
+    const at = (state.data.vocabularies[vocab] || []).indexOf(value);
+    return at === -1 ? "var(--line)" : `var(${SEGMENT_VARS[at % SEGMENT_VARS.length]})`;
+  };
+
+  function stackedHtml(dist) {
+    const total = Math.max(1, [...dist.counts.values()].reduce((a, b) => a + b, 0) + dist.blank);
+    const present = dist.order.filter((v) => dist.counts.get(v));
+    const segments = present
+      .map(
+        (v) =>
+          `<span style="width:${((dist.counts.get(v) || 0) / total) * 100}%;background:${colorFor(
+            dist.vocab,
+            v
+          )}" title="${esc(titleCase(v))}: ${dist.counts.get(v)}"></span>`
+      )
+      .join("");
+    const legend = present
+      .map(
+        (v) =>
+          `<span><i style="background:${colorFor(dist.vocab, v)}"></i>${esc(titleCase(v))} · ${dist.counts.get(
+            v
+          )}</span>`
+      )
+      .join("");
+    const blankBit = dist.blank
+      ? `<span><i style="background:var(--line)"></i>Not said · ${dist.blank}</span>`
+      : "";
+    return `<div class="card-sub" style="margin-bottom:10px">${esc(
+      `${titleCase(dist.type)} ${titleCase(dist.field).toLowerCase()}`
+    )}</div>
+      <div class="stack">${segments}${
+      dist.blank ? `<span style="width:${(dist.blank / total) * 100}%;background:var(--line)"></span>` : ""
+    }</div>
+      <div class="legend">${legend}${blankBit}</div>`;
+  }
 
   const countBy = (items, fn) => {
     const map = new Map();
@@ -145,87 +221,118 @@
       .join("")}</div>`;
   }
 
-  function memberAvatars(team, max = 7) {
-    const slugs = [team.fm.captain, ...listOf(team.fm.members)].filter(Boolean);
-    const shown = slugs.slice(0, max);
-    const rest = slugs.length - shown.length;
-    return `<span class="avatars">${shown
-      .map((s) => `<span class="avatar" title="${esc(personName(s))}">${esc(initials(personName(s)))}</span>`)
-      .join("")}${rest > 0 ? `<span class="avatar" title="${rest} more">+${rest}</span>` : ""}</span>`;
-  }
-
   /* ---------------- view: pulse ---------------- */
 
   function viewPulse() {
-    const t = teams(), i = ideas(), p = people();
-    const stages = state.data.vocabularies.stage || [];
-    const reporting = t.filter((x) => (state.updatesByTeam.get(x.id) || []).length > 0);
-    const claimed = i.filter((x) => listOf(x.fm.picked_by).length > 0);
-    const withStatus = t.filter((x) => x.fm.status);
-    const counts = {
-      update: (state.data.entities.update || []).length,
-      decision: (state.data.entities.decision || []).length,
-      learning: (state.data.entities.learning || []).length,
-    };
+    /* Which flat type records are filed against — the thing the event is
+       organised around. Derived from the record types' parent, not assumed. */
+    const parentType = recordTypes().map((rt) => meta(rt).parent_type).find(Boolean) || listTypes()[0];
 
-    const statusCounts = countBy(t, (x) => x.fm.status || "not-said");
-    const statusOrder = [...(state.data.vocabularies.team_status || []), "not-said"];
-    const statusColors = {
-      forming: "var(--warm)", building: "var(--accent)", "demo-ready": "var(--good)",
-      demoed: "var(--accent-2)", dropped: "var(--bad)", "not-said": "var(--line)",
-    };
-    const statusTotal = t.length || 1;
+    /* Every vocabulary field on a browsable type is a distribution worth
+       charting, and the vocabulary's own order is the order to chart it in.
+       This replaced three hand-written charts, each of which named a field. */
+    function distributions(type, limit) {
+      return Object.entries(fieldsOf(type))
+        .filter(([, fs]) => fs.vocab && (state.data.vocabularies[fs.vocab] || []).length)
+        .map(([field, fs]) => ({
+          type,
+          field,
+          vocab: fs.vocab,
+          multi: Boolean(fs.list),
+          order: state.data.vocabularies[fs.vocab],
+          counts: countBy(all(type), (x) => x.fm[field]),
+          blank: all(type).filter((x) => is_blank_value(x.fm[field])).length,
+        }))
+        .filter((d) => [...d.counts.values()].some(Boolean))
+        .slice(0, limit);
+    }
 
-    const stageCounts = countBy(t, (x) => x.fm.stage_gate);
-    const stageMax = Math.max(1, ...stageCounts.values());
+    /* A long ordered vocabulary is a progression, so it reads better as a rail
+       than as bars. Length is the only signal used — no value is recognised. */
+    const RAIL_MIN = 8;
+    const parentDists = distributions(parentType, 6);
+    const rail = parentDists.find((d) => d.order.length >= RAIL_MIN);
+    /* A field holding exactly one value per entity partitions the collection,
+       so it reads as one stacked bar with a legend — including the entities
+       nobody has recorded a value for. A multi-valued field does not partition
+       anything, so it reads as bars. Structural, not semantic. */
+    const stacked = parentDists.find((d) => d !== rail && !d.multi);
+    /* Never chart one vocabulary twice. `stages_completed` draws from the same
+       vocabulary as the stage rail, so charting both said the same thing twice
+       and crowded out the distribution from another type. */
+    const charted = new Set([rail, stacked].filter(Boolean).map((d) => d.vocab));
+    const barDists = listTypes()
+      .filter((x) => x !== parentType)
+      .flatMap((x) => distributions(x, 2))
+      .concat(parentDists.filter((d) => d !== rail && d !== stacked))
+      .filter((d) => !charted.has(d.vocab) && (charted.add(d.vocab), true))
+      .slice(0, stacked ? 1 : 2);
 
-    const silent = t.filter((x) => !(state.updatesByTeam.get(x.id) || []).length);
+    const silent = all(parentType).filter((x) => !inboundRecords(x).length);
 
     return `
       <div class="stats">
-        ${stat(t.length, "Teams", `${reporting.length} ${reporting.length === 1 ? "has" : "have"} logged something`)}
-        ${stat(i.length, "Ideas", `${claimed.length} claimed by a team`, "accent")}
-        ${stat(p.length, "People", `${new Set(t.flatMap((x) => [x.fm.captain, ...listOf(x.fm.members)]).filter(Boolean)).size} on a team`)}
-        ${stat(counts.update, "Updates", "progress, blockers, demos", "good")}
-        ${stat(counts.decision, "Decisions", "with options and trade-offs", "warm")}
-        ${stat(counts.learning, "Learnings", "what worked, what didn't", "accent")}
+        ${[...listTypes(), ...recordTypes()]
+          .map((type, at) => {
+            const items = all(type);
+            if (!items.length) return "";
+            /* Sub-line, without naming a single field: for a browsable type,
+               how many have records pointing at them; for a record type, how
+               many distinct things it covers. */
+            /* Records attach to one type; every other browsable type connects
+               through it. So the honest sub-line differs by role: for that type,
+               how many have been reported on; for the rest, how many reach it.
+               Saying "0 with records" about people read as a gap when it is
+               simply not how people connect. */
+            const anchor = recordTypes().map((rt) => meta(rt).parent_type).find(Boolean);
+            const sub = !meta(type).list_view
+              ? `across ${new Set(items.map((e) => e.fm[meta(type).parent_field]).filter(Boolean)).size} ${folderOf(
+                  meta(type).parent_type || ""
+                )}`
+              : type === anchor
+              ? `${items.filter((e) => inboundRecords(e).length).length} with records logged`
+              : `${
+                  items.filter((e) =>
+                    edges(e.type, e.id, "in").some((x) => x.type === anchor)
+                  ).length
+                } linked to a ${anchor || "team"}`;
+            return stat(items.length, titleCase(folderOf(type)), sub, TONES[at % TONES.length], routeForType(type));
+          })
+          .join("")}
       </div>
 
-      <div class="section-head"><h2>Where the teams are</h2>
-        <span class="note">${withStatus.length} of ${t.length} teams have said</span></div>
+      ${stacked || barDists.length ? `
+      <div class="section-head"><h2>Where the ${esc(folderOf(parentType))} are</h2>
+        ${stacked ? `<span class="note">${all(parentType).length - stacked.blank} of ${all(parentType).length} have said</span>` : ""}</div>
       <div class="grid cols-2 top">
-        <div class="card">
-          <div class="card-sub" style="margin-bottom:10px">Team status</div>
-          <div class="stack">${statusOrder
-            .map((s) => {
-              const n = statusCounts.get(s) || 0;
-              return n ? `<span style="width:${(n / statusTotal) * 100}%;background:${statusColors[s] || "var(--line)"}" title="${esc(titleCase(s))}: ${n}"></span>` : "";
-            })
-            .join("")}</div>
-          <div class="legend">${statusOrder
-            .filter((s) => statusCounts.get(s))
-            .map((s) => `<span><i style="background:${statusColors[s] || "var(--line)"}"></i>${esc(titleCase(s))} · ${statusCounts.get(s)}</span>`)
-            .join("")}</div>
-        </div>
-        <div class="card">
-          <div class="card-sub" style="margin-bottom:10px">Ideas by problem area</div>
-          ${barsHtml(countBy(i, (x) => x.fm.problem_area), null, "alt")}
-        </div>
-      </div>
+        ${stacked ? `<div class="card">${stackedHtml(stacked)}</div>` : ""}
+        ${barDists
+          .map(
+            (d) => `<div class="card">
+              <div class="card-sub" style="margin-bottom:10px">${esc(titleCase(folderOf(d.type)))} by ${esc(
+              titleCase(d.field).toLowerCase()
+            )}</div>
+              ${barsHtml(d.counts, d.order.filter((v) => d.counts.get(v)), "alt")}
+            </div>`
+          )
+          .join("")}
+      </div>` : ""}
 
-      <div class="section-head"><h2>SDLC stage reached</h2>
-        <span class="note">teams at each stage gate — blank stages are expected</span></div>
+      ${rail ? `
+      <div class="section-head"><h2>${esc(titleCase(rail.field))} reached</h2>
+        <span class="note">${esc(folderOf(rail.type))} at each value — blanks are expected</span></div>
       <div class="card">
-        <div class="rail">${stages
-          .map((s) => {
-            const n = stageCounts.get(s) || 0;
-            return `<div class="rail-step ${n ? "on" : "dim"}" title="${esc(titleCase(s))}: ${n}">
-              <div class="rail-bar"><span style="height:${n ? Math.max(12, (n / stageMax) * 100) : 3}%"></span></div>
-              <div class="rail-label">${esc(titleCase(s))}</div>
+        <div class="rail">${rail.order
+          .map((v) => {
+            const n = rail.counts.get(v) || 0;
+            const max = Math.max(1, ...rail.counts.values());
+            return `<div class="rail-step ${n ? "on" : "dim"}" title="${esc(titleCase(v))}: ${n}">
+              <div class="rail-bar"><span style="height:${n ? Math.max(12, (n / max) * 100) : 3}%"></span></div>
+              <div class="rail-label">${esc(titleCase(v))}</div>
             </div>`;
           })
           .join("")}</div>
-      </div>
+      </div>` : ""}
 
       <div class="grid cols-2 top" style="margin-top:14px">
         <div>
@@ -255,14 +362,26 @@
       ${silent.length ? `
       <div class="section-head"><h2>Nothing logged yet</h2>
         <span class="note">no update, decision or learning — probably heads-down, not stopped</span></div>
-      <div class="grid cols-4">${silent.map(teamCardCompact).join("")}</div>` : ""}
+      <div class="grid cols-4">${silent.map(entityCard).join("")}</div>` : ""}
     `;
   }
 
-  const stat = (n, k, sub, tone) =>
-    `<div class="stat ${tone || ""}"><div class="n">${n}</div><div class="k">${esc(k)}</div>${
+  /* A count is an aggregate over a collection, so it should take you to that
+     collection. These were plain divs, which is why nothing on the pulse page
+     led anywhere: the card knew the number but had thrown away what it counted. */
+  const stat = (n, k, sub, tone, href) => {
+    const inner = `<div class="n">${n}</div><div class="k">${esc(k)}</div>${
       sub ? `<div class="sub">${esc(sub)}</div>` : ""
-    }</div>`;
+    }`;
+    return href
+      ? `<a class="stat linked ${tone || ""}" href="${esc(href)}">${inner}</a>`
+      : `<div class="stat ${tone || ""}">${inner}</div>`;
+  };
+
+  /* Where a type's collection lives: its own tab if it has one, the activity
+     feed filtered to it otherwise. Both routes are derived from the schema. */
+  const routeForType = (type) =>
+    meta(type).list_view ? `#/${folderOf(type)}` : `#/activity/${type}`;
 
   function sparkHtml(commits) {
     if (!commits.length) return "";
@@ -285,156 +404,218 @@
       <div class="spark-axis"><span>24h ago</span><span>now</span></div>`;
   }
 
-  /* ---------------- view: teams ---------------- */
+  /* ---------------- generic entity cards and lists ----------------
 
-  function teamCard(team) {
-    const recs = state.updatesByTeam.get(team.id) || [];
-    const idea = team.fm.idea ? get("idea", team.fm.idea) : null;
-    const last = recs[0];
-    return `<a class="card" href="#/team/${encodeURI(team.id)}">
+     One renderer for every entity type, driven by the field specs the builder
+     took from SCHEMA.yml. It shows: the title, whatever vocabulary values the
+     entity carries, every reference it declares as a link, a blurb from its
+     longest prose field, and how many records point at it.
+
+     This replaced one hand-written view per entity type. Those views were the
+     reason relationships went missing from the page: an edge nobody had thought
+     to write code for was invisible even though the data held it, and adding an
+     entity type to the schema produced a page that ignored it. -------------- */
+
+  const REF_TEXT_SKIP = new Set(["slug", "title", "name", "current_summary"]);
+
+  const hasIcon = (type) => meta(type).display?.icon === "initials";
+
+  function icon(entity) {
+    return hasIcon(entity.type)
+      ? `<span class="avatar lg">${esc(initials(entity.title))}</span>`
+      : "";
+  }
+
+  /* Neighbours of a type that represents itself as an avatar render as a stack
+     rather than as text. Driven by the `display` hint on that type, so it is a
+     property of the model: a brain that puts the hint on a different entity
+     type gets stacks there instead. */
+  function avatarStack(groups, max = 7) {
+    const people = groups.filter((g) => hasIcon(g.items[0]?.type)).flatMap((g) => g.items);
+    if (!people.length) return "";
+    const shown = people.slice(0, max);
+    const rest = people.length - shown.length;
+    return `<span class="avatars">${shown
+      .map((e) => `<span class="avatar" title="${esc(entityName(e.type, e.id))}">${esc(
+        initials(entityName(e.type, e.id))
+      )}</span>`)
+      .join("")}${rest > 0 ? `<span class="avatar more">+${rest}</span>` : ""}</span>`;
+  }
+
+  /* Vocabulary-valued fields. Fields the schema computes come first: a derived
+     value is the entity's current state, which is what a card should lead with.
+     Everything else follows in schema order. */
+  function vocabFields(type) {
+    const entries = Object.entries(fieldsOf(type)).filter(([, fs]) => fs.vocab);
+    const rank = ([, fs]) =>
+      /* Derived single values first — a computed state is the headline. Then
+         other single values. Multi-valued fields are tag sets, not states, so
+         they follow. Bookkeeping ("how this entry came to exist") comes last:
+         it outranked real status on every team that had not reported one. */
+      (fs.bookkeeping ? 4 : 0) + (fs.list ? 2 : 0) + (fs.generated ? 0 : 1);
+    return entries.sort((a, b) => rank(a) - rank(b));
+  }
+
+  /* Returns a LIST. It used to return joined HTML, and the card then sliced
+     that string by the length of another one to get "the rest" — which cut
+     through a tag and shattered the card's DOM. */
+  function vocabPillList(entity, max = 3, { bookkeeping = false } = {}) {
+    const out = [];
+    for (const [field, fs] of vocabFields(entity.type)) {
+      if (out.length >= max) break;
+      /* How an entry came to exist is not its state. It stays in the facts
+         panel, where provenance belongs, rather than headlining a card. */
+      if (fs.bookkeeping && !bookkeeping) continue;
+      for (const value of listOf(entity.fm[field])) {
+        /* The field name as a tooltip: a bare "Yes" pill from `reversible` says
+           nothing on its own. */
+        if (value) out.push(pill(value, null, field));
+        if (out.length >= max) break;
+      }
+    }
+    return out;
+  }
+
+  const vocabPills = (entity, max = 3) => vocabPillList(entity, max).join("");
+
+  /* Every reference the entity declares, as links. `skip` holds the fields the
+     subtitle already spelled out, so a card does not say the same thing twice. */
+  function refChips(entity, max = 6, skip = new Set()) {
+    const chips = [];
+    for (const group of neighbourGroups(entity)) {
+      if (skip.has(group.label) || hasIcon(group.items[0]?.type)) continue;
+      for (const e of group.items) {
+        if (chips.length >= max) break;
+        chips.push(link(e.type, e.id, entityName(e.type, e.id), "chip-link"));
+      }
+    }
+    return chips.join("");
+  }
+
+  function blurb(entity, limit = 150) {
+    let best = "";
+    for (const [field, fs] of Object.entries(fieldsOf(entity.type))) {
+      if (fs.ref_type || fs.vocab || fs.type === "date") continue;
+      if (field === entity.title_field) continue;   // already the heading
+      const value = entity.fm[field];
+      if (typeof value !== "string" || REF_TEXT_SKIP.has(field)) continue;
+      /* A card body is prose. An address, a URL or an identifier has no
+         whitespace in it, and reading somebody's email as their summary was
+         both ugly and the wrong kind of thing to put on a card. */
+      if (!/\s/.test(value.trim())) continue;
+      if (value.length > best.length) best = value;
+    }
+    return best ? esc(best.slice(0, limit)) + (best.length > limit ? "…" : "") : "";
+  }
+
+  const inboundRecords = (entity) =>
+    edges(entity.type, entity.id, "in").filter((e) => !meta(e.type).list_view);
+
+  function entityCard(entity) {
+    const records = inboundRecords(entity).length;
+    const ico = icon(entity);
+    const sub = subtitleParts(entity);
+    const groups = neighbourGroups(entity);
+    const stack = avatarStack(groups);
+    return `<div class="card card-link" data-href="#/${entity.type}/${encodeURI(entity.id)}" role="link" tabindex="0">
       <div class="card-head">
-        <div>
-          <h3 class="card-title">${esc(team.title)}</h3>
-          <div class="card-sub">${team.fm.team_number ? `Team ${team.fm.team_number} · ` : ""}${
-            team.fm.captain ? `${esc(personName(team.fm.captain))} (captain)` : "no captain recorded"
-          }</div>
+        <div class="card-ident">
+          ${ico}
+          <div style="min-width:0">
+            <h3 class="card-title">${esc(entity.title)}</h3>
+            ${sub.text ? `<div class="card-sub">${sub.text}</div>` : ""}
+          </div>
         </div>
-        ${pill(team.fm.status || "not-said", team.fm.status ? null : "quiet")}
+        ${vocabPills(entity, 1)}
       </div>
-      <div class="card-body">${
-        idea ? esc(idea.title) : team.fm.idea_label_as_stated ? esc(team.fm.idea_label_as_stated) : "<em>Idea not recorded</em>"
-      }</div>
+      ${blurb(entity) ? `<div class="card-body">${blurb(entity)}</div>` : ""}
       <div class="card-foot">
-        ${memberAvatars(team)}
-        ${team.fm.stage_gate ? pill(team.fm.stage_gate, "accent") : ""}
-        <span class="pill quiet">${recs.length} logged</span>
-        ${last ? `<span class="pill quiet">${esc(relTime(last.date))}</span>` : ""}
+        ${stack}
+        ${vocabPillList(entity, 3).slice(1).join("")}
+        ${refChips(entity, 3, sub.used)}
+        ${records ? `<span class="pill quiet">${records} record${records === 1 ? "" : "s"}</span>` : ""}
       </div>
-    </a>`;
+    </div>`;
   }
 
-  const teamCardCompact = (team) =>
-    `<a class="card" href="#/team/${encodeURI(team.id)}">
-      <h3 class="card-title" style="font-size:14px">${esc(team.title)}</h3>
-      <div class="card-sub">${team.fm.captain ? esc(personName(team.fm.captain)) : "—"}</div>
-    </a>`;
+  /* A one-line "who or what this belongs to": its first two reference fields,
+     and the set of fields it used, so the footer can skip them. */
+  /* Both directions, grouped: outbound by the field that declares it, inbound
+     by the type it comes from. Reading only outbound fields is what left a
+     person's team off their card. */
+  function neighbourGroups(entity) {
+    const groups = [];
+    const seen = new Set();
+    const push = (label, field, e) => {
+      if (seen.has(`${e.type}:${e.id}`) || !meta(e.type).list_view) return;
+      if (isRetired(e.type, e.id)) return;
+      seen.add(`${e.type}:${e.id}`);
+      let group = groups.find((g) => g.label === label);
+      if (!group) groups.push((group = { label, field, items: [] }));
+      group.items.push(e);
+    };
+    for (const e of edges(entity.type, entity.id, "out")) push(titleCase(e.field), e.field, e);
+    for (const e of edges(entity.type, entity.id, "in")) push(titleCase(folderOf(e.type)), null, e);
+    return groups;
+  }
 
-  function viewTeams() {
-    const statuses = [...new Set(teams().map((t) => t.fm.status).filter(Boolean))];
-    const active = state.filters.teamStatus;
-    const shown = active ? teams().filter((t) => t.fm.status === active) : teams();
-    const ordered = [...shown].sort(
-      (a, b) =>
-        (state.updatesByTeam.get(b.id) || []).length - (state.updatesByTeam.get(a.id) || []).length ||
-        (a.fm.team_number || 99) - (b.fm.team_number || 99)
-    );
-    return `
-      <div class="chips">
-        <button class="chip ${!active ? "on" : ""}" data-filter="teamStatus" data-value="">All ${teams().length}</button>
-        ${statuses
+  function subtitleParts(entity) {
+    const parts = [];
+    const used = new Set();
+    /* Groups shown as avatars are not repeated as text. */
+    const textual = neighbourGroups(entity).filter((g) => !hasIcon(g.items[0]?.type));
+    for (const group of textual.slice(0, 2)) {
+      const names = group.items.slice(0, 2).map((e) => entityName(e.type, e.id));
+      const more = group.items.length - names.length;
+      parts.push(`${group.label}: ${esc(names.join(", "))}${more > 0 ? ` +${more}` : ""}`);
+      used.add(group.label);
+    }
+    return { text: parts.join(" · "), used };
+  }
+  const subtitle = (entity) => subtitleParts(entity).text;
+
+  /* Filters come from the entity's own vocabulary fields, so any brain gets
+     the right chips without the page knowing what they mean. */
+  function filterableFields(type) {
+    return Object.entries(fieldsOf(type))
+      .filter(([, fs]) => fs.vocab && (state.data.vocabularies[fs.vocab] || []).length)
+      .slice(0, 2)
+      .map(([field, fs]) => [field, fs.vocab]);
+  }
+
+  function viewList(type) {
+    let shown = [...all(type)].sort((a, b) => a.title.localeCompare(b.title));
+    const chipRows = filterableFields(type).map(([field, vocab]) => {
+      const active = state.filters[`${type}.${field}`] || "";
+      if (active) shown = shown.filter((x) => listOf(x.fm[field]).includes(active));
+      const present = (state.data.vocabularies[vocab] || []).filter((v) =>
+        all(type).some((x) => listOf(x.fm[field]).includes(v))
+      );
+      if (present.length < 2) return "";
+      return `<div class="chips">
+        <button class="chip ${!active ? "on" : ""}" data-filter="${esc(type)}.${esc(field)}" data-value="">All ${esc(
+        titleCase(field).toLowerCase()
+      )}</button>
+        ${present
           .map(
-            (s) =>
-              `<button class="chip ${active === s ? "on" : ""}" data-filter="teamStatus" data-value="${esc(s)}">${esc(
-                titleCase(s)
-              )}</button>`
+            (v) =>
+              `<button class="chip ${active === v ? "on" : ""}" data-filter="${esc(type)}.${esc(
+                field
+              )}" data-value="${esc(v)}">${esc(titleCase(v))}</button>`
           )
           .join("")}
-      </div>
-      <div class="grid cols-3">${ordered.map(teamCard).join("")}</div>`;
-  }
-
-  /* ---------------- view: ideas ---------------- */
-
-  function ideaCard(idea) {
-    const pickedBy = listOf(idea.fm.picked_by);
-    return `<a class="card" href="#/idea/${encodeURI(idea.id)}">
-      <div class="card-head">
-        <h3 class="card-title">${esc(idea.title)}</h3>
-        ${pill(idea.fm.status || "unclaimed")}
-      </div>
-      <div class="card-sub">${
-        listOf(idea.fm.proposed_by).length
-          ? esc(listOf(idea.fm.proposed_by).map(personName).join(", "))
-          : "submitter not recorded"
-      }</div>
-      <div class="card-body">${(() => {
-        const blurb = idea.fm.demo_promise || idea.fm.beneficiaries || "";
-        return esc(blurb.slice(0, 165)) + (blurb.length > 165 ? "…" : "");
-      })()}</div>
-      <div class="card-foot">
-        ${idea.fm.problem_area ? pill(idea.fm.problem_area, "alt") : ""}
-        ${pickedBy.length ? `<span class="pill accent">${esc(pickedBy.map((s) => entityName("team", s)).join(", "))}</span>` : ""}
-      </div>
-    </a>`;
-  }
-
-  function viewIdeas() {
-    const areas = state.data.vocabularies.problem_area || [];
-    const { ideaArea, ideaStatus } = state.filters;
-    let shown = ideas();
-    if (ideaArea) shown = shown.filter((x) => x.fm.problem_area === ideaArea);
-    if (ideaStatus) shown = shown.filter((x) => (x.fm.status || "unclaimed") === ideaStatus);
-    const statuses = state.data.vocabularies.idea_status || [];
-    return `
-      <div class="chips">
-        <button class="chip ${!ideaArea ? "on" : ""}" data-filter="ideaArea" data-value="">All areas</button>
-        ${areas
-          .filter((a) => ideas().some((x) => x.fm.problem_area === a))
-          .map(
-            (a) =>
-              `<button class="chip ${ideaArea === a ? "on" : ""}" data-filter="ideaArea" data-value="${esc(a)}">${esc(
-                titleCase(a)
-              )}</button>`
-          )
-          .join("")}
-      </div>
-      <div class="chips">
-        <button class="chip ${!ideaStatus ? "on" : ""}" data-filter="ideaStatus" data-value="">Any status</button>
-        ${statuses
-          .map(
-            (s) =>
-              `<button class="chip ${ideaStatus === s ? "on" : ""}" data-filter="ideaStatus" data-value="${esc(s)}">${esc(
-                titleCase(s)
-              )}</button>`
-          )
-          .join("")}
-      </div>
-      <div class="section-head"><h2>${shown.length} idea${shown.length === 1 ? "" : "s"}</h2></div>
-      <div class="grid cols-3">${shown.map(ideaCard).join("")}</div>`;
-  }
-
-  /* ---------------- view: people ---------------- */
-
-  function viewPeople() {
-    const sorted = [...people()].sort((a, b) => a.title.localeCompare(b.title));
-    return `
-      <div class="section-head"><h2>${sorted.length} people</h2>
-        <span class="note">team membership and proposed ideas are generated from the team and idea files</span></div>
-      <div class="grid cols-4">${sorted
-        .map((p) => {
-          const teamRoles = listOf(p.fm.teams);
-          return `<a class="card" href="#/person/${encodeURI(p.id)}">
-            <div style="display:flex;gap:11px;align-items:center">
-              <span class="avatar lg">${esc(initials(p.title))}</span>
-              <div>
-                <h3 class="card-title" style="font-size:14.5px">${esc(p.title)}</h3>
-                <div class="card-sub">${
-                  teamRoles.length
-                    ? esc(teamRoles.map((t) => (typeof t === "string" ? titleCase(t) : entityName("team", t.team))).join(", "))
-                    : "no team recorded"
-                }</div>
-              </div>
-            </div>
-            ${
-              listOf(p.fm.proposed_ideas).length
-                ? `<div class="card-foot"><span class="pill accent">${listOf(p.fm.proposed_ideas).length} idea${
-                    listOf(p.fm.proposed_ideas).length === 1 ? "" : "s"
-                  } proposed</span></div>`
-                : ""
-            }
-          </a>`;
-        })
-        .join("")}</div>`;
+      </div>`;
+    });
+    /* Column width follows the content, not the count: a type whose entities
+       carry prose needs room to read it, one that is just a name and some
+       references does not. */
+    const hasProse = all(type).some((e) => blurb(e, 80));
+    const cols = hasProse ? "cols-3" : "cols-4";
+    return `${chipRows.join("")}
+      <div class="section-head"><h2>${shown.length} ${esc(
+      shown.length === 1 ? type : folderOf(type)
+    )}</h2></div>
+      <div class="grid ${cols}">${shown.map(entityCard).join("")}</div>`;
   }
 
   /* ---------------- view: activity ---------------- */
@@ -443,33 +624,35 @@
     if (!records.length) return `<div class="empty-note">Nothing logged yet.</div>`;
     return `<div class="feed">${records
       .map((r) => {
-        const actor = r.fm[RECORD_ACTOR[r.type]];
-        const summary =
-          r.type === "update" ? r.fm.what_changed
-          : r.type === "decision" ? r.fm.chosen_because
-          : r.fm.evidence;
+        const actorField = actorFieldOf(r.type);
+        const actor = r.fm[actorField];
+        const actorType = spec(r.type, actorField).ref_type;
+        /* The longest prose field that is not the title: whatever this record
+           type calls its summary. No field names, so a new record type reads
+           correctly the day it is added to the schema. */
+        const summary = blurb({ ...r, fm: r.fm }, 220);
+        const parentField = meta(r.type).parent_field;
+        const parentType = spec(r.type, parentField || "").ref_type;
         return `<div class="feed-item">
           <div class="feed-when">${esc(fmtDate(r.date))}</div>
           <div class="feed-main">
             ${link(r.type, r.id, r.title, "feed-title")}
             <div class="feed-meta">
-              <span class="pill ${r.type === "decision" ? "warm" : r.type === "learning" ? "alt" : "accent"}">${esc(r.type)}</span>
-              ${r.fm.team ? link("team", r.fm.team, entityName("team", r.fm.team)) : ""}
-              ${r.fm.stage ? pill(r.fm.stage, "quiet") : ""}
-              ${r.fm.record_kind ? pill(r.fm.record_kind) : ""}
-              ${r.fm.kind ? pill(r.fm.kind) : ""}
-              ${r.fm.decision_type ? pill(r.fm.decision_type, "quiet") : ""}
-              ${actor ? `<span class="pill quiet">${esc(personName(actor))}</span>` : ""}
+              <span class="pill ${toneFor(r.type) || "accent"}">${esc(r.type)}</span>
+              ${parentType && r.fm[parentField] ? link(parentType, r.fm[parentField], entityName(parentType, r.fm[parentField])) : ""}
+              ${vocabPills(r, 3)}
+              ${actor ? `<span class="pill quiet">${esc(actorType ? entityName(actorType, actor) : titleCase(actor))}</span>` : ""}
             </div>
-            ${summary && summary !== r.title ? `<div class="feed-text">${esc(String(summary).slice(0, 220))}</div>` : ""}
+            ${summary && summary !== r.title ? `<div class="feed-text">${summary}</div>` : ""}
           </div>
         </div>`;
       })
       .join("")}</div>`;
   }
 
-  function viewActivity() {
-    const kinds = ["update", "decision", "learning"];
+  function viewActivity(routeKind) {
+    const kinds = recordTypes();
+    if (routeKind && kinds.includes(routeKind)) state.filters.activityKind = routeKind;
     const active = state.filters.activityKind;
     const shown = active ? state.records.filter((r) => r.type === active) : state.records;
     return `
@@ -505,21 +688,106 @@
       </div>`;
   }
 
+  /* Everything the graph says touches this entity, in both directions, plus one
+     further hop through each neighbour.
+
+     The second hop is what was missing: a person declares their teams, and a
+     team declares its idea, so "what is this person working on" is two edges
+     away and no view had walked it. Nothing here names a field or a type — the
+     builder derived the edges from the schema, and this walks them. */
+
+  const REL_HOP_LIMIT = 8;
+
+  function relatedHtml(entity) {
+    const blocks = [];
+    const seen = new Set([`${entity.type}:${entity.id}`]);
+
+    /* Records filed against this entity read better as a feed than as links. */
+    const ownRecords = state.records.filter((r) =>
+      edges(entity.type, entity.id, "in").some((e) => e.type === r.type && e.id === r.id)
+    );
+    for (const e of edges(entity.type, entity.id, "in")) seen.add(`${e.type}:${e.id}`);
+    if (ownRecords.length) blocks.push(["Logged against this", feedHtml(ownRecords)]);
+
+    /* Inbound edges only. An entity's own references are already in the facts
+       panel, labelled and linked, so repeating them here said everything twice.
+       What the facts panel cannot show is what points *at* this entity. */
+    const groups = new Map();
+    /* Anything this entity already points at is in the facts panel. Its mirror
+       arriving as an inbound edge — picked_by in facts, team.idea inbound — is
+       the same relationship twice. */
+    const shown = new Set(
+      edges(entity.type, entity.id, "out").map((e) => `${e.type}:${e.id}`)
+    );
+    for (const dir of ["in"]) {
+      for (const e of edges(entity.type, entity.id, dir)) {
+        if (!meta(e.type).list_view) continue;      // records are in the feed above
+        const target = get(e.type, e.id);
+        if (!target || target.fm.deprecated) continue;
+        /* picked_by is generated from team.idea: the same relationship seen from
+           both ends. Show whichever we reach first and skip its mirror. */
+        if (shown.has(`${e.type}:${e.id}`)) continue;
+        shown.add(`${e.type}:${e.id}`);
+        const label = `${titleCase(folderOf(e.type))} by ${e.field.replace(/_/g, " ")}`;
+        if (!groups.has(label)) groups.set(label, []);
+        groups.get(label).push(`<div>${link(e.type, e.id, target.title)}</div>`);
+        seen.add(`${e.type}:${e.id}`);
+      }
+    }
+    for (const [label, items] of groups) blocks.push([label, `<div class="rel-list">${items.join("")}</div>`]);
+
+    /* Two hops, attributed to the neighbour they came through. */
+    const indirect = new Map();
+    for (const dir of ["out", "in"]) {
+      for (const near of edges(entity.type, entity.id, dir)) {
+        if (!meta(near.type).list_view) continue;
+        const via = get(near.type, near.id);
+        if (!via) continue;
+        for (const far of edges(near.type, near.id, "out")) {
+          const key2 = `${far.type}:${far.id}`;
+          if (seen.has(key2) || !meta(far.type).list_view) continue;
+          const target = get(far.type, far.id);
+          if (!target) continue;
+          const label = `${titleCase(folderOf(far.type))} via ${via.title}`;
+          if (!indirect.has(label)) indirect.set(label, []);
+          if (indirect.get(label).length < REL_HOP_LIMIT)
+            indirect.get(label).push(`<div>${link(far.type, far.id, target.title)}</div>`);
+          seen.add(key2);
+        }
+      }
+    }
+    for (const [label, items] of indirect)
+      blocks.push([label, `<div class="rel-list">${items.join("")}</div>`]);
+
+    if (!blocks.length) return "";
+    return blocks
+      .map(
+        ([label, body]) => `<div class="card" style="margin-top:14px">
+          <div class="card-sub" style="margin-bottom:9px">${esc(label)}</div>${body}</div>`
+      )
+      .join("");
+  }
+
   /* ---------------- view: detail ---------------- */
 
-  const HIDE_FACTS = new Set([
-    "schema_version", "type", "slug", "title", "name", "sources", "picked_by",
-    "members", "captain", "teams", "proposed_ideas", "what_changed", "decision", "learning",
-  ]);
+  /* Structural bookkeeping, plus whatever the card already used as the title.
+     Reference fields are NOT hidden here any more — they are the interesting
+     part, and they now render as links. */
+  const HIDE_FACTS = new Set(["schema_version", "type", "slug", "sources"]);
 
-  function factValue(k, v) {
+  /* A reference renders as a link because the schema says it is a reference —
+     not because the page recognises the field's name. The old version listed
+     field names, so any reference field it had not been told about rendered as
+     dead text. */
+  function factValue(k, v, type) {
     if (v == null || v === "" || (Array.isArray(v) && !v.length)) return "";
-    if (k === "team") return link("team", v, entityName("team", v));
-    if (k === "idea") return link("idea", v, entityName("idea", v));
-    if (["reported_by", "decided_by", "learned_by", "logged_by"].includes(k)) {
-      return get("person", v) ? link("person", v, personName(v)) : esc(titleCase(v));
+    const refType = type ? spec(type, k).ref_type : null;
+    if (refType) {
+      const ids = listOf(v).filter(Boolean);
+      return ids
+        .map((id) => (get(refType, id) ? link(refType, id, entityName(refType, id)) : esc(String(id))))
+        .join(", ");
     }
-    if (k === "proposed_by") return listOf(v).map((s) => link("person", s, personName(s))).join(", ");
     if (Array.isArray(v)) {
       return v
         .map((item) =>
@@ -527,20 +795,96 @@
             ? `<span class="pill quiet">${esc(Object.values(item).join(" · "))}</span>`
             : /^https?:/.test(item)
             ? `<a href="${esc(item)}" target="_blank" rel="noopener noreferrer">${esc(String(item).slice(0, 46))}…</a>`
-            : `<span class="pill">${esc(titleCase(item))}</span>`
+            : isVocabValue(k, type, item)
+            ? `<span class="pill">${esc(titleCase(item))}</span>`
+            : `<span class="pill quiet">${esc(item)}</span>`
         )
         .join(" ");
     }
     if (typeof v === "object") return `<span class="pill quiet">${esc(JSON.stringify(v))}</span>`;
     if (/^https?:/.test(v)) return `<a href="${esc(v)}" target="_blank" rel="noopener noreferrer">${esc(v)}</a>`;
     if (/^\d{4}-\d{2}-\d{2}/.test(String(v))) return esc(String(v));
-    return String(v).length > 60 ? esc(v) : pill(v) || esc(v);
+    if (isVocabValue(k, type, v)) return pill(v) || esc(v);
+    return esc(String(v));
   }
 
-  function factsHtml(fm) {
-    const rows = Object.entries(fm)
-      .filter(([k, v]) => !HIDE_FACTS.has(k) && v != null && v !== "" && !(Array.isArray(v) && !v.length))
-      .map(([k, v]) => `<div class="fact"><span class="k">${esc(titleCase(k))}</span><span class="v">${factValue(k, v)}</span></div>`);
+  /* Title-casing and pill styling belong to controlled vocabulary. Applying
+     them to free text capitalised every part of an address as though it were a
+     label. (Written without an example: the publish workflow refuses anything
+     address-shaped, and it cannot tell an illustration from a leak — correctly.) */
+  function isVocabValue(field, type, value) {
+    if (!type) return false;
+    const vocab = spec(type, field).vocab;
+    if (!vocab) return false;
+    return (state.data.vocabularies[vocab] || []).includes(value);
+  }
+
+  /* Where a field goes is decided by the shape of its value, not its name: a
+     list of objects or a paragraph is content and belongs in the wide column; a
+     word or a date is a fact and belongs in the margin. options_considered —
+     the whole point of a decision — was being squeezed into the sidebar as
+     unreadable monospace. */
+  const isHeavy = (v) =>
+    (typeof v === "string" && v.length > 160) ||
+    (Array.isArray(v) && v.some((i) => i && typeof i === "object")) ||
+    (v && typeof v === "object" && !Array.isArray(v) && Object.keys(v).length > 2);
+
+  function detailFields(entity, heavy) {
+    return Object.entries(entity.fm).filter(
+      ([k, v]) =>
+        !HIDE_FACTS.has(k) &&
+        k !== entity.title_field &&
+        v != null &&
+        v !== "" &&
+        !(Array.isArray(v) && !v.length) &&
+        isHeavy(v) === heavy
+    );
+  }
+
+  function structuredValue(v, type) {
+    if (Array.isArray(v)) {
+      return v
+        .map((item) =>
+          item && typeof item === "object"
+            ? `<div class="struct">${Object.entries(item)
+                .map(
+                  ([k, val]) =>
+                    `<div class="struct-row"><span class="struct-k">${esc(titleCase(k))}</span>` +
+                    `<span class="struct-v">${esc(String(val))}</span></div>`
+                )
+                .join("")}</div>`
+            : `<div class="struct-plain">${esc(String(item))}</div>`
+        )
+        .join("");
+    }
+    if (v && typeof v === "object") {
+      return `<div class="struct">${Object.entries(v)
+        .map(
+          ([k, val]) =>
+            `<div class="struct-row"><span class="struct-k">${esc(titleCase(k))}</span>` +
+            `<span class="struct-v">${esc(String(val))}</span></div>`
+        )
+        .join("")}</div>`;
+    }
+    return `<p>${esc(String(v))}</p>`;
+  }
+
+  function heavyFieldsHtml(entity) {
+    const rows = detailFields(entity, true);
+    if (!rows.length) return "";
+    return rows
+      .map(
+        ([k, v]) => `<div class="card" style="margin-top:14px">
+          <div class="card-sub" style="margin-bottom:9px">${esc(titleCase(k))}</div>
+          ${structuredValue(v, entity.type)}</div>`
+      )
+      .join("");
+  }
+
+  function factsHtml(entity) {
+    const { fm, type } = entity;
+    const rows = detailFields(entity, false)
+      .map(([k, v]) => `<div class="fact"><span class="k">${esc(titleCase(k))}</span><span class="v">${factValue(k, v, type)}</span></div>`);
     return rows.length ? `<div class="facts">${rows.join("")}</div>` : "";
   }
 
@@ -560,53 +904,6 @@
     </div>`;
   }
 
-  function relatedHtml(entity) {
-    const blocks = [];
-    if (entity.type === "team") {
-      const recs = state.updatesByTeam.get(entity.id) || [];
-      if (recs.length) blocks.push(["Logged by this team", feedHtml(recs)]);
-      const members = [entity.fm.captain, ...listOf(entity.fm.members)].filter(Boolean);
-      if (members.length)
-        blocks.push([
-          "Members",
-          `<div class="rel-list">${members
-            .map((m) => `<div>${link("person", m, personName(m))}${m === entity.fm.captain ? " <span class=\"pill quiet\">captain</span>" : ""}</div>`)
-            .join("")}</div>`,
-        ]);
-    }
-    if (entity.type === "idea") {
-      const picked = listOf(entity.fm.picked_by);
-      if (picked.length)
-        blocks.push([
-          "Picked up by",
-          `<div class="rel-list">${picked.map((t) => `<div>${link("team", t, entityName("team", t))}</div>`).join("")}</div>`,
-        ]);
-    }
-    if (entity.type === "person") {
-      const memberOf = teams().filter(
-        (t) => t.fm.captain === entity.id || listOf(t.fm.members).includes(entity.id)
-      );
-      if (memberOf.length)
-        blocks.push([
-          "Teams",
-          `<div class="rel-list">${memberOf
-            .map((t) => `<div>${link("team", t.id, t.title)}${t.fm.captain === entity.id ? " <span class=\"pill quiet\">captain</span>" : ""}</div>`)
-            .join("")}</div>`,
-        ]);
-      const proposed = listOf(entity.fm.proposed_ideas);
-      if (proposed.length)
-        blocks.push([
-          "Proposed ideas",
-          `<div class="rel-list">${proposed.map((i) => `<div>${link("idea", i, entityName("idea", i))}</div>`).join("")}</div>`,
-        ]);
-      const authored = state.records.filter((r) => r.fm[RECORD_ACTOR[r.type]] === entity.id);
-      if (authored.length) blocks.push(["Reported by this person", feedHtml(authored)]);
-    }
-    return blocks
-      .map(([title, body]) => `<div class="section-head"><h2>${esc(title)}</h2></div><div class="card">${body}</div>`)
-      .join("");
-  }
-
   function viewDetail(type, id) {
     const entity = get(type, id);
     if (!entity) return `<div class="empty-note">Nothing here with the id <code>${esc(id)}</code>.</div>`;
@@ -615,10 +912,9 @@
     return `
       <div class="detail">
         <div class="detail-top">
-          <a class="back" href="#/${type === "person" ? "people" : type === "idea" ? "ideas" : type === "team" ? "teams" : "activity"}">← back</a>
+          <a class="back" href="${esc(routeForType(type))}">← back</a>
           <span class="kicker">${esc(type)}</span>
-          ${entity.fm.status ? pill(entity.fm.status) : ""}
-          ${entity.fm.stage ? pill(entity.fm.stage, "quiet") : ""}
+          ${vocabPills(entity, 2)}
         </div>
         <h1>${esc(entity.title)}</h1>
         <div class="card-sub" style="margin-bottom:18px">
@@ -627,12 +923,13 @@
         <div class="detail-grid">
           <div>
             <div class="card prose">${entity.body || "<p><em>No prose in this file yet.</em></p>"}</div>
+            ${heavyFieldsHtml(entity)}
             ${relatedHtml(entity)}
           </div>
           <div>
             <div class="card">
               <div class="card-sub" style="margin-bottom:8px">Recorded facts</div>
-              ${factsHtml(entity.fm) || '<div class="empty-note">Nothing recorded.</div>'}
+              ${factsHtml(entity) || '<div class="empty-note">Nothing recorded.</div>'}
             </div>
             ${sourcesHtml(entity.fm)}
           </div>
@@ -683,25 +980,45 @@
     const hash = location.hash.replace(/^#\/?/, "") || "pulse";
     const [head, ...rest] = hash.split("/");
     const app = $("#app");
-    const detailTypes = ["team", "idea", "person", "update", "decision", "learning"];
+    const detailTypes = state.data.entity_order || [];
+    const listFolder = typeOfFolder(head);   // "#/teams" -> the team type
 
     let html;
     if (detailTypes.includes(head) && rest.length) {
       html = viewDetail(head, decodeURI(rest.join("/")));
+    } else if (listFolder && meta(listFolder).list_view) {
+      html = viewList(listFolder);
+    } else if (head === "activity") {
+      html = viewActivity(rest[0] || "");
     } else {
-      const views = { pulse: viewPulse, teams: viewTeams, ideas: viewIdeas, people: viewPeople, activity: viewActivity };
-      html = (views[head] || viewPulse)();
+      html = viewPulse();
     }
     app.innerHTML = html;
     window.scrollTo({ top: 0 });
 
-    const tab = detailTypes.includes(head)
-      ? { team: "teams", idea: "ideas", person: "people" }[head] || "activity"
-      : head;
+    const tab =
+      detailTypes.includes(head) && rest.length
+        ? meta(head).list_view
+          ? folderOf(head)
+          : "activity"
+        : listFolder
+        ? head
+        : head === "activity"
+        ? "activity"
+        : "pulse";
     document.querySelectorAll("#tabs a").forEach((a) => a.classList.toggle("active", a.dataset.view === tab));
   }
 
   /* ---------------- data loading ---------------- */
+
+  function renderTabs() {
+    const tabs = [["pulse", "Pulse"]]
+      .concat(listTypes().map((t) => [folderOf(t), titleCase(folderOf(t))]))
+      .concat([["activity", "Activity"]]);
+    $("#tabs").innerHTML = tabs
+      .map(([slug, label]) => `<a href="#/${esc(slug)}" data-view="${esc(slug)}">${esc(label)}</a>`)
+      .join("");
+  }
 
   async function load(initial) {
     const res = await fetch(`data.json?t=${Date.now()}`, { cache: "no-store" });
@@ -712,6 +1029,7 @@
     }
     state.data = data;
     index(data);
+    renderTabs();
     $("#freshness-text").textContent = `built ${relTime(data.built_at)} · ${data.commit || ""}`;
     $("#freshness").title = `Built ${new Date(data.built_at).toLocaleString()} from commit ${data.commit}`;
     if (data.repo) {
@@ -746,7 +1064,19 @@
       if (chip) {
         state.filters[chip.dataset.filter] = chip.dataset.value || null;
         route();
+        return;
       }
+      /* Clicking the card goes to the card. Clicking a link inside it — one of
+         its references — goes there instead, which is the reason the card is a
+         div: nested anchors are invalid and the parser tears the card apart. */
+      if (e.target.closest("a")) return;
+      const card = e.target.closest(".card-link[data-href]");
+      if (card) location.hash = card.dataset.href;
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter") return;
+      const card = e.target.closest?.(".card-link[data-href]");
+      if (card) location.hash = card.dataset.href;
     });
     document.addEventListener("keydown", (e) => {
       if (e.key === "/" && document.activeElement !== search) {
