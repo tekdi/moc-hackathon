@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T07:40:11+00:00",
+ "built_at": "2026-08-22T07:54:04+00:00",
  "public": true,
- "commit": "bacdf17",
+ "commit": "9fdfb05",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 3,
  "vocabularies": {
@@ -1992,12 +1992,22 @@
     {
      "field": "reported_by",
      "type": "update",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-schema-v3-projects"
+    },
+    {
+     "field": "reported_by",
+     "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-ashwin-visualiser-live"
     },
     {
      "field": "reported_by",
      "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-design-parity-pass"
+    },
+    {
+     "field": "reported_by",
+     "type": "update",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-filter-records-by-project"
     },
     {
      "field": "reported_by",
@@ -2067,12 +2077,37 @@
     {
      "field": "decided_by",
      "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-one-module-for-derivations"
+    },
+    {
+     "field": "decided_by",
+     "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-project-as-the-unit-of-work"
+    },
+    {
+     "field": "decided_by",
+     "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-retire-team-work-fields-as-aliases"
+    },
+    {
+     "field": "decided_by",
+     "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-cards-are-divs"
     },
     {
      "field": "decided_by",
      "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-fix-the-status-in-the-data"
+    },
+    {
+     "field": "decided_by",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type"
+    },
+    {
+     "field": "decided_by",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor"
     },
     {
      "field": "decided_by",
@@ -2122,7 +2157,27 @@
     {
      "field": "learned_by",
      "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-model-can-be-right-for-every-case-you-have"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-re-parenting-breaks-references-people-already-wrote"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-duplicated-rules-survive-until-the-model-changes"
     },
     {
      "field": "learned_by",
@@ -2153,6 +2208,11 @@
      "field": "learned_by",
      "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-documenting-a-leak-trips-the-leak-guard"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generating-from-the-schema-generates-the-noise-too"
     },
     {
      "field": "learned_by",
@@ -2232,6 +2292,11 @@
     },
     {
      "field": "project",
+     "type": "update",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-schema-v3-projects"
+    },
+    {
+     "field": "project",
      "type": "decision",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-21-decisions-and-learnings-as-entities"
     },
@@ -2267,6 +2332,21 @@
     },
     {
      "field": "project",
+     "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-one-module-for-derivations"
+    },
+    {
+     "field": "project",
+     "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-project-as-the-unit-of-work"
+    },
+    {
+     "field": "project",
+     "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-retire-team-work-fields-as-aliases"
+    },
+    {
+     "field": "project",
      "type": "learning",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-21-yaml-turns-a-bare-on-into-true"
     },
@@ -2283,7 +2363,27 @@
     {
      "field": "project",
      "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written"
+    },
+    {
+     "field": "project",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-model-can-be-right-for-every-case-you-have"
+    },
+    {
+     "field": "project",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-re-parenting-breaks-references-people-already-wrote"
+    },
+    {
+     "field": "project",
+     "type": "learning",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it"
+    },
+    {
+     "field": "project",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-duplicated-rules-survive-until-the-model-changes"
     },
     {
      "field": "project",
@@ -2374,12 +2474,22 @@
     {
      "field": "team",
      "type": "update",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-schema-v3-projects"
+    },
+    {
+     "field": "team",
+     "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-ashwin-visualiser-live"
     },
     {
      "field": "team",
      "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-design-parity-pass"
+    },
+    {
+     "field": "team",
+     "type": "update",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-filter-records-by-project"
     },
     {
      "field": "team",
@@ -2449,12 +2559,37 @@
     {
      "field": "team",
      "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-one-module-for-derivations"
+    },
+    {
+     "field": "team",
+     "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-project-as-the-unit-of-work"
+    },
+    {
+     "field": "team",
+     "type": "decision",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-retire-team-work-fields-as-aliases"
+    },
+    {
+     "field": "team",
+     "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-cards-are-divs"
     },
     {
      "field": "team",
      "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-fix-the-status-in-the-data"
+    },
+    {
+     "field": "team",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type"
+    },
+    {
+     "field": "team",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor"
     },
     {
      "field": "team",
@@ -2504,7 +2639,27 @@
     {
      "field": "team",
      "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written"
+    },
+    {
+     "field": "team",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-model-can-be-right-for-every-case-you-have"
+    },
+    {
+     "field": "team",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-re-parenting-breaks-references-people-already-wrote"
+    },
+    {
+     "field": "team",
+     "type": "learning",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it"
+    },
+    {
+     "field": "team",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-duplicated-rules-survive-until-the-model-changes"
     },
     {
      "field": "team",
@@ -2535,6 +2690,11 @@
      "field": "team",
      "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-documenting-a-leak-trips-the-leak-guard"
+    },
+    {
+     "field": "team",
+     "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generating-from-the-schema-generates-the-noise-too"
     },
     {
      "field": "team",
@@ -2668,6 +2828,11 @@
     {
      "field": "project",
      "type": "update",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-filter-records-by-project"
+    },
+    {
+     "field": "project",
+     "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live"
     },
     {
@@ -2689,6 +2854,16 @@
      "field": "project",
      "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-fix-the-status-in-the-data"
+    },
+    {
+     "field": "project",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type"
+    },
+    {
+     "field": "project",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor"
     },
     {
      "field": "project",
@@ -2724,6 +2899,11 @@
      "field": "project",
      "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-documenting-a-leak-trips-the-leak-guard"
+    },
+    {
+     "field": "project",
+     "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generating-from-the-schema-generates-the-noise-too"
     },
     {
      "field": "project",
@@ -4384,6 +4564,26 @@
    ],
    "in": []
   },
+  "update:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-schema-v3-projects": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "reported_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
   "update:t-brain--make-the-brain-explorable-not-just/2026-08-22-ashwin-visualiser-live": {
    "out": [
     {
@@ -4405,6 +4605,26 @@
    "in": []
   },
   "update:t-brain--make-the-brain-explorable-not-just/2026-08-22-design-parity-pass": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "reported_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "update:t-brain--make-the-brain-explorable-not-just/2026-08-22-filter-records-by-project": {
    "out": [
     {
      "field": "project",
@@ -4964,6 +5184,66 @@
    ],
    "in": []
   },
+  "decision:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-one-module-for-derivations": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "decided_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "decision:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-project-as-the-unit-of-work": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "decided_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "decision:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-retire-team-work-fields-as-aliases": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "decided_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
   "decision:t-brain--make-the-brain-explorable-not-just/2026-08-22-cards-are-divs": {
    "out": [
     {
@@ -4985,6 +5265,46 @@
    "in": []
   },
   "decision:t-brain--make-the-brain-explorable-not-just/2026-08-22-fix-the-status-in-the-data": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "decided_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "decision:t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "decided_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "decision:t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor": {
    "out": [
     {
      "field": "project",
@@ -5284,7 +5604,87 @@
    ],
    "in": []
   },
+  "learning:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "learning:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-model-can-be-right-for-every-case-you-have": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "learning:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-re-parenting-breaks-references-people-already-wrote": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
   "learning:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "learning:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-duplicated-rules-survive-until-the-model-changes": {
    "out": [
     {
      "field": "project",
@@ -5405,6 +5805,26 @@
    "in": []
   },
   "learning:t-brain--make-the-brain-explorable-not-just/2026-08-22-documenting-a-leak-trips-the-leak-guard": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "learning:t-brain--make-the-brain-explorable-not-just/2026-08-22-generating-from-the-schema-generates-the-noise-too": {
    "out": [
     {
      "field": "project",
@@ -7178,7 +7598,7 @@
       "markdown",
       "github-actions"
      ],
-     "current_summary": "The wiki, its schema and its validators — in production use by the other teams.",
+     "current_summary": "The wiki, its schema and its validators. Schema v3 models a project — one team's implementation of one idea — as the unit records attach to.",
      "stages_completed": [
       "discovery",
       "environment-setup",
@@ -7238,7 +7658,7 @@
       "python",
       "github-actions"
      ],
-     "current_summary": "A public page over this brain, rendered from the schema and rebuilt on every push.",
+     "current_summary": "A public page over this brain, rendered from the schema. Records filter by project, and an idea shows the work implementing it.",
      "last_update": "2026-08-22",
      "origin": "self-registered",
      "first_logged": "2026-08-22",
@@ -9652,6 +10072,66 @@
     "body": "<h3>What we did</h3>\n<p>Read the nine accumulated validation errors. Seven were the validator being wrong: nested records were only addressable by their qualified name, and mapping-form metrics were rejected though two teams had independently written them that way. The other two were a rename tombstone the schema had no word for.</p>\n<p>Schema v2 is additive — <code>team.related_ideas</code>, <code>idea.related_teams</code>, <code>team.deprecated</code>, <code>team.renamed_to</code>; references resolve by bare filename; metrics accept either shape; tombstones are exempt from the requirements of a live entity. 106 files carry the new version stamp and nothing else changed.</p>\n<h3>What broke</h3>\n<p>CI had been failing on six consecutive pushes while <code>publish-site</code> succeeded, and everybody kept pushing, because nothing gated on it.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>When several people independently write something your schema rejects, they are telling you about your schema. Fix the schema, not their files.</p>"
    },
    {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-schema-v3-projects",
+    "type": "update",
+    "path": "updates/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-schema-v3-projects.md",
+    "title": "Introduced projects as the unit of work and re-parented every record onto one, in a migration that left no record unmapped",
+    "title_field": "what_changed",
+    "fm": {
+     "schema_version": 3,
+     "type": "update",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "implementation",
+     "record_kind": "progress",
+     "date": "2026-08-22",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Introduced projects as the unit of work and re-parented every record onto one, in a migration that left no record unmapped",
+     "decisions": [
+      "2026-08-22-project-as-the-unit-of-work",
+      "2026-08-22-retire-team-work-fields-as-aliases",
+      "2026-08-22-one-module-for-derivations"
+     ],
+     "learnings": [
+      "2026-08-22-a-model-can-be-right-for-every-case-you-have",
+      "2026-08-22-a-migration-regex-hit-what-it-had-just-written",
+      "2026-08-22-duplicated-rules-survive-until-the-model-changes",
+      "2026-08-22-a-re-parenting-breaks-references-people-already-wrote"
+     ],
+     "metrics": {
+      "projects_created": 12,
+      "records_re_parented": 66,
+      "records_unmapped": 0,
+      "entities": 169,
+      "validation_errors": 0,
+      "sample": "the whole wiki before and after the migration",
+      "method": "scripts/validate_wiki.py, both generators in --check mode, the --public build and the publish gate's own grep"
+     },
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Added <code>projects/</code>, moved the work fields onto it, re-parented all 66 records, and kept <code>team</code> on each record as a generated field so nothing that read it broke.</p>\n<h3>What broke</h3>\n<p>A migration regex rewrote the entity the same script had just inserted, so every project-derived value computed as empty until it was caught. Two of Team 7's references named the old parent directory and stopped resolving.</p>\n<h3>What we decided</h3>\n<p>Retire the team-level work fields as generated aliases over one version rather than removing them on the day six teams were using them.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>The classification of T Brain's 43 records across its three projects was a judgement about our own work, so it was put in front of Parth before anything was logged on top of it — he checked a project's record list and confirmed it. Deriving something and having somebody confirm it are different claims, and only the second one earns the word \"corroborated\".</p>"
+   },
+   {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-ashwin-visualiser-live",
     "type": "update",
     "path": "updates/t-brain--make-the-brain-explorable-not-just/2026-08-22-ashwin-visualiser-live.md",
@@ -9745,6 +10225,67 @@
      ]
     },
     "body": "<h3>What we did</h3>\n<p>Compared the rewrite against the live original side by side. The original was still better: it had a stacked status bar with a legend, member avatars, colours that varied per value, and the anchor type leading the tabs.</p>\n<p>Each came back as a structural rule. A field holding one value per entity partitions the collection, so it renders as a stacked bar with a \"not said\" segment; a multi-valued field does not partition anything, so it stays bars. No vocabulary is charted twice, which stopped <code>stages_completed</code> duplicating the stage rail. Avatars come from a <code>display</code> hint on the entity type. Colours come from a value's index in its own vocabulary.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Hand-written views contain design judgement that reads as duplication. Going generic deletes it silently — nothing fails. List what the bespoke version does well before you replace it.</p>"
+   },
+   {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-filter-records-by-project",
+    "type": "update",
+    "path": "updates/t-brain--make-the-brain-explorable-not-just/2026-08-22-filter-records-by-project.md",
+    "title": "The page filters records by project and by person, projects have their own tab, and an idea shows the records of the work implementing it",
+    "title_field": "what_changed",
+    "fm": {
+     "schema_version": 3,
+     "type": "update",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "ux-validation",
+     "record_kind": "demo",
+     "date": "2026-08-22",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "The page filters records by project and by person, projects have their own tab, and an idea shows the records of the work implementing it",
+     "decisions": [
+      "2026-08-22-group-filters-by-target-type",
+      "2026-08-22-hop-only-through-the-anchor"
+     ],
+     "learnings": [
+      "2026-08-22-generating-from-the-schema-generates-the-noise-too"
+     ],
+     "metrics": {
+      "records_on_the_visualiser_idea_page_before": 0,
+      "records_after": 17,
+      "filter_rows": 2,
+      "sample": "the idea page for Make the Brain Explorable, and the activity page",
+      "method": "clicked through in a browser; DOM inspected for the group labels and counts"
+     },
+     "artifacts": [
+      {
+       "kind": "demo-video",
+       "url": "https://tekdi.github.io/moc-hackathon",
+       "note": "the live page (the running site, not a recording)"
+      }
+     ],
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Filter chips now come from reference fields as well as vocabulary fields, grouped by the type they point at. Picking a project shows that project's records and nothing else.</p>\n<h3>What broke</h3>\n<p>Generating a filter per reference field produced a chip for every decision in the wiki. And gathering records through any neighbour reached an idea's project, then its team, then that team's other projects — 77 records on a page that should show 17.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>The schema tells you what exists, not what is worth putting on screen. Every control we generated had to be asked what question it answers.</p>"
    },
    {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live",
@@ -11053,6 +11594,174 @@
     "body": "<h3>Context</h3>\n<p>Nine validation errors had accumulated from other teams' pushes. Reading them, seven were the validator being wrong, not the records.</p>\n<h3>Rationale</h3>\n<p>Contributors inventing a field is a schema gap. Contributors converging on an undocumented shape is a design signal. Neither is a user error.</p>\n<h3>Consequences</h3>\n<p>Schema v2, additive: <code>team.related_ideas</code>, <code>idea.related_teams</code>, <code>team.deprecated</code>, <code>team.renamed_to</code>; references resolve by bare filename as well as <code>team/filename</code>; metrics accept the mapping form; tombstones are exempt from the requirements of a live entity. Nine errors to zero. The specific call was the assistant's, under Parth's standing instruction that the schema serve the brain rather than the reverse.</p>"
    },
    {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-one-module-for-derivations",
+    "type": "decision",
+    "path": "decisions/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-one-module-for-derivations.md",
+    "title": "Compute every generated field in one shared module that both the rollup writer and the validator read",
+    "title_field": "decision",
+    "fm": {
+     "schema_version": 3,
+     "type": "decision",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "implementation",
+     "decision_type": "architecture-choice",
+     "decision": "Compute every generated field in one shared module that both the rollup writer and the validator read",
+     "options_considered": [
+      {
+       "option": "Keep the rules in both scripts, as they were",
+       "why_not": "The same fact written twice. Adding projects meant adding four rules to each, and the first one updated without the other would have had the validator passing files the writer would change and vice versa."
+      }
+     ],
+     "chosen_because": "A generated value should have one definition. The validator now compares against exactly what the writer would produce.",
+     "tradeoff_accepted": "A third script, and both tools now fail together if it has a bug.",
+     "constraints": [
+      "skills"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Rationale</h3>\n<p>The rules in it are general — inbound references, a connector join, a parent's fields inherited by its records, a single child mirrored by its parent, and roles taken from the field that referenced you. No entity name appears in it, so the next brain gets the same engine.</p>\n<h3>Consequences</h3>\n<p><code>idea.picked_by</code> is now a two-hop join through projects, which no per-field rule could have expressed.</p>"
+   },
+   {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-project-as-the-unit-of-work",
+    "type": "decision",
+    "path": "decisions/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-project-as-the-unit-of-work.md",
+    "title": "Model a project — one team's implementation of one idea — as a first-class entity, and hang every record off it",
+    "title_field": "decision",
+    "fm": {
+     "schema_version": 3,
+     "type": "decision",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "solution-design",
+     "decision_type": "architecture-choice",
+     "decision": "Model a project — one team's implementation of one idea — as a first-class entity, and hang every record off it",
+     "options_considered": [
+      {
+       "option": "Add an optional `idea` field to records, leaving the team as the parent",
+       "why_not": "Additive and safe, and it would have answered the filtering question today. But the pair is the thing that exists: without an object for it there is nowhere to put a status, a repo or a demo URL per piece of work, and a team with two ideas has two of each."
+      },
+      {
+       "option": "Fix only the filtering and leave the schema",
+       "why_not": "The records carry no idea, so there is nothing to filter by. It would have been a filter over data that cannot answer the question."
+      }
+     ],
+     "chosen_because": "A team is who, an idea is what, and the work is the pair. Two teams can build one idea and one team can build several, so neither end identifies the work.",
+     "tradeoff_accepted": "A re-parenting migration of every existing record, and one more entity for contributors to understand — though a single-idea team never sees it.",
+     "constraints": [
+      "time",
+      "skills"
+     ],
+     "reversible": "costly",
+     "revisit_if": "Projects turn out to hold nothing a team does not, in which case the pair could collapse back into a field on the record.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Context</h3>\n<p>Reported as a UX complaint — records could not be filtered by idea. The cause was the model: <code>update.team</code> was required and the path to an idea ran through the team, which only works while a team has one.</p>\n<h3>Rationale</h3>\n<p>Parth's call was to build it properly rather than take the additive shortcut. The deciding evidence was T Brain: 43 records across three ideas, none able to say which idea it advanced.</p>\n<h3>Consequences</h3>\n<p>12 projects, 66 records re-parented, <code>team</code> kept on every record as a generated field so nothing that read it broke. A single-project team sees no change: they log an update and it lands under their one project.</p>"
+   },
+   {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-retire-team-work-fields-as-aliases",
+    "type": "decision",
+    "path": "decisions/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-retire-team-work-fields-as-aliases.md",
+    "title": "Keep team.idea, team.status and team.stage_gate for one version as generated aliases of a single-project team's project",
+    "title_field": "decision",
+    "fm": {
+     "schema_version": 3,
+     "type": "decision",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "tech-design",
+     "decision_type": "pattern-choice",
+     "decision": "Keep team.idea, team.status and team.stage_gate for one version as generated aliases of a single-project team's project",
+     "options_considered": [
+      {
+       "option": "Remove them outright with the migration",
+       "why_not": "Six teams had been writing status and stage_gate on their team page all day, and the visualiser read them. A hard removal breaks both on the day."
+      },
+      {
+       "option": "Leave them writable alongside the project fields",
+       "why_not": "Two writable homes for one fact is the drift this wiki's link-direction rule exists to prevent — and nothing would say which was right."
+      }
+     ],
+     "chosen_because": "CONVENTIONS.md already had the rule: retire a field over two versions, keeping it populated as an alias. Generated rather than writable means one source of truth with a compatibility surface.",
+     "tradeoff_accepted": "A contributor editing team.status will see their edit reverted by the rollup script. Documented, but it will surprise somebody.",
+     "constraints": [
+      "time",
+      "compliance"
+     ],
+     "reversible": "yes",
+     "revisit_if": "Nothing reads the aliases any more — then they go, which is what the second version is for.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Consequences</h3>\n<p>They mirror the single project of a single-project team and are blank for a team with several, which is honest: T Brain has no one status.</p>"
+   },
+   {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-cards-are-divs",
     "type": "decision",
     "path": "decisions/t-brain--make-the-brain-explorable-not-just/2026-08-22-cards-are-divs.md",
@@ -11163,6 +11872,110 @@
      "date": "2026-08-22"
     },
     "body": "<h3>Consequences</h3>\n<p>Three ideas corrected. The mechanism is generic — no field or entity name appears in either script — so any brain can declare it on any field.</p>"
+   },
+   {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type",
+    "type": "decision",
+    "path": "decisions/t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type.md",
+    "title": "Generate one filter row per referenced entity type, and none for references to records",
+    "title_field": "decision",
+    "fm": {
+     "schema_version": 3,
+     "type": "decision",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "ux-validation",
+     "decision_type": "ux-tradeoff",
+     "decision": "Generate one filter row per referenced entity type, and none for references to records",
+     "options_considered": [
+      {
+       "option": "One row per reference field, which is what generating from the schema gives you",
+       "why_not": "It produced a row per author field — three fields all meaning 'a person' — and a row listing every decision as its own chip, because an update references decisions. Twenty chips of noise above the feed."
+      }
+     ],
+     "chosen_because": "The useful question is 'by which project' or 'by which person', not 'by which field'. Grouping by target answers it in one row.",
+     "tradeoff_accepted": "A record referencing two projects would filter under either, which the grouping hides.",
+     "constraints": [
+      "time"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Consequences</h3>\n<p>Two rows: projects and people. Picking a project shows exactly that project's records, which is the thing that could not be asked before.</p>"
+   },
+   {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor",
+    "type": "decision",
+    "path": "decisions/t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor.md",
+    "title": "Gather a page's records only through neighbours of the type records attach to",
+    "title_field": "decision",
+    "fm": {
+     "schema_version": 3,
+     "type": "decision",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "implementation",
+     "decision_type": "pattern-choice",
+     "decision": "Gather a page's records only through neighbours of the type records attach to",
+     "options_considered": [
+      {
+       "option": "Hop through every neighbour, which is the simpler rule",
+       "why_not": "An idea page then reaches its project's team, and through the team every other project that team runs. The idea for the visualiser showed 77 records, 60 of which belonged to different work."
+      }
+     ],
+     "chosen_because": "Records attach to one type; that is the only hop that means anything. The type is read from the schema rather than named.",
+     "tradeoff_accepted": "A record reachable only by a longer path is not shown.",
+     "constraints": [
+      "data"
+     ],
+     "reversible": "yes",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Consequences</h3>\n<p>The idea page went from 77 records to its project's 17.</p>"
    },
    {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-merge-without-waiting-for-review",
@@ -11796,6 +12609,139 @@
     "body": "<h3>What happened</h3>\n<p>Seeded data was written by the same script that defined the convention, so every reference in it was qualified and the bug could not surface until somebody else wrote a record by hand.</p>\n<h3>Evidence</h3>\n<p>Two <code>does not resolve in decisions/</code> errors against files present in the repo.</p>\n<h3>What we'd do differently</h3>\n<p>Both forms now resolve, and CONVENTIONS.md documents the short one as normal.</p>"
    },
    {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written",
+    "type": "learning",
+    "path": "learnings/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written.md",
+    "title": "A regex rewriting every occurrence of a field also rewrote the entity the same script had just inserted",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "implementation",
+     "kind": "failed",
+     "learning": "A regex rewriting every occurrence of a field also rewrote the entity the same script had just inserted",
+     "evidence": "The migration replaced `team: { ref: teams, required: true }` with a project reference across the record entities, and the new project entity — added earlier in the same run — matched too. It came out with a reference to itself and a generated team, so every project-derived value computed as empty.",
+     "generalises_to": "Any migration that inserts and rewrites in one pass: the inserted text is inside the file the rewrite scans.",
+     "would_do_differently": "Insert and rewrite in separate passes, or anchor the rewrite to the blocks that existed before the insert.",
+     "cost_of_lesson": "~15 minutes, found because derived values came back empty rather than wrong",
+     "ai_failure_mode": "wrong-abstraction",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Evidence</h3>\n<p><code>project.team</code> reported <code>generated: True</code> in the loaded schema, which it must never be — it is the authoritative half of the link.</p>\n<h3>What we'd do differently</h3>\n<p>The failure was loud, which is the only good part: an empty derivation is easy to spot. A regex that had corrupted a <em>value</em> rather than a field spec would have been silent.</p>"
+   },
+   {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-model-can-be-right-for-every-case-you-have",
+    "type": "learning",
+    "path": "learnings/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-model-can-be-right-for-every-case-you-have.md",
+    "title": "The schema modelled a team that happens to have an idea, and that was indistinguishable from modelling the work until one team carried more than one idea",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "solution-design",
+     "kind": "surprised",
+     "learning": "The schema modelled a team that happens to have an idea, and that was indistinguishable from modelling the work until one team carried more than one idea",
+     "evidence": "Nine of ten teams have exactly one idea, so team and project were the same thing for them and every page looked correct. T Brain has three ideas and 43 records, and not one record could say which idea it advanced. No idea has two teams yet, so the other half of the mismatch is still theoretical.",
+     "generalises_to": "Any model where two concepts are one-to-one in the data you happen to have: the join is invisible until the first row where they differ, and the first such row is usually yours.",
+     "would_do_differently": "Ask which pairs are genuinely one-to-one and which merely are today. The idea-to-team relationship was described as many-to-one on day one and the schema still collapsed it.",
+     "cost_of_lesson": "a re-parenting migration of 66 records, on the last day, rather than one field on day one",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>The gap surfaced as a UX complaint about filtering, not as a modelling error.</p>\n<h3>What we'd do differently</h3>\n<p>The tell was already in the file: <code>team.related_ideas</code> existed, which is a model admitting a team has several ideas while every record assumed one.</p>"
+   },
+   {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-re-parenting-breaks-references-people-already-wrote",
+    "type": "learning",
+    "path": "learnings/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-re-parenting-breaks-references-people-already-wrote.md",
+    "title": "Moving records to a new parent invalidated references other contributors had written in the qualified form",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "integration",
+     "kind": "surprised",
+     "learning": "Moving records to a new parent invalidated references other contributors had written in the qualified form",
+     "evidence": "Team 7's update referenced `team-7/2026-08-21-security-cleanup`. The record still existed, under its project directory, so the reference resolved to nothing — two validation errors against files that were plainly present.",
+     "generalises_to": "Any identifier that embeds its container. A migration that re-parents will break every reference written the long way, and those references were written by people who are not doing the migration.",
+     "would_do_differently": "Treat the container in a reference as a hint rather than part of the key. The validator now resolves by filename and warns, so the next re-parenting breaks nothing.",
+     "cost_of_lesson": "two errors and a fallback rule; the alternative was rewriting other teams' references by hand",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What we'd do differently</h3>\n<p>Both forms resolve now, and the qualified one warns with the correction rather than failing.</p>"
+   },
+   {
     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it",
     "type": "learning",
     "path": "learnings/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-red-ci-that-blocks-nothing-teaches-people-to-ignore-it.md",
@@ -11835,6 +12781,50 @@
      "date": "2026-08-22"
     },
     "body": "<h3>What happened</h3>\n<p>CI was wired on day one and then nobody looked at it, including the person who wired it.</p>\n<h3>Evidence</h3>\n<p>Six failing <code>validate</code> runs across pushes from three different contributors, none of which stopped anything.</p>\n<h3>What we'd do differently</h3>\n<p>Read the first few CI runs after adding a check to somebody else's workflow. The information was one command away for a full day.</p>"
+   },
+   {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-duplicated-rules-survive-until-the-model-changes",
+    "type": "learning",
+    "path": "learnings/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-duplicated-rules-survive-until-the-model-changes.md",
+    "title": "Two scripts implementing the same derivation coexisted happily for a day, and only a model change made the duplication expensive",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "implementation",
+     "kind": "reusable",
+     "learning": "Two scripts implementing the same derivation coexisted happily for a day, and only a model change made the duplication expensive",
+     "evidence": "build_rollups.py wrote generated fields and validate_wiki.py checked them, each with its own copy of the rules. Adding projects meant four new rules in each; the first updated without the other would have had the validator pass files the writer would immediately change.",
+     "generalises_to": "Any pair of tools that agree by coincidence rather than by construction — a writer and its checker, a builder and its linter.",
+     "would_do_differently": "Extract the shared rule the second time it is written, not the third. The duplication was visible when the validator was first given a rollup check.",
+     "cost_of_lesson": "~30 minutes to extract, against four rules that would otherwise have been written twice and drifted",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Evidence</h3>\n<p>scripts/derive.py is now the only place a generated value is computed, and the rules in it are general rather than per-field.</p>"
    },
    {
     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-file-per-update-held-under-real-concurrency",
@@ -12097,6 +13087,50 @@
      "date": "2026-08-22"
     },
     "body": "<h3>What happened</h3>\n<p>The merge validated cleanly and then refused to publish.</p>\n<h3>Evidence</h3>\n<p>The workflow's own message named the cause exactly, which is why this cost minutes rather than an afternoon — a gate that says what it found and why is worth the one it interrupts.</p>\n<h3>What we'd do differently</h3>\n<p>Write about the shape of a leak, not an instance of one.</p>"
+   },
+   {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generating-from-the-schema-generates-the-noise-too",
+    "type": "learning",
+    "path": "learnings/t-brain--make-the-brain-explorable-not-just/2026-08-22-generating-from-the-schema-generates-the-noise-too.md",
+    "title": "A rule that turns every reference field into a filter turns useless fields into filters too",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "ux-validation",
+     "kind": "surprised",
+     "learning": "A rule that turns every reference field into a filter turns useless fields into filters too",
+     "evidence": "The first version produced a chip for every decision in the wiki, because an update references its decisions, plus three separate author rows for reported_by, decided_by and learned_by. Twenty-odd chips above the feed, all technically correct.",
+     "generalises_to": "Any UI generated from a schema: the schema describes what exists, not what is worth showing, and the difference shows up as clutter rather than as an error.",
+     "would_do_differently": "Ask what question each generated control answers. Grouping by target type and excluding references to records took it from twenty chips to two rows.",
+     "cost_of_lesson": "~10 minutes, caught by a screenshot rather than by a check",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits, CI runs and the deployed build read directly"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Evidence</h3>\n<p>Screenshot of the activity page with a chip per decision, next to the same page after grouping.</p>"
    },
    {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generic-is-not-the-same-as-good",
@@ -12424,6 +13458,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "9fdfb05",
+   "author": "Parth Lawate",
+   "date": "2026-08-22T13:23:51+05:30",
+   "subject": "hack: T Brain — log the v3 modelling work and the project filtering"
+  },
   {
    "sha": "bacdf17",
    "author": "Gourav More",
