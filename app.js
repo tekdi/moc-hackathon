@@ -285,17 +285,34 @@
                Saying "0 with records" about people read as a gap when it is
                simply not how people connect. */
             const anchor = recordTypes().map((rt) => meta(rt).parent_type).find(Boolean);
-            const sub = !meta(type).list_view
-              ? `across ${new Set(items.map((e) => e.fm[meta(type).parent_field]).filter(Boolean)).size} ${folderOf(
-                  meta(type).parent_type || ""
-                )}`
-              : type === anchor
-              ? `${items.filter((e) => inboundRecords(e).length).length} with records logged`
-              : `${
-                  items.filter((e) =>
-                    edges(e.type, e.id, "in").some((x) => x.type === anchor)
-                  ).length
-                } linked to a ${anchor || "team"}`;
+            let sub;
+            if (!meta(type).list_view) {
+              sub = `across ${
+                new Set(items.map((e) => e.fm[meta(type).parent_field]).filter(Boolean)).size
+              } ${folderOf(meta(type).parent_type || "")}`;
+            } else if (type === anchor) {
+              sub = `${items.filter((e) => inboundRecords(e).length).length} with records logged`;
+            } else {
+              /* Whichever browsable type most of these actually connect to —
+                 people reach the work through teams, ideas through projects.
+                 Naming one type for all of them said "0 linked to a project"
+                 about 55 people, which is not a gap but the wrong question. */
+              const tally = new Map();
+              for (const e of items)
+                for (const x of edges(e.type, e.id, "in"))
+                  if (meta(x.type).list_view && x.type !== type)
+                    tally.set(x.type, (tally.get(x.type) || 0) + 1);
+              /* Prefer the type the work itself hangs off: 20 ideas have a
+                 proposer and 10 have a project, and the interesting number is
+                 how many are being built. */
+              const via = tally.has(anchor)
+                ? anchor
+                : [...tally.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+              const n = via
+                ? items.filter((e) => edges(e.type, e.id, "in").some((x) => x.type === via)).length
+                : 0;
+              sub = via ? `${n} linked to a ${via}` : `${items.length} recorded`;
+            }
             return stat(items.length, titleCase(folderOf(type)), sub, TONES[at % TONES.length], routeForType(type));
           })
           .join("")}
@@ -574,37 +591,62 @@
   }
   const subtitle = (entity) => subtitleParts(entity).text;
 
-  /* Filters come from the entity's own vocabulary fields, so any brain gets
-     the right chips without the page knowing what they mean. */
+  /* Filters come from the entity's own fields: vocabulary values, and now
+     references too. Filtering records by the project or the idea they belong to
+     was impossible while only vocabularies produced chips. */
   function filterableFields(type) {
-    return Object.entries(fieldsOf(type))
-      .filter(([, fs]) => fs.vocab && (state.data.vocabularies[fs.vocab] || []).length)
-      .slice(0, 2)
-      .map(([field, fs]) => [field, fs.vocab]);
+    const vocabs = Object.entries(fieldsOf(type))
+      .filter(([, fs]) => fs.vocab && !fs.bookkeeping && (state.data.vocabularies[fs.vocab] || []).length)
+      .map(([field, fs]) => ({ field, kind: "vocab", vocab: fs.vocab }));
+    const refs = Object.entries(fieldsOf(type))
+      .filter(([, fs]) => fs.ref_type && !fs.generated && meta(fs.ref_type).list_view)
+      .map(([field, fs]) => ({ field, kind: "ref", refType: fs.ref_type }));
+    return [...refs, ...vocabs].slice(0, 3);
+  }
+
+  /* The values a field actually takes across a set, with a label for each. */
+  function filterValues(items, f) {
+    const seen = new Map();
+    for (const item of items) {
+      for (const value of listOf(item.fm[f.field])) {
+        if (!value || typeof value !== "string") continue;
+        if (!seen.has(value))
+          seen.set(value, f.kind === "ref" ? entityName(f.refType, value) : titleCase(value));
+      }
+    }
+    if (f.kind === "vocab") {
+      const order = state.data.vocabularies[f.vocab] || [];
+      return [...seen].sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]));
+    }
+    return [...seen].sort((a, b) => a[1].localeCompare(b[1]));
+  }
+
+  function chipRow(items, f, key) {
+    const active = state.filters[key] || "";
+    const values = filterValues(items, f);
+    if (values.length < 2) return "";
+    return `<div class="chips">
+      <button class="chip ${!active ? "on" : ""}" data-filter="${esc(key)}" data-value="">All ${esc(
+      titleCase(f.field).toLowerCase()
+    )}</button>
+      ${values
+        .map(
+          ([value, label]) =>
+            `<button class="chip ${active === value ? "on" : ""}" data-filter="${esc(
+              key
+            )}" data-value="${esc(value)}">${esc(label)}</button>`
+        )
+        .join("")}</div>`;
   }
 
   function viewList(type) {
     let shown = [...all(type)].sort((a, b) => a.title.localeCompare(b.title));
-    const chipRows = filterableFields(type).map(([field, vocab]) => {
-      const active = state.filters[`${type}.${field}`] || "";
-      if (active) shown = shown.filter((x) => listOf(x.fm[field]).includes(active));
-      const present = (state.data.vocabularies[vocab] || []).filter((v) =>
-        all(type).some((x) => listOf(x.fm[field]).includes(v))
-      );
-      if (present.length < 2) return "";
-      return `<div class="chips">
-        <button class="chip ${!active ? "on" : ""}" data-filter="${esc(type)}.${esc(field)}" data-value="">All ${esc(
-        titleCase(field).toLowerCase()
-      )}</button>
-        ${present
-          .map(
-            (v) =>
-              `<button class="chip ${active === v ? "on" : ""}" data-filter="${esc(type)}.${esc(
-                field
-              )}" data-value="${esc(v)}">${esc(titleCase(v))}</button>`
-          )
-          .join("")}
-      </div>`;
+    const chipRows = filterableFields(type).map((f) => {
+      const key = `${type}.${f.field}`;
+      const row = chipRow(all(type), f, key);
+      const active = state.filters[key];
+      if (active) shown = shown.filter((x) => listOf(x.fm[f.field]).includes(active));
+      return row;
     });
     /* Column width follows the content, not the count: a type whose entities
        carry prose needs room to read it, one that is just a name and some
@@ -654,8 +696,55 @@
     const kinds = recordTypes();
     if (routeKind && kinds.includes(routeKind)) state.filters.activityKind = routeKind;
     const active = state.filters.activityKind;
-    const shown = active ? state.records.filter((r) => r.type === active) : state.records;
+    let shown = active ? state.records.filter((r) => r.type === active) : state.records;
+
+    /* One filter per referenced entity type, not per field. Three record types
+       name their author in three different fields (reported_by, decided_by,
+       learned_by) and all three mean "a person", so grouping by target gives one
+       "by person" row instead of three. Fields pointing at record types are left
+       out: an update's `decisions` list would otherwise become a chip per
+       decision.
+
+       This is what makes "all of this team's work on this idea" answerable —
+       pick the project. */
+    const byTarget = new Map();
+    for (const type of kinds) {
+      for (const [field, fs] of Object.entries(fieldsOf(type))) {
+        if (!fs.ref_type || fs.generated || !meta(fs.ref_type).list_view) continue;
+        if (!byTarget.has(fs.ref_type)) byTarget.set(fs.ref_type, new Set());
+        byTarget.get(fs.ref_type).add(field);
+      }
+    }
+    const refRows = [...byTarget].map(([refType, fields]) => {
+      const key = `activity.${refType}`;
+      const active = state.filters[key];
+      const labels = new Map();
+      for (const r of state.records)
+        for (const field of fields)
+          for (const v of listOf(r.fm[field]))
+            if (typeof v === "string" && v) labels.set(v, entityName(refType, v));
+      if (labels.size < 2) return "";
+      if (active)
+        shown = shown.filter((r) =>
+          [...fields].some((field) => listOf(r.fm[field]).includes(active))
+        );
+      return `<div class="chips">
+        <button class="chip ${!active ? "on" : ""}" data-filter="${esc(key)}" data-value="">All ${esc(
+        folderOf(refType)
+      )}</button>
+        ${[...labels]
+          .sort((a, b) => a[1].localeCompare(b[1]))
+          .map(
+            ([value, label]) =>
+              `<button class="chip ${active === value ? "on" : ""}" data-filter="${esc(
+                key
+              )}" data-value="${esc(value)}">${esc(label)}</button>`
+          )
+          .join("")}</div>`;
+    });
+
     return `
+      ${refRows.join("")}
       <div class="chips">
         <button class="chip ${!active ? "on" : ""}" data-filter="activityKind" data-value="">Everything ${state.records.length}</button>
         ${kinds
@@ -735,6 +824,29 @@
       }
     }
     for (const [label, items] of groups) blocks.push([label, `<div class="rel-list">${items.join("")}</div>`]);
+
+    /* Records filed against a neighbour. An idea reaches its records through
+       the projects that implement it, so without this hop an idea page shows
+       which teams picked it up and nothing they actually did.
+
+       Only through the type records actually attach to, though: hopping through
+       a team as well would pull in every other project that team runs, which on
+       an idea page is somebody else's work. And deduped, because a generated
+       field means the same neighbour arrives from both directions. */
+    const anchorType = recordTypes().map((t) => meta(t).parent_type).find(Boolean);
+    const hopped = new Set();
+    for (const near of edges(entity.type, entity.id, "out").concat(
+      edges(entity.type, entity.id, "in")
+    )) {
+      if (near.type !== anchorType || hopped.has(near.id)) continue;
+      hopped.add(near.id);
+      const via = get(near.type, near.id);
+      if (!via) continue;
+      const viaRecords = state.records.filter((r) =>
+        edges(near.type, near.id, "in").some((e) => e.type === r.type && e.id === r.id)
+      );
+      if (viaRecords.length) blocks.push([`Logged against ${via.title}`, feedHtml(viaRecords)]);
+    }
 
     /* Two hops, attributed to the neighbour they came through. */
     const indirect = new Map();
