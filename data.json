@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T07:56:18+00:00",
+ "built_at": "2026-08-22T07:57:39+00:00",
  "public": true,
- "commit": "6a9662b",
+ "commit": "b52badf",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 3,
  "vocabularies": {
@@ -6399,11 +6399,11 @@
      "beneficiaries": "Delivery and engineering teams reusing past decisions, PMs and architects scoping new engagements, new joiners ramping onto a project, and anyone drafting proposals or case studies who needs real delivery history.",
      "demo_promise": "Feed the skill a real conversation about a delivery decision and show it land — correctly shaped, correctly routed, correctly attributed — in the right brain repo, without a human picking where it goes.",
      "inspiration": "current-tekdi-project",
-     "status": "in-progress",
+     "status": "demoed",
      "idea_ref_ideas_sheet": 20,
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "ideas-sheet",
@@ -6481,11 +6481,11 @@
      "beneficiaries": "Non-technical staff (BD, leadership, HR) who need to explore what Tekdi knows without going through an AI agent or GitHub, and new joiners orienting themselves.",
      "demo_promise": "Load tekdibraincore, show a graph a non-engineer can navigate, click into an entity, and ask a real question in a chat panel to get a real, sourced answer.",
      "inspiration": "current-tekdi-project",
-     "status": "in-progress",
+     "status": "demoed",
      "idea_ref_ideas_sheet": 23,
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "ideas-sheet",
@@ -6998,11 +6998,11 @@
      "beneficiaries": "Brain curators and stewards who need confidence in what lands in the wiki, and leadership who need sensitive or client-related content gated before commit.",
      "demo_promise": "A low-trust user tries to push an update and it lands in pending instead of committing; an approver opens the web view, reads the diff, approves, and it lands for real.",
      "inspiration": "current-tekdi-project",
-     "status": "in-progress",
+     "status": "demoed",
      "idea_ref_ideas_sheet": 22,
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "ideas-sheet",
@@ -7229,7 +7229,8 @@
       "t-brain--give-the-brain-a-memory-for-how-we",
       "t-brain--make-the-brain-explorable-not-just",
       "t-brain--whos-allowed-to-write-to-the-brain"
-     ]
+     ],
+     "status": "demo-ready"
     },
     "body": "<h3>What they're building</h3>\n<p>Three things, all of which the rest of the hackathon is already using:</p>\n<ol>\n<li><strong>This wiki</strong> — the entity model, the vocabularies, the validators, the seeded backlog. Primary idea: <a href=\"#/idea/give-the-brain-a-memory-for-how-we-actually-deliver\">Give the Brain a Memory for How We Actually Deliver</a>.</li>\n<li><strong>Multi-brain routing in <code>brain-ingest-skill</code></strong> — one install serving several wikis, choosing its target at install or on first use, and refusing to write into a wiki it was not given. Touches <a href=\"#/idea/whos-allowed-to-write-to-the-brain\">Who's Allowed to Write to the Brain?</a>.</li>\n<li><strong>The visualiser</strong> at <a href=\"https://tekdi.github.io/moc-hackathon\" target=\"_blank\" rel=\"noopener noreferrer\">https://tekdi.github.io/moc-hackathon</a>, built by Ashwin — a public, schema-driven page over this brain, rebuilt on every push. That is <a href=\"#/idea/make-the-brain-explorable-not-just-queryable\">Make the Brain Explorable, Not Just Queryable</a>.</li>\n</ol>\n<h3>Current state</h3>\n<p><code>demo-ready</code>, and past that in practice: five other contributors have pushed into this wiki and the visualiser serves it publicly. <code>stage_gate</code> is <code>productisation</code> because what remains is operational — who may write, what CI gates, how it merges into <code>tekdibraincore</code> after the event.</p>\n<h3>Notes</h3>\n<p><strong>Not on the organisers' teams sheet.</strong> This team registered itself in the wiki rather than through the sign-up sheet, so it has no <code>team_number</code>. Its idea entries were pre-seeded from the ideas sheet like everyone else's.</p>"
    },
@@ -13538,6 +13539,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "b52badf",
+   "author": "Parth Lawate",
+   "date": "2026-08-22T13:27:24+05:30",
+   "subject": "hack: the brain ideas are demoed, and a team mirrors what its projects agree on"
+  },
   {
    "sha": "6a9662b",
    "author": "Parth Lawate",
