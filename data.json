@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T07:01:31+00:00",
+ "built_at": "2026-08-22T07:06:18+00:00",
  "public": true,
- "commit": "8cd4757",
+ "commit": "2d1380c",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 3,
  "vocabularies": {
@@ -7050,16 +7050,16 @@
     "id": "falcon-forge--civiclens",
     "type": "project",
     "path": "projects/falcon-forge--civiclens.md",
-    "title": "Falcon Forge — (Idea 16) CivicLens",
+    "title": "Falcon Forge — (Idea 16) FixitBharat",
     "title_field": "name",
     "fm": {
      "schema_version": 3,
      "type": "project",
-     "slug": "falcon-forge--civiclens",
-     "name": "Falcon Forge — (Idea 16) CivicLens",
+     "slug": "falcon-forge--FixitBharat",
+     "name": "Falcon Forge — (Idea 16) FixitBharat",
      "team": "falcon-forge",
      "idea_unresolved": true,
-     "idea_label_as_stated": "(Idea 16) CivicLens",
+     "idea_label_as_stated": "(Idea 16) FixitBharat",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
      "last_updated": "2026-08-22",
@@ -7071,7 +7071,7 @@
       }
      ]
     },
-    "body": "<h3>What this project is</h3>\n<p>Falcon Forge's work. The teams sheet records their problem statement as <code>(Idea 16) CivicLens</code>, which matches no idea in the ideas sheet — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than guessed.</p>"
+    "body": "<h3>What this project is</h3>\n<p>Falcon Forge's work. The teams sheet records their problem statement as <code>(Idea 16) FixitBharat</code>, which matches no idea in the ideas sheet — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than guessed.</p>"
    },
    {
     "id": "impact-makers--agritech-predictive-analytics-intent",
@@ -12424,6 +12424,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "2d1380c",
+   "author": "Vaishali K",
+   "date": "2026-08-22T12:36:02+05:30",
+   "subject": "Rename project from CivicLens to FixitBharat"
+  },
   {
    "sha": "8cd4757",
    "author": "Parth Lawate",
