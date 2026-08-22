@@ -15,6 +15,8 @@
   --warm: #ffb454;
   --good: #5ddba4;
   --bad: #ff7b72;
+  --graph-6: #4cc9f0;
+  --graph-7: #f78fb3;
   --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
   --radius: 14px;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
@@ -36,6 +38,8 @@
   --warm: #b96b00;
   --good: #17805a;
   --bad: #c0392b;
+  --graph-6: #0b7285;
+  --graph-7: #b5297f;
   --shadow: 0 1px 2px rgba(20,30,50,.06), 0 8px 24px rgba(20,30,50,.08);
 }
 
@@ -364,4 +368,16 @@ a.stat.linked:hover::after { opacity: 1; }
   .app { padding: 20px 15px 60px; }
   .topbar { padding: 10px 15px; }
   .tabs { padding: 0 15px; }
+}
+
+/* ---- knowledge graph ---- */
+.graph-wrap {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  height: min(72vh, 760px); overflow: hidden; position: relative;
+}
+#graph-canvas { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+#graph-canvas:active { cursor: grabbing; }
+.chip .dot {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  margin-right: 6px; vertical-align: -1px;
 }

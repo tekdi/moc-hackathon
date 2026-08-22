@@ -10,6 +10,8 @@
 
   const REFRESH_MS = 60000;
   const state = {
+    graph: { hidden: new Set(), pan: { x: 0, y: 0 }, zoom: 1, alpha: 1, running: false,
+             raf: null, data: null, hover: null, focus: null, dragging: null },
     data: null,
     byId: new Map(),      // "type:id" -> entity
     records: [],          // updates + decisions + learnings, newest first
@@ -880,6 +882,368 @@
       .join("");
   }
 
+  /* ---------------- view: graph ----------------
+
+     Every entity as a node, every declared reference as an edge, laid out by a
+     small force simulation on a canvas. No library: the page has no build step
+     and no runtime dependencies, and a force sim over a couple of hundred nodes
+     is a few lines of arithmetic.
+
+     Nothing here knows what a team or an idea is. Nodes come from the entity
+     list, edges from the graph the builder derived, colours from each type's
+     position in that list. A brain with different entities gets its own graph
+     for free. ------------------------------------------------------------- */
+
+  const GRAPH_TONE_VARS = [
+    "--accent", "--good", "--warm", "--accent-2", "--bad", "--graph-6", "--graph-7",
+  ];
+
+  function typeColor(type) {
+    const at = (state.data.entity_order || []).indexOf(type);
+    const name = GRAPH_TONE_VARS[(at < 0 ? 0 : at) % GRAPH_TONE_VARS.length];
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || "#888";
+  }
+
+  function buildGraph() {
+    const nodes = [];
+    const byKey = new Map();
+    for (const type of state.data.entity_order || []) {
+      if (state.graph.hidden.has(type)) continue;
+      for (const e of all(type)) {
+        const node = {
+          key: key(type, e.id), type, id: e.id, title: e.title, degree: 0,
+          x: 0, y: 0, vx: 0, vy: 0,
+        };
+        byKey.set(node.key, node);
+        nodes.push(node);
+      }
+    }
+    /* One line per relationship: a generated field is the mirror of a field
+       somebody wrote, so drawing both would double every edge. */
+    const links = [];
+    const seen = new Set();
+    for (const [from, slots] of Object.entries(state.data.graph || {})) {
+      const source = byKey.get(from);
+      if (!source) continue;
+      for (const e of slots.out || []) {
+        if (spec(source.type, e.field).generated) continue;
+        const target = byKey.get(key(e.type, e.id));
+        if (!target) continue;
+        const pair = `${from}|${target.key}`;
+        if (seen.has(pair)) continue;
+        seen.add(pair);
+        links.push({ source, target, field: e.field });
+        source.degree++;
+        target.degree++;
+      }
+    }
+    /* Seed on a circle: a random start makes the first second look like an
+       explosion, and the same layout twice is easier to talk about. */
+    const R = Math.min(320, 60 + nodes.length * 1.6);
+    nodes.forEach((n, i) => {
+      const a = (i / Math.max(1, nodes.length)) * Math.PI * 2;
+      n.x = Math.cos(a) * R * (0.6 + ((i % 7) / 10));
+      n.y = Math.sin(a) * R * (0.6 + ((i % 5) / 10));
+    });
+    return { nodes, links, byKey };
+  }
+
+  function radiusOf(node) {
+    return 3.2 + Math.min(9, Math.sqrt(node.degree) * 2.1);
+  }
+
+  function stepGraph(g, alpha) {
+    const REPEL = 1150, SPRING = 0.0021, LINK_LEN = 62, CENTRE = 0.0026, DAMP = 0.86;
+    const { nodes, links } = g;
+    for (let i = 0; i < nodes.length; i++) {
+      const a = nodes[i];
+      for (let j = i + 1; j < nodes.length; j++) {
+        const b = nodes[j];
+        let dx = a.x - b.x, dy = a.y - b.y;
+        let d2 = dx * dx + dy * dy;
+        if (d2 < 0.01) { dx = (i % 3) - 1 || 0.7; dy = (j % 3) - 1 || 0.7; d2 = 1; }
+        if (d2 > 360000) continue;               // far enough to ignore
+        const f = (REPEL / d2) * alpha;
+        const d = Math.sqrt(d2);
+        a.vx += (dx / d) * f; a.vy += (dy / d) * f;
+        b.vx -= (dx / d) * f; b.vy -= (dy / d) * f;
+      }
+    }
+    for (const l of links) {
+      const dx = l.target.x - l.source.x, dy = l.target.y - l.source.y;
+      const d = Math.sqrt(dx * dx + dy * dy) || 1;
+      const f = (d - LINK_LEN) * SPRING * alpha;
+      const fx = (dx / d) * f, fy = (dy / d) * f;
+      l.source.vx += fx; l.source.vy += fy;
+      l.target.vx -= fx; l.target.vy -= fy;
+    }
+    for (const n of nodes) {
+      if (n === state.graph.dragging) { n.vx = n.vy = 0; continue; }
+      n.vx -= n.x * CENTRE * alpha;
+      n.vy -= n.y * CENTRE * alpha;
+      n.vx *= DAMP; n.vy *= DAMP;
+      n.x += n.vx; n.y += n.vy;
+    }
+  }
+
+  function drawGraph() {
+    const g = state.graph;
+    const canvas = $("#graph-canvas");
+    if (!canvas || !g.data) return;
+    const ctx = canvas.getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
+      canvas.width = w * dpr; canvas.height = h * dpr;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    ctx.save();
+    ctx.translate(w / 2 + g.pan.x, h / 2 + g.pan.y);
+    ctx.scale(g.zoom, g.zoom);
+
+    const focus = g.hover || g.focus;
+    const near = new Set();
+    if (focus) {
+      near.add(focus.key);
+      for (const l of g.data.links) {
+        if (l.source === focus) near.add(l.target.key);
+        if (l.target === focus) near.add(l.source.key);
+      }
+    }
+
+    const line = getComputedStyle(document.documentElement).getPropertyValue("--line").trim();
+    for (const l of g.data.links) {
+      const lit = focus && (near.has(l.source.key) && near.has(l.target.key));
+      ctx.strokeStyle = lit ? typeColor(l.target.type) : line;
+      ctx.globalAlpha = focus ? (lit ? 0.85 : 0.12) : 0.5;
+      ctx.lineWidth = lit ? 1.4 / g.zoom : 0.8 / g.zoom;
+      ctx.beginPath();
+      ctx.moveTo(l.source.x, l.source.y);
+      ctx.lineTo(l.target.x, l.target.y);
+      ctx.stroke();
+    }
+
+    ctx.globalAlpha = 1;
+    const labelAt = g.zoom > 1.5 ? 0 : g.zoom > 0.9 ? 6 : 12;
+    for (const n of g.data.nodes) {
+      const dim = focus && !near.has(n.key);
+      ctx.globalAlpha = dim ? 0.22 : 1;
+      ctx.fillStyle = typeColor(n.type);
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, radiusOf(n), 0, Math.PI * 2);
+      ctx.fill();
+      if (n === focus) {
+        ctx.strokeStyle = ctx.fillStyle;
+        ctx.globalAlpha = 0.4;
+        ctx.lineWidth = 6 / g.zoom;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    /* Labels in a second pass, so a node drawn later cannot sit on top of one,
+       with a halo in the panel colour to keep them readable over the edges. */
+    const panel = getComputedStyle(document.documentElement).getPropertyValue("--panel").trim();
+    ctx.textAlign = "center";
+    ctx.lineJoin = "round";
+    for (const n of g.data.nodes) {
+      const dim = focus && !near.has(n.key);
+      if (dim || (n.degree < labelAt && n !== focus)) continue;
+      const size = (n === focus ? 12 : 10.5) / g.zoom;
+      ctx.font = `${size}px ui-sans-serif, system-ui, sans-serif`;
+      const label = n.title.length > 34 ? n.title.slice(0, 33) + "…" : n.title;
+      const y = n.y - radiusOf(n) - 4 / g.zoom;
+      ctx.globalAlpha = 0.9;
+      ctx.strokeStyle = panel;
+      ctx.lineWidth = 3 / g.zoom;
+      ctx.strokeText(label, n.x, y);
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = getComputedStyle(document.documentElement)
+        .getPropertyValue(n === focus ? "--text" : "--text-dim").trim();
+      ctx.fillText(label, n.x, y);
+    }
+    ctx.restore();
+  }
+
+  /* Settle the layout synchronously instead of over animation frames.
+     requestAnimationFrame does not tick while the page is hidden — a background
+     tab, a collapsed pane — so a frame-driven layout arrives unsettled and stays
+     that way until somebody looks at it. The physics is cheap enough to just
+     run: a couple of hundred steps over a couple of hundred nodes. */
+  function settleGraph(steps = 300) {
+    const g = state.graph;
+    let alpha = 1;
+    for (let i = 0; i < steps; i++) {
+      stepGraph(g.data, alpha);
+      alpha *= 0.985;
+    }
+    g.alpha = 0;
+  }
+
+  /* Fit the whole graph in view. A force sim has no idea how big it will end
+     up, so any fixed zoom is wrong for some brain. */
+  function fitGraph() {
+    const g = state.graph;
+    const canvas = $("#graph-canvas");
+    if (!canvas || !g.data || !g.data.nodes.length) return;
+    if (!canvas.clientWidth || !canvas.clientHeight) return;   // not laid out yet
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (const n of g.data.nodes) {
+      minX = Math.min(minX, n.x); maxX = Math.max(maxX, n.x);
+      minY = Math.min(minY, n.y); maxY = Math.max(maxY, n.y);
+    }
+    const pad = 48;
+    const w = canvas.clientWidth - pad * 2, h = canvas.clientHeight - pad * 2;
+    const zoom = Math.min(2, Math.max(0.2, Math.min(w / (maxX - minX || 1), h / (maxY - minY || 1))));
+    g.zoom = zoom;
+    g.pan = { x: -((minX + maxX) / 2) * zoom, y: -((minY + maxY) / 2) * zoom };
+  }
+
+  function graphTick() {
+    const g = state.graph;
+    if (!g.running) return;
+    if (g.alpha > 0.02) {
+      stepGraph(g.data, g.alpha);   // only while a drag is warming it
+      g.alpha *= 0.94;
+    }
+    drawGraph();
+    g.raf = requestAnimationFrame(graphTick);
+  }
+
+  function graphNodeAt(clientX, clientY) {
+    const g = state.graph;
+    const canvas = $("#graph-canvas");
+    const box = canvas.getBoundingClientRect();
+    const x = (clientX - box.left - box.width / 2 - g.pan.x) / g.zoom;
+    const y = (clientY - box.top - box.height / 2 - g.pan.y) / g.zoom;
+    let best = null, bestD = Infinity;
+    for (const n of g.data.nodes) {
+      const d = (n.x - x) ** 2 + (n.y - y) ** 2;
+      const r = (radiusOf(n) + 6) ** 2;
+      if (d < r && d < bestD) { best = n; bestD = d; }
+    }
+    return best;
+  }
+
+  function stopGraph() {
+    if (state.graph.raf) cancelAnimationFrame(state.graph.raf);
+    if (state.graph.observer) state.graph.observer.disconnect();
+    state.graph.observer = null;
+    state.graph.running = false;
+    state.graph.raf = null;
+  }
+
+  function mountGraph(focusKey) {
+    const g = state.graph;
+    window.__graph = g;          // inspectable while debugging the layout
+    g.data = buildGraph();
+    g.alpha = 0;
+    g.running = true;
+    g.hover = null;
+    g.moved = false;
+    g.focus = focusKey ? g.data.byKey.get(focusKey) || null : null;
+    const canvas = $("#graph-canvas");
+    if (!canvas) return;
+
+    settleGraph();
+    fitGraph();
+    drawGraph();
+
+    /* The canvas may have no size yet — a hidden pane, a fold-out panel. Fit
+       again when it gets one, and on resize, unless the reader has taken over. */
+    if (window.ResizeObserver) {
+      g.observer = new ResizeObserver(() => {
+        if (!g.moved) fitGraph();
+        drawGraph();
+      });
+      g.observer.observe(canvas);
+    }
+
+    let down = null, movedFar = false;
+    canvas.addEventListener("pointerdown", (e) => {
+      /* Capture keeps a drag alive outside the canvas, but it throws for a
+         pointer id the browser is not tracking — and an exception here would
+         abandon the whole gesture, including the click. */
+      try {
+        canvas.setPointerCapture(e.pointerId);
+      } catch {
+        /* not capturable; dragging still works within the canvas */
+      }
+      const node = graphNodeAt(e.clientX, e.clientY);
+      down = { x: e.clientX, y: e.clientY, node, pan: { ...g.pan } };
+      movedFar = false;
+      if (node) { g.dragging = node; g.focus = node; }
+      g.alpha = Math.max(g.alpha, 0.35);
+    });
+    canvas.addEventListener("pointermove", (e) => {
+      if (!down) {
+        const hit = graphNodeAt(e.clientX, e.clientY);
+        canvas.style.cursor = hit ? "pointer" : "grab";
+        if (hit !== g.hover) { g.hover = hit; drawGraph(); }
+        return;
+      }
+      const dx = e.clientX - down.x, dy = e.clientY - down.y;
+      if (Math.abs(dx) + Math.abs(dy) > 4) movedFar = true;
+      if (down.node) {
+        down.node.x += dx / g.zoom - (down.lastX || 0);
+        down.node.y += dy / g.zoom - (down.lastY || 0);
+        down.lastX = dx / g.zoom; down.lastY = dy / g.zoom;
+        g.alpha = Math.max(g.alpha, 0.3);
+      } else {
+        g.pan = { x: down.pan.x + dx, y: down.pan.y + dy };
+        g.moved = true;
+        drawGraph();
+      }
+    });
+    canvas.addEventListener("pointerup", (e) => {
+      const node = down && down.node;
+      g.dragging = null;
+      const wasClick = node && !movedFar;
+      down = null;
+      if (wasClick) location.hash = `#/${node.type}/${encodeURI(node.id)}`;
+      else if (!movedFar) { g.focus = null; drawGraph(); }
+    });
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      const box = canvas.getBoundingClientRect();
+      const cx = e.clientX - box.left - box.width / 2;
+      const cy = e.clientY - box.top - box.height / 2;
+      const factor = Math.exp(-e.deltaY * 0.0015);
+      const next = Math.min(4, Math.max(0.25, g.zoom * factor));
+      g.pan.x = cx - ((cx - g.pan.x) * next) / g.zoom;
+      g.pan.y = cy - ((cy - g.pan.y) * next) / g.zoom;
+      g.zoom = next;
+      g.moved = true;
+      drawGraph();
+    }, { passive: false });
+
+    graphTick();
+  }
+
+  function viewGraph() {
+    const counts = (state.data.entity_order || []).map((type) => ({
+      type,
+      n: all(type).length,
+      hidden: state.graph.hidden.has(type),
+    }));
+    return `
+      <div class="section-head"><h2>Knowledge graph</h2>
+        <span class="note">drag a node · scroll to zoom · click to open · hover to isolate</span></div>
+      <div class="chips">
+        ${counts
+          .map(
+            (c) =>
+              `<button class="chip ${c.hidden ? "" : "on"}" data-graph-type="${esc(c.type)}">
+                 <i class="dot" style="background:${typeColor(c.type)}"></i>${esc(
+                titleCase(folderOf(c.type))
+              )} ${c.n}</button>`
+          )
+          .join("")}
+      </div>
+      <div class="graph-wrap"><canvas id="graph-canvas"></canvas></div>`;
+  }
+
   /* ---------------- view: detail ---------------- */
 
   /* Structural bookkeeping, plus whatever the card already used as the title.
@@ -1095,8 +1459,12 @@
     const detailTypes = state.data.entity_order || [];
     const listFolder = typeOfFolder(head);   // "#/teams" -> the team type
 
+    stopGraph();
+
     let html;
-    if (detailTypes.includes(head) && rest.length) {
+    if (head === "graph") {
+      html = viewGraph();
+    } else if (detailTypes.includes(head) && rest.length) {
       html = viewDetail(head, decodeURI(rest.join("/")));
     } else if (listFolder && meta(listFolder).list_view) {
       html = viewList(listFolder);
@@ -1107,6 +1475,7 @@
     }
     app.innerHTML = html;
     window.scrollTo({ top: 0 });
+    if (head === "graph") mountGraph(rest.length ? rest.join("/") : null);
 
     const tab =
       detailTypes.includes(head) && rest.length
@@ -1117,6 +1486,8 @@
         ? head
         : head === "activity"
         ? "activity"
+        : head === "graph"
+        ? "graph"
         : "pulse";
     document.querySelectorAll("#tabs a").forEach((a) => a.classList.toggle("active", a.dataset.view === tab));
   }
@@ -1126,7 +1497,7 @@
   function renderTabs() {
     const tabs = [["pulse", "Pulse"]]
       .concat(listTypes().map((t) => [folderOf(t), titleCase(folderOf(t))]))
-      .concat([["activity", "Activity"]]);
+      .concat([["activity", "Activity"], ["graph", "Graph"]]);
     $("#tabs").innerHTML = tabs
       .map(([slug, label]) => `<a href="#/${esc(slug)}" data-view="${esc(slug)}">${esc(label)}</a>`)
       .join("");
@@ -1172,6 +1543,14 @@
     search.addEventListener("focus", () => renderSearch(search.value));
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".search")) $("#search-results").hidden = true;
+      const gchip = e.target.closest(".chip[data-graph-type]");
+      if (gchip) {
+        const type = gchip.dataset.graphType;
+        if (state.graph.hidden.has(type)) state.graph.hidden.delete(type);
+        else state.graph.hidden.add(type);
+        route();
+        return;
+      }
       const chip = e.target.closest(".chip[data-filter]");
       if (chip) {
         state.filters[chip.dataset.filter] = chip.dataset.value || null;

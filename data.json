@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T07:57:39+00:00",
+ "built_at": "2026-08-22T08:06:03+00:00",
  "public": true,
- "commit": "b52badf",
+ "commit": "464044c",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 3,
  "vocabularies": {
@@ -2012,6 +2012,11 @@
     {
      "field": "reported_by",
      "type": "update",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-knowledge-graph-view"
+    },
+    {
+     "field": "reported_by",
+     "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live"
     },
     {
@@ -2103,6 +2108,11 @@
      "field": "decided_by",
      "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type"
+    },
+    {
+     "field": "decided_by",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hand-rolled-graph-on-canvas"
     },
     {
      "field": "decided_by",
@@ -2207,6 +2217,11 @@
     {
      "field": "learned_by",
      "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-a-throwing-guard-abandoned-the-gesture"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-do-not-slice-html-by-length"
     },
     {
@@ -2223,6 +2238,11 @@
      "field": "learned_by",
      "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generic-is-not-the-same-as-good"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-raf-does-not-tick-in-a-hidden-pane"
     },
     {
      "field": "learned_by",
@@ -2504,6 +2524,11 @@
     {
      "field": "team",
      "type": "update",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-knowledge-graph-view"
+    },
+    {
+     "field": "team",
+     "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live"
     },
     {
@@ -2595,6 +2620,11 @@
      "field": "team",
      "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type"
+    },
+    {
+     "field": "team",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hand-rolled-graph-on-canvas"
     },
     {
      "field": "team",
@@ -2699,6 +2729,11 @@
     {
      "field": "team",
      "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-a-throwing-guard-abandoned-the-gesture"
+    },
+    {
+     "field": "team",
+     "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-do-not-slice-html-by-length"
     },
     {
@@ -2715,6 +2750,11 @@
      "field": "team",
      "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generic-is-not-the-same-as-good"
+    },
+    {
+     "field": "team",
+     "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-raf-does-not-tick-in-a-hidden-pane"
     },
     {
      "field": "team",
@@ -2848,6 +2888,11 @@
     {
      "field": "project",
      "type": "update",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-knowledge-graph-view"
+    },
+    {
+     "field": "project",
+     "type": "update",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live"
     },
     {
@@ -2874,6 +2919,11 @@
      "field": "project",
      "type": "decision",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-group-filters-by-target-type"
+    },
+    {
+     "field": "project",
+     "type": "decision",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hand-rolled-graph-on-canvas"
     },
     {
      "field": "project",
@@ -2908,6 +2958,11 @@
     {
      "field": "project",
      "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-a-throwing-guard-abandoned-the-gesture"
+    },
+    {
+     "field": "project",
+     "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-do-not-slice-html-by-length"
     },
     {
@@ -2924,6 +2979,11 @@
      "field": "project",
      "type": "learning",
      "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-generic-is-not-the-same-as-good"
+    },
+    {
+     "field": "project",
+     "type": "learning",
+     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-raf-does-not-tick-in-a-hidden-pane"
     },
     {
      "field": "project",
@@ -4659,6 +4719,26 @@
    ],
    "in": []
   },
+  "update:t-brain--make-the-brain-explorable-not-just/2026-08-22-knowledge-graph-view": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "reported_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
   "update:t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live": {
    "out": [
     {
@@ -5319,6 +5399,26 @@
    ],
    "in": []
   },
+  "decision:t-brain--make-the-brain-explorable-not-just/2026-08-22-hand-rolled-graph-on-canvas": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "decided_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
   "decision:t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor": {
    "out": [
     {
@@ -5819,6 +5919,26 @@
    ],
    "in": []
   },
+  "learning:t-brain--make-the-brain-explorable-not-just/2026-08-22-a-throwing-guard-abandoned-the-gesture": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
   "learning:t-brain--make-the-brain-explorable-not-just/2026-08-22-do-not-slice-html-by-length": {
    "out": [
     {
@@ -5880,6 +6000,26 @@
    "in": []
   },
   "learning:t-brain--make-the-brain-explorable-not-just/2026-08-22-generic-is-not-the-same-as-good": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--make-the-brain-explorable-not-just"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
+  "learning:t-brain--make-the-brain-explorable-not-just/2026-08-22-raf-does-not-tick-in-a-hidden-pane": {
    "out": [
     {
      "field": "project",
@@ -10325,6 +10465,67 @@
     "body": "<h3>What we did</h3>\n<p>Filter chips now come from reference fields as well as vocabulary fields, grouped by the type they point at. Picking a project shows that project's records and nothing else.</p>\n<h3>What broke</h3>\n<p>Generating a filter per reference field produced a chip for every decision in the wiki. And gathering records through any neighbour reached an idea's project, then its team, then that team's other projects — 77 records on a page that should show 17.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>The schema tells you what exists, not what is worth putting on screen. Every control we generated had to be asked what question it answers.</p>"
    },
    {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-knowledge-graph-view",
+    "type": "update",
+    "path": "updates/t-brain--make-the-brain-explorable-not-just/2026-08-22-knowledge-graph-view.md",
+    "title": "Added an Obsidian-style knowledge graph view: every entity a node, every declared reference an edge, laid out on a canvas with no libraries",
+    "title_field": "what_changed",
+    "fm": {
+     "schema_version": 3,
+     "type": "update",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "implementation",
+     "record_kind": "demo",
+     "date": "2026-08-22",
+     "reported_by": "parth-lawate",
+     "logged_by": "parthlawate",
+     "what_changed": "Added an Obsidian-style knowledge graph view: every entity a node, every declared reference an edge, laid out on a canvas with no libraries",
+     "decisions": [
+      "2026-08-22-hand-rolled-graph-on-canvas"
+     ],
+     "learnings": [
+      "2026-08-22-raf-does-not-tick-in-a-hidden-pane",
+      "2026-08-22-a-throwing-guard-abandoned-the-gesture"
+     ],
+     "metrics": {
+      "nodes": 181,
+      "edges_drawn": "one per declared reference, mirrors skipped",
+      "libraries_added": 0,
+      "sample": "the whole wiki at 182 entities, seven entity types",
+      "method": "rendered in a browser; hover isolation, click-through, type toggles and zoom each exercised"
+     },
+     "artifacts": [
+      {
+       "kind": "demo-video",
+       "url": "https://tekdi.github.io/moc-hackathon/#/graph",
+       "note": "the graph tab on the live page"
+      }
+     ],
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits and the deployed build"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>The builder already emitted the graph for the related-entity sections, so this is a view over data the page had. Nodes are coloured by their type's position in the schema, sized by degree; hovering isolates a neighbourhood; clicking opens the entity; each type can be switched off.</p>\n<h3>What broke</h3>\n<p>The layout appeared badly tuned and was not running at all — animation frames do not tick in a hidden pane. And a click did nothing, because the first line of the gesture handler could throw.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Hovering the busiest node is the moment the graph earns itself: 58 edges from one person, everything else dimmed. Reaching that took separating the layout from the drawing, which is worth doing first rather than after three rounds of tuning forces that were never the problem.</p>"
+   },
+   {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live",
     "type": "update",
     "path": "updates/t-brain--make-the-brain-explorable-not-just/2026-08-22-merged-and-live.md",
@@ -11963,6 +12164,64 @@
     "body": "<h3>Consequences</h3>\n<p>Two rows: projects and people. Picking a project shows exactly that project's records, which is the thing that could not be asked before.</p>"
    },
    {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hand-rolled-graph-on-canvas",
+    "type": "decision",
+    "path": "decisions/t-brain--make-the-brain-explorable-not-just/2026-08-22-hand-rolled-graph-on-canvas.md",
+    "title": "Draw the knowledge graph on a canvas with a hand-written force simulation rather than pulling in a graph library",
+    "title_field": "decision",
+    "fm": {
+     "schema_version": 3,
+     "type": "decision",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "tech-selection",
+     "decision_type": "build-vs-buy",
+     "decision": "Draw the knowledge graph on a canvas with a hand-written force simulation rather than pulling in a graph library",
+     "options_considered": [
+      {
+       "option": "D3-force, or a purpose-built graph library from a CDN",
+       "why_not": "The page has no build step and no runtime dependencies, and it is served from a public Pages site — a CDN script is a third party in the load path of a page about a private wiki. The layout is a few lines of arithmetic."
+      },
+      {
+       "option": "SVG nodes instead of a canvas",
+       "why_not": "Around 180 nodes and 400 edges is where SVG starts costing a frame on every drag, and none of SVG's advantages — hit testing, CSS — were needed once nodes are circles."
+      }
+     ],
+     "chosen_because": "Repulsion, springs and a centring pull are about thirty lines. Colours come from each entity type's position in the schema, so the graph works for any brain without configuration.",
+     "tradeoff_accepted": "No clustering, no collision resolution, and labels can overlap in a dense hub. Hover isolation carries most of the readability instead.",
+     "constraints": [
+      "infra",
+      "skills"
+     ],
+     "reversible": "yes",
+     "revisit_if": "A brain grows past a few thousand nodes, where a naive all-pairs repulsion stops being free.",
+     "decided_by": "parth-lawate",
+     "decided_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits and the deployed build"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Context</h3>\n<p>Asked for an Obsidian-style graph view. The edges already existed — the builder emits the whole graph for the related-entity sections — so this is a view over data the page already had.</p>\n<h3>Consequences</h3>\n<p>Nodes are entities, edges are declared references, a generated field is skipped so mirrored pairs draw once, radius follows degree, and hovering a node isolates its neighbourhood. Clicking opens the entity. Each type can be toggled off.</p>"
+   },
+   {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor",
     "type": "decision",
     "path": "decisions/t-brain--make-the-brain-explorable-not-just/2026-08-22-hop-only-through-the-anchor.md",
@@ -13081,6 +13340,50 @@
     "body": "<h3>Evidence</h3>\n<p>Idea cards showed problem-area pills first, because the generic renderer took vocabulary fields in schema order.</p>\n<h3>What we'd do differently</h3>\n<p>A derived field now leads a card: if the schema computes it, it is the entity's current state and belongs where the eye lands first.</p>"
    },
    {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-a-throwing-guard-abandoned-the-gesture",
+    "type": "learning",
+    "path": "learnings/t-brain--make-the-brain-explorable-not-just/2026-08-22-a-throwing-guard-abandoned-the-gesture.md",
+    "title": "setPointerCapture throws for a pointer id the browser is not tracking, and the exception abandoned the rest of the gesture",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "implementation",
+     "kind": "failed",
+     "learning": "setPointerCapture throws for a pointer id the browser is not tracking, and the exception abandoned the rest of the gesture",
+     "evidence": "Clicking a node did nothing when driven programmatically: pointerdown called setPointerCapture first, it threw, and the handler never recorded the press — so pointerup had no press to complete. Real mouse input worked, which is what made it look like a test artefact rather than a bug.",
+     "generalises_to": "Any handler that starts with a browser call that can throw. The first line of a gesture handler is the worst place for one, because everything the gesture needs comes after it.",
+     "would_do_differently": "Wrap the capture; it is an enhancement, not a precondition.",
+     "cost_of_lesson": "~10 minutes; it would have surfaced as an occasional dead click on real devices",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits and the deployed build"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>Evidence</h3>\n<p>The click worked immediately once the call was guarded — same synthetic events, same coordinates.</p>"
+   },
+   {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-do-not-slice-html-by-length",
     "type": "learning",
     "path": "learnings/t-brain--make-the-brain-explorable-not-just/2026-08-22-do-not-slice-html-by-length.md",
@@ -13256,6 +13559,51 @@
      "date": "2026-08-22"
     },
     "body": "<h3>Evidence</h3>\n<p>Screenshots of the live original beside the rewrite: the original's one stacked bar with a legend against three plain bar charts, one of which duplicated the stage rail.</p>\n<h3>What we'd do differently</h3>\n<p>Every restored feature is now a rule rather than a special case: a single-valued vocabulary partitions the collection so it stacks; avatars come from a display hint on the entity type; no vocabulary is charted twice.</p>"
+   },
+   {
+    "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-raf-does-not-tick-in-a-hidden-pane",
+    "type": "learning",
+    "path": "learnings/t-brain--make-the-brain-explorable-not-just/2026-08-22-raf-does-not-tick-in-a-hidden-pane.md",
+    "title": "A layout driven by animation frames never settles while nothing is watching it",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--make-the-brain-explorable-not-just",
+     "team": "t-brain",
+     "stage": "poc-validation",
+     "kind": "surprised",
+     "learning": "A layout driven by animation frames never settles while nothing is watching it",
+     "evidence": "Seven seconds after mounting the graph, alpha had decayed exactly one step — from 1 to 0.985. requestAnimationFrame does not run in a hidden pane or a background tab, so the simulation had advanced a single frame. The canvas also reported clientWidth 0, so the auto-fit had nothing to fit to.",
+     "generalises_to": "Anything that computes rather than merely animates inside an rAF loop: layouts, physics, progressive work. Visibility is not a precondition anyone declares, and the failure appears as 'it looks wrong' rather than as an error.",
+     "would_do_differently": "Separate computing from drawing. The layout now runs 300 steps synchronously at mount, so it is correct before the first paint, and rAF only draws. A ResizeObserver refits when the canvas gets a real size.",
+     "cost_of_lesson": "~20 minutes chasing a layout that looked untuned when it had simply never run",
+     "ai_failure_mode": "overconfident-wrong",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "confidence": "corroborated",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commits and the deployed build"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>Three rounds of tuning forces that were never the problem.</p>\n<h3>What we'd do differently</h3>\n<p>Measure before tuning. One probe of alpha would have said the simulation had run one step, which no amount of force tuning was going to fix.</p>"
    },
    {
     "id": "t-brain--make-the-brain-explorable-not-just/2026-08-22-screenshots-catch-what-assertions-do-not",
@@ -13539,6 +13887,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "464044c",
+   "author": "Parth Lawate",
+   "date": "2026-08-22T13:35:49+05:30",
+   "subject": "hack: an Obsidian-style knowledge graph view, and log it"
+  },
   {
    "sha": "b52badf",
    "author": "Parth Lawate",
