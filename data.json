@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T07:54:04+00:00",
+ "built_at": "2026-08-22T07:56:18+00:00",
  "public": true,
- "commit": "9fdfb05",
+ "commit": "6a9662b",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 3,
  "vocabularies": {
@@ -2157,6 +2157,11 @@
     {
      "field": "learned_by",
      "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-moves-other-peoples-write-target"
+    },
+    {
+     "field": "learned_by",
+     "type": "learning",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written"
     },
     {
@@ -2359,6 +2364,11 @@
      "field": "project",
      "type": "learning",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-join-key-with-two-natural-spellings-needs-to-accept-both"
+    },
+    {
+     "field": "project",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-moves-other-peoples-write-target"
     },
     {
      "field": "project",
@@ -2635,6 +2645,11 @@
      "field": "team",
      "type": "learning",
      "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-join-key-with-two-natural-spellings-needs-to-accept-both"
+    },
+    {
+     "field": "team",
+     "type": "learning",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-moves-other-peoples-write-target"
     },
     {
      "field": "team",
@@ -3886,14 +3901,14 @@
     {
      "field": "projects",
      "type": "project",
-     "id": "falcon-forge--civiclens"
+     "id": "falcon-forge--fixitbharat"
     }
    ],
    "in": [
     {
      "field": "team",
      "type": "project",
-     "id": "falcon-forge--civiclens"
+     "id": "falcon-forge--fixitbharat"
     }
    ]
   },
@@ -3937,7 +3952,7 @@
     }
    ]
   },
-  "project:falcon-forge--civiclens": {
+  "project:falcon-forge--fixitbharat": {
    "out": [
     {
      "field": "team",
@@ -5604,6 +5619,26 @@
    ],
    "in": []
   },
+  "learning:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-moves-other-peoples-write-target": {
+   "out": [
+    {
+     "field": "project",
+     "type": "project",
+     "id": "t-brain--give-the-brain-a-memory-for-how-we"
+    },
+    {
+     "field": "team",
+     "type": "team",
+     "id": "t-brain"
+    },
+    {
+     "field": "learned_by",
+     "type": "person",
+     "id": "parth-lawate"
+    }
+   ],
+   "in": []
+  },
   "learning:t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written": {
    "out": [
     {
@@ -7068,7 +7103,7 @@
       }
      ],
      "projects": [
-      "falcon-forge--civiclens"
+      "falcon-forge--fixitbharat"
      ]
     },
     "body": "<h3>What they're building</h3>\n<p><strong>Unresolved.</strong> The teams sheet records this team's problem statement as <code>(Idea 16) CivicLens</code>. No idea with that title exists in the ideas sheet, and the idea numbers in the two sheets do not correspond — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than matched by number, which would attribute the whole build to the wrong problem statement.</p>\n<p>Ask the team which problem statement they are actually building, then link it.</p>\n<h3>Current state</h3>\n<p>Nothing reported yet. <code>status</code> and <code>stage_gate</code> are blank because nobody has said — not because the team has not started.</p>"
@@ -7467,15 +7502,15 @@
   ],
   "project": [
    {
-    "id": "falcon-forge--civiclens",
+    "id": "falcon-forge--fixitbharat",
     "type": "project",
-    "path": "projects/falcon-forge--civiclens.md",
+    "path": "projects/falcon-forge--fixitbharat.md",
     "title": "Falcon Forge — (Idea 16) FixitBharat",
     "title_field": "name",
     "fm": {
      "schema_version": 3,
      "type": "project",
-     "slug": "falcon-forge--FixitBharat",
+     "slug": "falcon-forge--fixitbharat",
      "name": "Falcon Forge — (Idea 16) FixitBharat",
      "team": "falcon-forge",
      "idea_unresolved": true,
@@ -7491,7 +7526,7 @@
       }
      ]
     },
-    "body": "<h3>What this project is</h3>\n<p>Falcon Forge's work. The teams sheet records their problem statement as <code>(Idea 16) FixitBharat</code>, which matches no idea in the ideas sheet — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than guessed.</p>"
+    "body": "<h3>What this project is</h3>\n<p>Falcon Forge's work. The teams sheet records their problem statement as <code>(Idea 16) FixitBharat</code>, which matches no idea in the ideas sheet — see <code>SOURCE-SEMANTICS.md</code>. Left unlinked rather than guessed.</p>\n<h3>Notes</h3>\n<p>Renamed from CivicLens to FixitBharat by the team on 2026-08-22. The teams sheet still records the problem statement as <code>(Idea 16) CivicLens</code>, which matches no idea in the ideas sheet — see <code>SOURCE-SEMANTICS.md</code>.</p>"
    },
    {
     "id": "impact-makers--agritech-predictive-analytics-intent",
@@ -7735,7 +7770,7 @@
      "name": "Linguistic Legends — AI-Powered Digital Readiness & Assessment Companion",
      "team": "team-5",
      "idea": "ai-powered-digital-readiness-and-assessment-companion",
-     "status": "building",
+     "status": "demo-ready",
      "stage_gate": "integration",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
@@ -7751,7 +7786,8 @@
        "method": "stated",
        "date": "2026-08-22"
       }
-     ]
+     ],
+     "last_update": "2026-08-22"
     },
     "body": "<h3>What this project is</h3>\n<p>Linguistic Legends's work on <a href=\"#/idea/ai-powered-digital-readiness-and-assessment-companion\">AI-Powered Digital Readiness &amp; Assessment Companion</a>.</p>"
    },
@@ -12609,6 +12645,50 @@
     "body": "<h3>What happened</h3>\n<p>Seeded data was written by the same script that defined the convention, so every reference in it was qualified and the bug could not surface until somebody else wrote a record by hand.</p>\n<h3>Evidence</h3>\n<p>Two <code>does not resolve in decisions/</code> errors against files present in the repo.</p>\n<h3>What we'd do differently</h3>\n<p>Both forms now resolve, and CONVENTIONS.md documents the short one as normal.</p>"
    },
    {
+    "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-moves-other-peoples-write-target",
+    "type": "learning",
+    "path": "learnings/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-moves-other-peoples-write-target.md",
+    "title": "A migration moved the field two contributors were writing to, while they were writing to it",
+    "title_field": "learning",
+    "fm": {
+     "schema_version": 3,
+     "type": "learning",
+     "project": "t-brain--give-the-brain-a-memory-for-how-we",
+     "team": "t-brain",
+     "stage": "integration",
+     "kind": "failed",
+     "learning": "A migration moved the field two contributors were writing to, while they were writing to it",
+     "evidence": "Within an hour of v3 landing: Vaishali renamed Falcon Forge's project by editing the slug field without renaming the file, and Gourav set status on the Team 5 page — the field v3 had just turned into a generated alias, so the rollup script would have reverted it. Neither did anything unreasonable; both wrote where the field had been that morning.",
+     "generalises_to": "Any schema change to a store people are actively writing to. The cost does not land on the person doing the migration, which is why it is easy to underestimate.",
+     "would_do_differently": "Announce the move to the people writing, and prefer accepting a write in the old place and relaying it to the new one over reverting it. Their edits were moved to the project rather than reverted, but they had to be moved by hand.",
+     "cost_of_lesson": "one red CI run and two files fixed by hand; nobody's intent was lost",
+     "learned_by": "parth-lawate",
+     "learned_on": "2026-08-22",
+     "ai_role": "generated",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "harness_pattern": "skill",
+     "confidence": "corroborated",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "the failing CI run and the two contributors' commits"
+      }
+     ],
+     "date": "2026-08-22"
+    },
+    "body": "<h3>What happened</h3>\n<p>Two contributors wrote to the pre-v3 shape between the migration landing and the next push.</p>\n<h3>Evidence</h3>\n<p>CI failed on the log commit with three errors that a local run before the pull had not seen.</p>\n<h3>What we'd do differently</h3>\n<p>Two things. Tell people when a field moves — nobody was told. And validate after pulling, not before: the errors were in other people's commits that arrived during the rebase, so a local check run beforehand could not have found them.</p>"
+   },
+   {
     "id": "t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written",
     "type": "learning",
     "path": "learnings/t-brain--give-the-brain-a-memory-for-how-we/2026-08-22-a-migration-regex-hit-what-it-had-just-written.md",
@@ -13458,6 +13538,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "6a9662b",
+   "author": "Parth Lawate",
+   "date": "2026-08-22T13:26:06+05:30",
+   "subject": "hack: finish two contributors' edits that v3 moved out from under them"
+  },
   {
    "sha": "9fdfb05",
    "author": "Parth Lawate",
