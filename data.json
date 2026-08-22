@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T04:46:14+00:00",
+ "built_at": "2026-08-22T04:49:51+00:00",
  "public": true,
- "commit": "c8226d5",
+ "commit": "5ff866e",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 2,
  "vocabularies": {
@@ -1273,8 +1273,8 @@
      "repos": [
       "https://github.com/mahajanmahesh935/khetisetu"
      ],
-     "status": "building",
-     "stage_gate": "poc-validation",
+     "status": "demo-ready",
+     "stage_gate": "demo-prep",
      "stages_completed": [
       "solution-design",
       "tech-design",
@@ -1282,7 +1282,8 @@
       "environment-setup",
       "implementation",
       "integration",
-      "poc-validation"
+      "poc-validation",
+      "ux-validation"
      ],
      "current_summary": "Building KhetiSetu (also FasalCast in the API title) — an agritech decision-support platform pairing a farmer-facing crop-opportunity score with a business-facing fertilizer-demand forecast. FastAPI + PostgreSQL/pgvector backend, TanStack Start frontend, XGBoost batch forecasting, pgvector RAG over agronomic guides.",
      "last_update": "2026-08-22",
@@ -1308,7 +1309,7 @@
       }
      ]
     },
-    "body": "<h3>What they're building</h3>\n<p><strong>KhetiSetu</strong> — \"From Crop Decisions to Smart Supply.\" Two audiences off one data model:</p>\n<ul>\n<li><strong>Farmers</strong> get a crop-opportunity score for their district and sowing month,</li>\n</ul>\n<p>computed live from a weighted formula so their acreage, irrigation answer and a rainfall what-if slider all affect it. Four components (weather fit, demand vs supply, demand trend, stability) are shown separately with a plain-language reason each, and confidence is reported as a second, independent number.</p>\n<ul>\n<li><strong>Agri-businesses</strong> get a fertilizer-demand forecast with intervals, plus stock</li>\n</ul>\n<p>actions derived from it, written nightly to <code>forecast</code> and <code>recommendations</code>.</p>\n<p>Stack: FastAPI, PostgreSQL 16 with pgvector, psycopg3, XGBoost, TanStack Start / React 19 / Tailwind. Maharashtra only — 7 districts, 13 crops, 29 products.</p>\n<p><code>stack</code> is left blank in the frontmatter deliberately: the <code>technology</code> vocabulary in <code>SCHEMA.yml</code> is still empty, and populating it is a shared schema change rather than one team's capture. The stack is recorded in prose here instead.</p>\n<h3>Idea link — still unresolved</h3>\n<p>Unchanged from the seeded state, and deliberately so. The teams sheet records <code>(Idea 13) Agritech Predictive Analytics &amp;amp; Intent</code>; no idea with that title exists in <code>ideas/</code>, and <code>ideas-sheet</code> was unreachable when this was written, so it could not be checked under another title. The build is unmistakably agritech predictive analytics with a farmer-intent table — but matching it to an idea slug on that resemblance is the same guess the original note warned against.</p>\n<p>Someone on the team should either name the real idea slug, or create a <code>self-registered</code> idea for it.</p>\n<h3>Current state</h3>\n<p>At <code>poc-validation</code>. Both analytics layers are built and the backend suite is green (101 tests). Frontend is wired to the live API.</p>\n<p>Known open items as of this update: two data migrations are written but not applied, so one district still shows an uncultivated crop at 100% opportunity; the RAG layer retrieves without a crop filter in ask-mode, so one crop's question can be answered from another crop's document.</p>\n<p>See <code>updates/impact-makers/</code> for the narrative log and <code>decisions/impact-makers/</code> for trade-offs.</p>"
+    "body": "<h3>What they're building</h3>\n<p><strong>KhetiSetu</strong> — \"From Crop Decisions to Smart Supply.\" Two audiences off one data model:</p>\n<ul>\n<li><strong>Farmers</strong> get a crop-opportunity score for their district and sowing month,</li>\n</ul>\n<p>computed live from a weighted formula so their acreage, irrigation answer and a rainfall what-if slider all affect it. Four components (weather fit, demand vs supply, demand trend, stability) are shown separately with a plain-language reason each, and confidence is reported as a second, independent number.</p>\n<ul>\n<li><strong>Agri-businesses</strong> get a fertilizer-demand forecast with intervals, plus stock</li>\n</ul>\n<p>actions derived from it, written nightly to <code>forecast</code> and <code>recommendations</code>.</p>\n<p>Stack: FastAPI, PostgreSQL 16 with pgvector, psycopg3, XGBoost, TanStack Start / React 19 / Tailwind. Maharashtra only — 7 districts, 13 crops, 29 products.</p>\n<p><code>stack</code> is left blank in the frontmatter deliberately: the <code>technology</code> vocabulary in <code>SCHEMA.yml</code> is still empty, and populating it is a shared schema change rather than one team's capture. The stack is recorded in prose here instead.</p>\n<h3>Idea link — still unresolved</h3>\n<p>Unchanged from the seeded state, and deliberately so. The teams sheet records <code>(Idea 13) Agritech Predictive Analytics &amp;amp; Intent</code>; no idea with that title exists in <code>ideas/</code>, and <code>ideas-sheet</code> was unreachable when this was written, so it could not be checked under another title. The build is unmistakably agritech predictive analytics with a farmer-intent table — but matching it to an idea slug on that resemblance is the same guess the original note warned against.</p>\n<p>Someone on the team should either name the real idea slug, or create a <code>self-registered</code> idea for it.</p>\n<h3>Current state</h3>\n<p><strong>Demo-ready</strong> as of 2026-08-22, at <code>demo-prep</code>. Both analytics layers are built and serving, the backend suite is green (101 tests, 1 xfail), and the frontend is wired to the live API. The nightly forecast has run — 2,898 rows — so all four business-dashboard panels populate. RAG has 348 embedded chunks from TNAU crop guides.</p>\n<p><strong>Open items going into the demo</strong>, recorded because a demo-ready flag with no caveats is indistinguishable from a finished product:</p>\n<ul>\n<li>Two data migrations are written and reviewed but <strong>not applied</strong>, so Pune still</li>\n</ul>\n<p>ranks Cotton at 100% opportunity off a 1-quintal synthetic demand row against zero supply — a crop ICRISAT says is not grown there. Visible on the recommendations screen.</p>\n<ul>\n<li>All 13 <code>fertilizer_recommendations</code> rows still have a NULL <code>source_id</code>, so the</li>\n</ul>\n<p>\"Based on agricultural knowledge sources\" panel renders empty.</p>\n<ul>\n<li>RAG ask-mode retrieves without a crop filter, so a question about one crop can be</li>\n</ul>\n<p>answered from another crop's document. Pinned as an xfail test with the diagnosis.</p>\n<ul>\n<li><code>weather_forecast</code> is empty and no weather API is wired, so the 7-day outlook is</li>\n</ul>\n<p>always blank.</p>\n<ul>\n<li><code>/farmer/crop-recommendation</code> takes ~2.5s — 40+ sequential queries over an ngrok</li>\n</ul>\n<p>tunnel, not a code path issue.</p>\n<p>See <code>updates/impact-makers/</code> for the narrative log and <code>decisions/impact-makers/</code> for trade-offs.</p>"
    },
    {
     "id": "quality-rocks",
@@ -3442,6 +3443,66 @@
    }
   ],
   "update": [
+   {
+    "id": "impact-makers/2026-08-22-demo-ready",
+    "type": "update",
+    "path": "updates/impact-makers/2026-08-22-demo-ready.md",
+    "title": "Status moved to demo-ready — both analytics layers serving, frontend wired to the live API, nightly forecast populating all four business panels",
+    "fm": {
+     "schema_version": 2,
+     "type": "update",
+     "team": "impact-makers",
+     "date": "2026-08-22",
+     "stage": "demo-prep",
+     "record_kind": "demo",
+     "reported_by": "mahesh-mahajan",
+     "logged_by": "mahajanmahesh935",
+     "what_changed": "Status moved to demo-ready — both analytics layers serving, frontend wired to the live API, nightly forecast populating all four business panels",
+     "decisions": [],
+     "learnings": [],
+     "metrics": {
+      "backend_tests_passing": 101,
+      "backend_tests_xfail": 1,
+      "forecast_rows_serving": 2898,
+      "rag_chunks_embedded": 348,
+      "crops_with_sourced_agronomic_bands": 13,
+      "known_open_items": 5,
+      "sample": "backend suite at the demo-ready commit; live database via the API",
+      "method": "pytest -q; psql row counts against the running instance"
+     },
+     "artifacts": [
+      {
+       "kind": "repo",
+       "url": "https://github.com/mahajanmahesh935/khetisetu",
+       "note": "21 commits on branch hack, 7 contributors"
+      }
+     ],
+     "confidence": "asserted",
+     "ai_role": "reviewed",
+     "ai_tool": "claude-code",
+     "ai_leverage": "high",
+     "ai_failure_mode": "none",
+     "harness_pattern": "skill",
+     "human_intervention": "Calling demo-ready. The open items below are real and none of them are fixed — the judgement that the demo stands up anyway is the captain's, not the tooling's.",
+     "acceleration": "not estimated for this record",
+     "first_logged": "2026-08-22",
+     "last_updated": "2026-08-22",
+     "sources": [
+      {
+       "system": "conversation",
+       "method": "stated",
+       "date": "2026-08-22"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "probed with git rather than gh (gh CLI unavailable) — 21 commits, branch hack"
+      }
+     ]
+    },
+    "body": "<h3>What we did</h3>\n<p>Declared demo-ready. What is actually serving, verified against the running instance rather than asserted:</p>\n<ul>\n<li><strong>Farmer flow</strong> — crop-opportunity score computed live from a four-component</li>\n</ul>\n<p>formula, so acreage, irrigation and the rainfall slider all reach it. Scores differentiate across crops (Soybean 73 to Maize 54 for Nashik in June) and the slider moves monotonically across its whole range.</p>\n<ul>\n<li><strong>Business flow</strong> — 2,898 forecast rows for 2025-2026 from the nightly XGBoost job,</li>\n</ul>\n<p>plus derived stock actions, so all four dashboard panels populate. Three of them were empty before this.</p>\n<ul>\n<li><strong>RAG</strong> — 348 embedded chunks from TNAU crop production guides at 1024 dimensions.</li>\n<li><strong>Backend</strong> — 101 tests passing, 1 xfail (a known RAG gap, pinned deliberately).</li>\n</ul>\n<h3>What broke</h3>\n<p>Nothing new. But five things are knowingly open going into the demo, and a demo-ready flag with no caveats would read as a finished product:</p>\n<ol>\n<li><strong>Pune ranks Cotton at 100% opportunity.</strong> Two migrations are written and</li>\n</ol>\n<p>reviewed but not applied, so 29 <code>crop_market_data</code> rows still carry a placeholder 1-quintal demand against zero supply — producing a maximum-possible demand-gap ratio for crops ICRISAT reports as not grown in that district. This one is on screen if anyone picks Pune.</p>\n<ol>\n<li><strong>The sources panel renders empty</strong> — all 13 <code>fertilizer_recommendations</code> rows</li>\n</ol>\n<p>have a NULL <code>source_id</code>.</p>\n<ol>\n<li><strong>RAG can answer one crop's question from another crop's document.</strong> Ask-mode</li>\n</ol>\n<p>retrieves with no crop filter. Chunks <em>are</em> tagged with <code>crop_id</code>, so the fix is a filter, not re-ingestion.</p>\n<ol>\n<li><strong>The 7-day weather outlook is always blank</strong> — <code>weather_forecast</code> is empty and</li>\n</ol>\n<p>no weather API is wired up.</p>\n<ol>\n<li><strong>First recommendation takes ~2.5s</strong> — 40+ sequential queries over an ngrok</li>\n</ol>\n<p>tunnel. Not a code path problem; the pool was retuned to stop it failing under a retry burst, which is different from making it fast.</p>\n<h3>What we decided</h3>\n<p>Nothing new this record. Status change only.</p>\n<h3>What we'd tell another team attempting this</h3>\n<p>Write the caveats into the demo-ready record while you still remember them. By the time someone reads this file the difference between \"we shipped it\" and \"we shipped it with two known wrong numbers on screen\" is unrecoverable from git history, and that difference is the only thing that makes the entry worth having.</p>"
+   },
    {
     "id": "impact-makers/2026-08-22-ml-and-scoring-layers",
     "type": "update",
@@ -5603,6 +5664,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "5ff866e",
+   "author": "Mahesh Mahajan",
+   "date": "2026-08-22T10:19:37+05:30",
+   "subject": "brain: impact-makers — status demo-ready"
+  },
   {
    "sha": "c8226d5",
    "author": "Mahesh Mahajan",
