@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-22T03:57:26+00:00",
+ "built_at": "2026-08-22T03:58:35+00:00",
  "public": true,
- "commit": "678846d",
+ "commit": "44c73cb",
  "repo": "tekdi/moihackathon-brain",
  "schema_version": 2,
  "vocabularies": {
@@ -1917,20 +1917,26 @@
     "id": "ashwin",
     "type": "person",
     "path": "people/ashwin.md",
-    "title": "Ashwin",
+    "title": "Ashwin Date",
     "fm": {
      "schema_version": 2,
      "type": "person",
      "slug": "ashwin",
-     "name": "Ashwin",
+     "name": "Ashwin Date",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "ideas-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commit authorship in this repo"
       }
      ],
      "teams": [
@@ -1942,9 +1948,10 @@
      "proposed_ideas": [
       "trace-to-trust",
       "whats-actually-in-this-pack"
-     ]
+     ],
+     "github": "coolbung"
     },
-    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname not recorded in the source sheet.</p>"
+    "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>Surname from commit authorship in this repo; the ideas sheet recorded the given name only.</p>"
    },
    {
     "id": "chaitali",
@@ -2029,6 +2036,12 @@
        "system": "ideas-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commit authorship in this repo"
       }
      ],
      "teams": [
@@ -2039,7 +2052,8 @@
      ],
      "proposed_ideas": [
       "one-click-project-onboarding"
-     ]
+     ],
+     "github": "dsprelax07"
     },
     "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
    },
@@ -2120,7 +2134,7 @@
      "name": "Gourav More",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
@@ -2131,6 +2145,12 @@
        "system": "ideas-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commit authorship in this repo"
       }
      ],
      "teams": [
@@ -2141,7 +2161,8 @@
      ],
      "proposed_ideas": [
       "ai-powered-digital-readiness-and-assessment-companion"
-     ]
+     ],
+     "github": "gouravmore"
     },
     "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
    },
@@ -2519,7 +2540,7 @@
      "name": "Parth Lawate",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "ideas-sheet",
@@ -2530,6 +2551,12 @@
        "system": "conversation",
        "method": "stated",
        "date": "2026-08-21"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commit authorship in this repo"
       }
      ],
      "teams": [
@@ -2540,7 +2567,8 @@
      ],
      "proposed_ideas": [
       "give-the-brain-a-memory-for-how-we-actually-deliver"
-     ]
+     ],
+     "github": "parthlawate"
     },
     "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>"
    },
@@ -3342,7 +3370,7 @@
      "name": "Vishal Chincholi",
      "origin": "pre-seeded",
      "first_logged": "2026-08-21",
-     "last_updated": "2026-08-21",
+     "last_updated": "2026-08-22",
      "sources": [
       {
        "system": "teams-sheet",
@@ -3353,6 +3381,12 @@
        "system": "ideas-sheet",
        "method": "document",
        "date": "2026-08-21"
+      },
+      {
+       "system": "github",
+       "method": "queried",
+       "date": "2026-08-22",
+       "note": "commit authorship in this repo"
       }
      ],
      "teams": [
@@ -3367,7 +3401,8 @@
      ],
      "proposed_ideas": [
       "ai-accessibility-reviewer"
-     ]
+     ],
+     "github": "vishalchincholi1"
     },
     "body": "<h3>Involvement</h3>\n<p>See generated <code>teams</code> and <code>proposed_ideas</code> in the frontmatter.</p>\n<h3>Notes</h3>\n<p>The teams sheet spells this <strong>Vishal Chincoli</strong>. Treated as one person: same first name, adjacent spelling, and the ideas sheet's Idea 18 member list uses the <em>other</em> spelling for the same team. Split into two entries if that turns out to be wrong.</p>"
    }
@@ -5081,6 +5116,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "44c73cb",
+   "author": "Parth Lawate",
+   "date": "2026-08-22T09:28:23+05:30",
+   "subject": "hack: fill github logins for the people actually pushing here"
+  },
   {
    "sha": "678846d",
    "author": "Parth Lawate",
