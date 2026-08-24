@@ -1,4 +1,4 @@
-/* Hackathon Brain visualiser.
+/* Brain visualiser.
  *
  * Reads data.json (produced by scripts/build_site.py from the wiki's own
  * markdown) and renders it. There is no server, no framework and no state
@@ -355,7 +355,7 @@
 
       <div class="grid cols-2 top" style="margin-top:14px">
         <div>
-          <div class="section-head"><h2>Latest from the teams</h2>
+          <div class="section-head"><h2>Latest activity</h2>
             <a class="note" href="#/activity">all activity →</a></div>
           <div class="card">${feedHtml(state.records.slice(0, 8))}</div>
         </div>
@@ -380,7 +380,7 @@
 
       ${silent.length ? `
       <div class="section-head"><h2>Nothing logged yet</h2>
-        <span class="note">no update, decision or learning — probably heads-down, not stopped</span></div>
+        <span class="note">no activity recorded against these yet</span></div>
       <div class="grid cols-4">${silent.map(entityCard).join("")}</div>` : ""}
     `;
   }
@@ -1512,6 +1512,7 @@
     }
     state.data = data;
     index(data);
+    applyBrand(data);
     renderTabs();
     $("#freshness-text").textContent = `built ${relTime(data.built_at)} · ${data.commit || ""}`;
     $("#freshness").title = `Built ${new Date(data.built_at).toLocaleString()} from commit ${data.commit}`;
@@ -1519,6 +1520,28 @@
       $("#footer-repo").innerHTML = `Generated from <a href="https://github.com/${esc(data.repo)}" target="_blank" rel="noopener noreferrer">${esc(
         data.repo
       )}</a> · schema v${esc(data.schema_version)}`;
+    }
+  }
+
+  /* The page carries no brain's name. build_site.py reads it from the brain
+     (SCHEMA.yml `site:`, else the README heading, else the repo name), because
+     a page that hardcodes one brain's title announces every other brain as
+     that one. */
+  function applyBrand(data) {
+    const brand = data.brand || {};
+    const title = brand.title || (data.repo || "").split("/").pop() || "Brain";
+    document.title = title;
+    const heading = $("#brand-title");
+    if (heading) heading.textContent = title;
+    const sub = $("#brand-sub");
+    if (sub) {
+      sub.textContent = brand.subtitle || "";
+      sub.hidden = !brand.subtitle;
+    }
+    const search = $("#search");
+    if (search) {
+      const kinds = listTypes().slice(0, 3).map((t) => folderOf(t));
+      search.placeholder = kinds.length ? `Search ${kinds.join(", ")}…` : "Search the brain…";
     }
   }
 
