@@ -1,7 +1,7 @@
 {
- "built_at": "2026-08-26T03:23:50+00:00",
+ "built_at": "2026-08-26T03:26:31+00:00",
  "public": true,
- "commit": "ce703b6",
+ "commit": "b8b4b02",
  "repo": "tekdi/moihackathon-brain",
  "brand": {
   "title": "Hackathon Brain",
@@ -13891,6 +13891,12 @@
   ]
  },
  "commits": [
+  {
+   "sha": "b8b4b02",
+   "author": "Parth Lawate",
+   "date": "2026-08-26T08:56:16+05:30",
+   "subject": "hack: declare the three scripts this brain owns"
+  },
   {
    "sha": "ce703b6",
    "author": "Parth Lawate",
